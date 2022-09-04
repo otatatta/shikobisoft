@@ -9,7 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@chakra-ui/react": "^2.3.1",
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
     "@heroicons/react": "^2.0.10",
+    "framer-motion": "^6.5.1",
     "microcms-js-sdk": "^2.2.1",
     "next": "12.2.5",
     "react": "18.2.0",

@@ -6,7 +6,7 @@ import shikoIcon from "../static/shikoIcon.png"
 function Header() {
 
   return (
-    <header className="sticky top-0 z-30 flex w-full items-center justify-between bg-[#E7ECEE] p-4">
+    <header className="sticky top-0 z-30 flex-1 w-full items-center justify-between bg-[#E7ECEE] p-4">
       <div className="flex items-center justify-center md:w-1/5">
         <Link href="/" style={{ width: "40%" }}>
           <div className="relative h-10 w-5 cursor-pointer opacity-75 transition hover:opacity-100">
@@ -22,13 +22,19 @@ function Header() {
         <span >SHIKOSHIKOSOFT OFFICAL WEBSITE</span>
         <span >twiter</span>
       </div>
-      <div className="flex-1 items-center justify-center space-x-8 md:flex">
+      <div className="flex-1 items-center justify-center space-x-8 md:flex mt-4">
         <Link href="./blog">
           <a className="headerLink">Blog</a>
         </Link>
-        <a className="headerLink">Staff</a>
-        <a className="headerLink">Product</a>
-        <a className="headerLink">Contact</a>
+        <Link href=".">
+          <a className="headerLink">Staff</a>
+        </Link>
+        <Link href=".">
+          <a className="headerLink">Product</a>
+        </Link>
+        <Link href=".">
+          <a className="headerLink">Contact</a>
+        </Link>
       </div>
       <div className="flex items-center justify-center gap-x-4 md:w-1/5">
         <Link href="/checkout">
