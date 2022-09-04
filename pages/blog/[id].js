@@ -1,5 +1,4 @@
-import { client } from "../../libs/client";
-import styles from "../styles/Home.module.css";
+import { client } from "../libs/client";
 
 //SSG
 export const getStaticProps = async (context) => {
@@ -25,12 +24,11 @@ export const getStaticPaths = async () => {
 
 export default function BlogId({ blog }) {
   return (
-    <main className={styles.main}>
-      <h1 className={styles.title}>{blog.title}</h1>
-      <p className={styles.publishedAt}>{blog.publishedAt}</p>
+    <main>
+      <h1>{blog.title}</h1>
+      <p>{blog.publishedAt}</p>
       <div
         dangerouslySetInnerHTML={{ __html: `${blog.content}` }}
-        className={styles.post}
       ></div>
     </main>
   );

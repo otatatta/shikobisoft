@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from 'next/image'
 import { client } from "../libs/client";
-import styles from "../styles/Home.module.css";
 import shikoIcon from "../static/shikoIcon.png"
 
 //SSG
@@ -17,7 +16,7 @@ export const getStaticProps = async () => {
 export default function Home({ blog }) {
   console.log(blog)
   return (
-    <div className={styles.container}>
+    <div>
       {blog.map((blog) => (
         <div key={blog.id}>
           <p>
