@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from 'next/image'
-import { client } from "../../libs/client";
-import styles from "../../styles/Home.module.css";
+import { client } from "../libs/client";
+import styles from "../styles/Home.module.css";
 import shikoIcon from "../static/shikoIcon.png"
 
 //SSG
