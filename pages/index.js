@@ -1,6 +1,6 @@
 import Header from "./component/Header"
 import Head from 'next/head'
-import { Footer } from "./component/Footer";
+import Footer from "./component/Footer";
 import { Carousel, Empty } from 'antd';
 
 const contentStyle = {

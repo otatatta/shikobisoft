@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from 'next/image'
-import { client } from "../libs/client";
+import { client } from "../../libs/client";
 import shikoIcon from "../static/shikoIcon.png"
 import Header from "../component/Header"
 
@@ -15,7 +15,6 @@ export const getStaticProps = async () => {
 };
 
 export default function Home({ blog }) {
-  console.log(blog)
   return (
     <div>
       <Header />
@@ -34,6 +33,7 @@ export default function Home({ blog }) {
                   {blog?.eyecatch ? (
                     <Image
                       src={blog.eyecatch?.url ?? shikoIcon}
+                      alt="blogIcon"
                       width={300}
                       height={300}
                     />

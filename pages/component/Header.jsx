@@ -47,7 +47,7 @@ function Header() {
         {/* <Card> */}
         {headerLink?.map((value, index) => {
           return (
-            <div style={{ width: '25%', borderLeft: `${index === 0 ? "" : borderStr}`, background: "#fff7e6" }}>
+            <div style={{ width: '25%', borderLeft: `${index === 0 ? "" : borderStr}`, background: "#fff7e6" }} key={index}>
               <Link href={value?.href} >
                 <Col span={4}>
                   <a className="headerLink" style={{ fontSize: "32px" }}>{value?.text}</a>

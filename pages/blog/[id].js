@@ -1,4 +1,4 @@
-import { client } from "../libs/client";
+import { client } from "../../libs/client";
 
 //SSG
 export const getStaticProps = async (context) => {
