@@ -1,6 +1,15 @@
 import Header from "./component/Header"
 import Head from 'next/head'
 import { Footer } from "./component/Footer";
+import { Carousel, Empty } from 'antd';
+
+const contentStyle = {
+  height: '160px',
+  color: '#fff',
+  lineHeight: '160px',
+  textAlign: 'center',
+  background: '#364d79',
+};
 
 export default function Home() {
   return (
@@ -15,7 +24,26 @@ export default function Home() {
         <h1 className="text-3xl font-bold underline">
           しこしこそふと（仮）
         </h1>
-
+        <Carousel autoplay>
+          <div>
+            <h3 style={contentStyle}>1</h3>
+          </div>
+          <div>
+            <h3 style={contentStyle}>2</h3>
+          </div>
+          <div>
+            <h3 style={contentStyle}>3</h3>
+          </div>
+          <div>
+            <h3 style={contentStyle}>4</h3>
+          </div>
+        </Carousel>
+        <p>
+          しこスタッフが日常を綴る <br />
+          しこログ不定期更新
+        </p>
+        <Empty />
+        <Empty />
       </main>
 
       <Footer />
