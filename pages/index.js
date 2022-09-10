@@ -1,40 +1,24 @@
-import Link from "next/link";
-// import Image from 'next/image'
-import { client } from "../libs/client";
-import styles from "../styles/Home.module.css";
+import Header from "./component/Header"
+import Head from 'next/head'
+import { Footer } from "./component/Footer";
 
-//SSG
-export const getStaticProps = async () => {
-  const data = await client.get({ endpoint: "blogs" });
-  console.log(data);
-  return {
-    props: {
-      blog: data.contents,
-    },
-  };
-};
-
-export default function Home({ blog }) {
+export default function Home() {
   return (
-    <div className={styles.container}>
-      {blog.map((blog) => (
-        <li key={blog.id}>
-          <Link href={`blog/${blog.id}`}>
-            {/* <a href="">
-              {blog.eyecatch ? (
-                <Image
-                  src={blog.eyecatch.url}
-                  width={blog.eyecatch.width}
-                  height={blog.eyecatch.height}
-                />
-              ) : (
-                <Image src="/static/shikoIcon.png" alt="No Image" />
-              )}
-            </a> */}
-            <a href="">{blog.title}</a>
-          </Link>
-        </li>
-      ))}
+    <div className="flex min-h-screen flex-col items-center justify-center py-2 ">
+      <Head>
+        <title>しこしこソフト | SHIKOSHIKO SOFT</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <Header />
+
+      <main className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center">
+        <h1 className="text-3xl font-bold underline">
+          しこしこそふと（仮）
+        </h1>
+
+      </main>
+
+      <Footer />
     </div>
   );
 }
