@@ -1,11 +1,11 @@
 import Header from "../component/Header"
 
-export default function Carankoe() {
+export default function StaffList() {
     return (
         <div>
             <Header />
             <div style={{ padding: "1rem" }}>
-                キャラ紹介
+                スタッフ紹介
             </div>
         </div>
     );

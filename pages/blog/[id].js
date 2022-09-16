@@ -24,7 +24,7 @@ export const getStaticPaths = async () => {
 
 export default function BlogId({ blog }) {
   return (
-    <main>
+    <main style={{ textAlign: "center", width: "100%", padding: "1rem" }}>
       <h1>{blog.title}</h1>
       <p>{blog.publishedAt}</p>
       <div

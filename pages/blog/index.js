@@ -18,7 +18,7 @@ export default function Home({ blog }) {
   return (
     <div>
       <Header />
-      <div style={{ padding: "1rem" }}>
+      <main style={{ textAlign: "center", width: "100%", padding: "1rem" }}>
         {blog.map((blog) => (
           <div key={blog.id}>
             <p>
@@ -49,7 +49,7 @@ export default function Home({ blog }) {
             </Link>
           </div>
         ))}
-      </div>
+      </main>
     </div>
   );
 }
