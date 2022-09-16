@@ -47,7 +47,7 @@ function Header() {
             <div style={{ width: '25%', borderLeft: `${index === 0 ? "" : borderStr}`, background: "#fff7e6" }} key={index}>
               <Link href={value?.href} >
                 <Col span={4}>
-                  <a className="headerLink" style={{ fontSize: "32px", padding: "1rem" }}>{value?.text}</a>
+                  <a className="headerLink" style={{ fontSize: "clamp(15px, 2vw, 32px)", padding: "1rem" }}>{value?.text}</a>
                 </Col>
               </Link>
             </div>
