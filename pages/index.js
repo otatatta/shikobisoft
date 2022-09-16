@@ -4,11 +4,12 @@ import Footer from "./component/Footer";
 import { Carousel, Empty } from 'antd';
 
 const contentStyle = {
-  height: '160px',
+  height: '480px',
   color: '#fff',
-  lineHeight: '160px',
+  lineHeight: '480px',
   textAlign: 'center',
   background: '#364d79',
+  fontSize: '36px',
 };
 
 export default function Home() {
@@ -21,28 +22,24 @@ export default function Home() {
       <Header />
 
       <main className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center">
-        <h1 className="text-3xl font-bold underline">
-          しこしこそふと（仮）
-        </h1>
         <Carousel autoplay>
           <div>
-            <h3 style={contentStyle}>1</h3>
+            <h3 style={contentStyle}>準備中です</h3>
           </div>
           <div>
-            <h3 style={contentStyle}>2</h3>
+            <h3 style={contentStyle}>準備中です</h3>
           </div>
           <div>
-            <h3 style={contentStyle}>3</h3>
-          </div>
-          <div>
-            <h3 style={contentStyle}>4</h3>
+            <h3 style={contentStyle}>準備中です</h3>
           </div>
         </Carousel>
-        <p>
-          しこスタッフが日常を綴る <br />
-          しこログ不定期更新
-        </p>
-        <Empty />
+        <div style={{ textAlign: "center", width: "100%" }}>
+          <p>
+            しこスタッフが日常を綴る <br />
+            しこログ不定期更新
+          </p>
+          <Empty />
+        </div>
         <Empty />
       </main>
 

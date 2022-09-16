@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import shikoIcon from "../static/shikoIcon.png"
+import shikoIcon from "../static/1500x500.jpg"
 import 'antd/dist/antd.css';
 import { Col, Row } from 'antd';
 
@@ -30,18 +30,15 @@ function Header() {
     <header>
       <Row justify="space-between" align="middle">
         <Link href="/">
-          <div className="relative h-10 w-5 cursor-pointer opacity-75 transition hover:opacity-100">
+          <div className="opacity-75 transition hover:opacity-100">
             <Image
               alt="Shikoshiko"
               src={shikoIcon}
               objectFit="contain"
-              width={100}
-              height={100}
+              height={120}
             />
           </div>
         </Link>
-        <span >SHIKOSHIKOSOFT OFFICAL WEBSITE</span>
-        <span ></span>
       </Row>
       <Row justify="space-around" align="middle" style={{ border: borderStr }} >
         {/* <Card> */}
@@ -50,7 +47,7 @@ function Header() {
             <div style={{ width: '25%', borderLeft: `${index === 0 ? "" : borderStr}`, background: "#fff7e6" }} key={index}>
               <Link href={value?.href} >
                 <Col span={4}>
-                  <a className="headerLink" style={{ fontSize: "32px" }}>{value?.text}</a>
+                  <a className="headerLink" style={{ fontSize: "32px", padding: "1rem" }}>{value?.text}</a>
                 </Col>
               </Link>
             </div>
