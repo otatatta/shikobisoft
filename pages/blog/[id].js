@@ -26,7 +26,7 @@ export default function BlogId({ blog }) {
   return (
     <main style={{ textAlign: "center", width: "100%", padding: "1rem" }}>
       <h1>{blog.title}</h1>
-      <p>{blog.publishedAt}</p>
+        <p>更新日：{String(blog.publishedAt)?.substring(0.10)}</p>
       <div
         dangerouslySetInnerHTML={{ __html: `${blog.content}` }}
       ></div>
