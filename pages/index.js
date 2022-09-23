@@ -34,6 +34,14 @@ export default function Home() {
           </div>
         </Carousel>
         <div style={{ textAlign: "center", width: "100%" }}>
+          <h2>TOPICS</h2>
+          <p>
+            ～繭イのカランコエ製作～
+          </p>
+          <Empty />
+        </div>
+        <div style={{ textAlign: "center", width: "100%" }}>
+          <h2>BlogS</h2>
           <p>
             しこスタッフが日常を綴る <br />
             しこログ不定期更新
