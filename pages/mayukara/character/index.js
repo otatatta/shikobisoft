@@ -1,17 +1,20 @@
 import OtherHeader from "../components/OtherHeader"
 import Footer from "../../component/Footer"
+import Image from 'next/image'
+import storyImg from "../../static/story.png"
 // import { Typography } from 'antd';
 
-export default function CarankoeStory() {
+export default function MayuChara() {
     // const { Title } = Typography;
     return (
         <>
             <OtherHeader />
             <div style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto" }}>
                 <div>
-                    <div style={{ height: "5rem" }} />
                     <div style={{ padding: "1rem" }}>
-                        物語
+                        <Image
+                            src={storyImg}
+                            alt="Image" />
                     </div>
                     <Footer />
                 </div>

@@ -5,23 +5,23 @@ import { Row } from 'antd';
 
 const headerLink = [
   {
-    href: "./carankoe/story",
+    href: "./mayukara/story",
     text: "物語"
   },
   {
-    href: "./blog",
+    href: "./mayukara/story",
     text: "世界観"
   },
   {
-    href: "./blog",
+    href: "./mayukara/story",
     text: "人物"
   },
   {
-    href: "./blog",
+    href: "./mayukara/story",
     text: "画像"
   },
   {
-    href: "./blog",
+    href: "./mayukara/story",
     text: "製品概要"
   }
 ]

@@ -8,7 +8,7 @@ import { Typography } from 'antd';
 const headerLink = [
     {
         href: "./story",
-        text: "物語aaa"
+        text: "物語"
     },
     {
         href: "./character",
