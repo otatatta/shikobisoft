@@ -36,7 +36,11 @@ function OtherHeader() {
         <header>
             <div style={{ width: "100%", backgroundColor: "#31a9ee", position: "fixed", zIndex: 4545 }}>
                 <div style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto" }}>
-                    <Title>SHIKOSHIKOSOFT 1st PROJECT</Title>
+                    <Link href="./" >
+                        <a className="headerLink">
+                            <Title>SHIKOSHIKOSOFT 1st PROJECT</Title>
+                        </a>
+                    </Link>
                 </div>
             </div>
             <div style={{ height: "5rem" }} />
