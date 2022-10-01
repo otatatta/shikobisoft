@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { client } from "../../libs/client";
 import shikoIcon from "../static/shikoIcon.png"
 import Header from "../component/Header"
+import Footer from "../component/Footer"
 
 //SSG
 export const getStaticProps = async () => {
@@ -50,6 +51,7 @@ export default function Home({ blog }) {
           </div>
         ))}
       </main>
+      <Footer />
     </div>
   );
 }
