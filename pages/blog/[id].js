@@ -1,9 +1,7 @@
 import { client } from "../../libs/client";
-import { formatDate } from "../func/funcs"
 import { Button } from 'antd';
 import Link from "next/link";
 import Footer from "../component/Footer"
-// import React, { useState } from 'react';
 
 //SSG
 export const getStaticProps = async (context) => {
@@ -27,6 +25,13 @@ export const getStaticPaths = async () => {
   };
 };
 
+export const formatDate = (dt) => {
+  const y = dt.getFullYear();
+  const m = ('00' + (dt.getMonth() + 1)).slice(-2);
+  const d = ('00' + dt.getDate()).slice(-2);
+  return (y + '-' + m + '-' + d)
+};
+
 export default function BlogId({ blog }) {
   const published = new Date(blog.publishedAt)
   // const size = useState('large');
@@ -34,7 +39,7 @@ export default function BlogId({ blog }) {
     <>
       <main style={{ textAlign: "left", width: "100%", padding: "1rem" }}>
         <h1>{blog.title}</h1>
-        <p>更新日：{formatDate(published)}</p>
+        <p>更新日：{blog.publishedAt ? formatDate(published) : ""}</p>
         <div
           dangerouslySetInnerHTML={{ __html: `${blog.content}` }}
         ></div>
