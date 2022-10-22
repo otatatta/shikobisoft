@@ -15,12 +15,12 @@ const headerLink = [
     text: "Staff"
   },
   {
-    href: "./blog",
+    href: "./mayukara",
     text: "Product"
   },
   {
     href: "./blog",
-    text: "Contact"
+    text: "Special"
   }
 ]
 const borderStr = "2px ridge rgba(211, 220, 50, .6)"
