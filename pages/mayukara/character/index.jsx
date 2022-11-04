@@ -3,6 +3,7 @@ import Footer from "../../component/Footer"
 import { Modal } from 'antd';
 import React, { useState } from 'react';
 import Image from 'next/image'
+import Background from "../../static/hp1_bg.png"
 import iconMamoru from "../../static/icons/iconmmr.png"
 import mamoru1 from "../../static/stands/HP1mmr.png"
 import mamoru2 from "../../static/stands/HP1mmr2.png"
@@ -20,7 +21,6 @@ const mamoru = {
     name_kana: "Inunashi Mamoru",
     txt: (
         <div>
-
             <p>
                 『 ――全部が全部、気色が悪いよな…… 』<br />
                 本作の主人公である十九歳の青年。<br />
@@ -68,7 +68,17 @@ export default function MayuChara() {
                             visible={mamoruOpen}
                             onOk={() => setMamoruOpen(false)}
                             onCancel={() => setMamoruOpen(false)}
+                            width={"90%"}
                         >
+                            <Image
+                                alt="Shikoshikoback"
+                                src={Background}
+                                style={{ position: "fixed", zIndex: 4545 }}
+                                width={"100%"}
+                                height={"100%"}
+                                layout={`fill`}
+                                objectFit={`cover`} />
+                            <div style={{ height: "auto" }}></div>
                             {mamoru.txt}
                         </Modal>
                         <div>
