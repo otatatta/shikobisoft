@@ -28,13 +28,13 @@ const headerLink = [
     }
 ]
 
-const borderStr = "2px ridge rgba(211, 220, 50, .6)"
+const borderStr = "2px ridge rgba(0, 0, 0, .6)"
 
 function OtherHeader() {
     const { Title } = Typography;
     return (
         <header>
-            <div style={{ width: "100%", backgroundColor: "#31a9ee", position: "fixed", zIndex: 4545 }}>
+            <div style={{ width: "100%", backgroundColor: "#fff", position: "fixed", zIndex: 4545 }}>
                 <div style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto" }}>
                     <Link href="./" >
                         <a className="headerLink">
@@ -51,9 +51,9 @@ function OtherHeader() {
                     {/* <Card> */}
                     {headerLink?.map((value, index) => {
                         return (
-                            <div style={{ width: '20%', borderLeft: `${index === 0 ? "" : borderStr}`, background: "#fff7e6" }} key={index}>
+                            <div style={{ width: '20%', borderLeft: `${index === 0 ? "" : borderStr}`, background: "#fff" }} key={index}>
                                 <Link href={value?.href} >
-                                    <a className="headerLink" style={{ fontSize: "clamp(14px, 2vw, 28px)", padding: "1rem" }}>{value?.text}</a>
+                                    <a className="headerLink" style={{ fontSize: "clamp(14px, 2vw, 28px)", padding: "1rem", color: "black" }}>{value?.text}</a>
                                 </Link>
                             </div>
                         )

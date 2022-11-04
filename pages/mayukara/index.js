@@ -9,7 +9,7 @@ export default function Carankoe() {
     const { Title } = Typography;
     return (
         <>
-            <div style={{ width: "100%", backgroundColor: "#31a9ee", position: "fixed", zIndex: 4545}}>
+            <div style={{ width: "100%", backgroundColor: "#fff", position: "fixed", zIndex: 4545}}>
                 <div style={{ paddingLeft: "2rem", marginBottom: "1rem" }} >
                     <Link href="./" >
                         <a className="headerLink">
