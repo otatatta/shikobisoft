@@ -65,7 +65,6 @@ const chiyo = {
     stand_1: chiyo1,
     options: ['1']
 }
-
 const saika = {
     names: "砂羽村 才花",
     selected_name: "Saika",
