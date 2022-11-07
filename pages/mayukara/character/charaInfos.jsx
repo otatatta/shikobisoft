@@ -1,3 +1,4 @@
+import React from 'react';
 import Image from 'next/image'
 import mamoru1 from "../../static/stands/HP1mmr.png"
 import mamoru2 from "../../static/stands/HP1mmr2.png"
@@ -13,12 +14,7 @@ import juri2 from "../../static/stands/HP4jr2.png"
 import tsuyuri1 from "../../static/stands/HP5tyr.png"
 import tsuyuri2 from "../../static/stands/HP5tyr2.png"
 
-class CharaWrapper {
-    constructor(x, y) {
-        this.x = x;
-        this.y = y;
-    }
-
+class CharaWrapper extends React.Component {
     static Mamoru = {
         names: "犬無 守琉",
         selected_name: "Mamoru",
@@ -158,7 +154,7 @@ class CharaWrapper {
         CharaWrapper.Juri,
         CharaWrapper.Tsuyuri
     ]
-
 }
+
 
 export default CharaWrapper;
