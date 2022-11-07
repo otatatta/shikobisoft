@@ -19,7 +19,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sass": "^1.54.8",
-    "save": "^2.9.0"
+    "save": "^2.9.0",
+    "styled-components": "^5.3.6"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.8",
