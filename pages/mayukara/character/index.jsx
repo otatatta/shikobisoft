@@ -4,7 +4,7 @@ import { Col, Row, Modal, Segmented } from 'antd';
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image'
 import Background from "../../static/hp1_bg.png"
-import CharaWrapper from "./charaInfos"
+import { pcList1 } from "./charaInfos"
 
 
 export default function MayuChara() {
@@ -55,6 +55,7 @@ export default function MayuChara() {
     const [value, setValue] = useState('1');
 
     console.log(width, height)
+    console.log(pcList1)
 
     return (
         <>
@@ -72,7 +73,7 @@ export default function MayuChara() {
                             lg: 32,
                         }} align="middle"
                     >
-                        {CharaWrapper.PCList1?.map((list,index) =>
+                        {pcList1?.map((list, index) =>
                         (
                             <Col span={3} key={`aaaa_${index}`}>
                                 <button type="primary" onClick={() => onClickButton(list)}>
