@@ -14,6 +14,10 @@ import tsuyuri1 from "../../static/stands/HP5tyr.png"
 import tsuyuri2 from "../../static/stands/HP5tyr2.png"
 
 class CharaWrapper {
+    constructor(x, y) {
+        this.x = x;
+        this.y = y;
+    }
 
     static Mamoru = {
         names: "犬無 守琉",
