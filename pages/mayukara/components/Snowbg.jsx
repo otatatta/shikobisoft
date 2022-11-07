@@ -29,7 +29,7 @@ const snowSpan = {
   opacity: "0.8",
   boxShadow: "0 0 1vw 0.5vw rgba(255, 255, 255, 0.4)",
   animation: "snow-anim 10s 0s linear infinite",
-  
+
 }
 
 
@@ -46,7 +46,7 @@ function SnowFlake() {
   return (
     <div style={container}>
       <div style={snows}>
-        {spanIndex()?.map(i => (<span style={{ ...snowSpan, left: `${i * 2}%` }}></span>))}
+        {spanIndex()?.map(i => (<span key={i} style={{ ...snowSpan, left: `${i * 2}%` }}></span>))}
       </div>
     </div>
   );

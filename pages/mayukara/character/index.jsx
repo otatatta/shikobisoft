@@ -72,9 +72,9 @@ export default function MayuChara() {
                             lg: 32,
                         }} align="middle"
                     >
-                        {CharaWrapper.PCList1?.map((list) =>
+                        {CharaWrapper.PCList1?.map((list,index) =>
                         (
-                            <Col span={3} key={`${list.selected_name}`}>
+                            <Col span={3} key={`aaaa_${index}`}>
                                 <button type="primary" onClick={() => onClickButton(list)}>
                                     {list?.icon}
                                 </button>
