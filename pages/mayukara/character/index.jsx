@@ -74,7 +74,7 @@ export default function MayuChara() {
                     >
                         {CharaWrapper.PCList1?.map((list) =>
                         (
-                            <Col span={3} >
+                            <Col span={3} key={`${list.selected_name}`}>
                                 <button type="primary" onClick={() => onClickButton(list)}>
                                     {list?.icon}
                                 </button>
