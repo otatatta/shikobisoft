@@ -16,7 +16,10 @@ export const getStaticProps = async (context) => {
 };
 
 export const getStaticPaths = async () => {
-  const data = await client.get({ endpoint: "blogs" });
+  const data = await client.get({
+    endpoint: "blogs",
+    queries: { limit: 20 },
+  });
 
   const paths = data.contents.map((content) => `/blog/${content.id}`);
   return {
@@ -25,7 +28,7 @@ export const getStaticPaths = async () => {
   };
 };
 
-export const formatDate = (dt) => {
+const formatDate = (dt) => {
   const y = dt.getFullYear();
   const m = ('00' + (dt.getMonth() + 1)).slice(-2);
   const d = ('00' + dt.getDate()).slice(-2);
