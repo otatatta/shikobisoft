@@ -2,6 +2,7 @@ import OtherHeader from "../components/OtherHeader"
 import Footer from "../../component/Footer"
 import { Col, Row, Modal, Segmented } from 'antd';
 import React, { useEffect, useState } from 'react';
+import CharaData from "./readOnly"
 import Image from 'next/image'
 import Background from "../../static/hp1_bg.png"
 import mamoru1 from "../../static/stands/HP1mmr.png"
@@ -17,6 +18,8 @@ import juri1 from "../../static/stands/HP4jr.png"
 import juri2 from "../../static/stands/HP4jr2.png"
 import tsuyuri1 from "../../static/stands/HP5tyr.png"
 import tsuyuri2 from "../../static/stands/HP5tyr2.png"
+
+console.log(CharaData.Mamoru)
 
 const mamoru = {
     names: "犬無 守琉",
