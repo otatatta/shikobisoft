@@ -2,7 +2,7 @@ import mamoru1 from "../../static/stands/HP1mmr.png";
 import mamoru2 from "../../static/stands/HP1mmr2.png";
 import iconMamoru from "../../static/icons/iconmmr.png";
 
-export class CharaData extends React.Component {
+class CharaData {
   static Mamoru = {
     names: "犬無 守琉",
     selected_name: "Mamoru",
@@ -31,3 +31,5 @@ export class CharaData extends React.Component {
     options: ["1", "2"],
   };
 }
+
+export default CharaData;
