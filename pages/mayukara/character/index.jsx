@@ -11,6 +11,16 @@ import iconChiyo from "../../static/icons/icon2ty.png"
 import iconSaika from "../../static/icons/icon3sik.png"
 import iconJuri from "../../static/icons/icon4jr.png"
 import iconTsuyuri from "../../static/icons/icon5tyr.png"
+import iconNazuna from "../../static/icons/icon6nzn.png"
+import iconSousei from "../../static/icons/icon7susi.png"
+import iconShito from "../../static/icons/icon8strs.png"
+import iconRyuko from "../../static/icons/icon9rk.png"
+import iconRyou from "../../static/icons/icon10ku.png"
+import iconKenji from "../../static/icons/icon11knj.png"
+import iconKomari from "../../static/icons/icon12kmr.png"
+import iconUshi from "../../static/icons/icon13uso.png"
+import iconUmi from "../../static/icons/icon14umn.png"
+import iconResuna from "../../static/icons/icon15rsn.png"
 import chiyo1 from "../../static/stands/HP2cy.png"
 import saika1 from "../../static/stands/HP3sik.png"
 import juri1 from "../../static/stands/HP4jr.png"
@@ -60,7 +70,87 @@ const tsuyuri = {
     stand_2: tsuyuri2,
     options: ['1', "2"]
 }
-const pcList1 = [mamoru, chiyo, saika, juri, tsuyuri]
+const nazuna = {
+    names: "淡嶋 なずな",
+    selected_name: "Nazuna",
+    icon: iconNazuna,
+    stand_1: tsuyuri1,
+    stand_2: tsuyuri2,
+    options: ['1', "2"]
+}
+const sousei = {
+    names: "梅園 聡晟",
+    selected_name: "Sousei",
+    icon: iconSousei,
+    stand_1: tsuyuri1,
+    stand_2: tsuyuri2,
+    options: ['1', "2"]
+}
+const shitorasu = {
+    names: "梅園 司斗羅栖",
+    selected_name: "Shitorasu",
+    icon: iconShito,
+    stand_1: tsuyuri1,
+    stand_2: tsuyuri2,
+    options: ['1', "2"]
+}
+const ryuko = {
+    names: "折戸 流子",
+    selected_name: "Ryuko",
+    icon: iconRyuko,
+    stand_1: tsuyuri1,
+    stand_2: tsuyuri2,
+    options: ['1', "2"]
+}
+const ryou = {
+    names: "雨呂鎚 享",
+    selected_name: "Ryou",
+    icon: iconRyou,
+    stand_1: tsuyuri1,
+    stand_2: tsuyuri2,
+    options: ['1', "2"]
+}
+const kenji = {
+    names: "久留島 健治",
+    selected_name: "Kenji",
+    icon: iconKenji,
+    stand_1: tsuyuri1,
+    stand_2: tsuyuri2,
+    options: ['1', "2"]
+}
+const komari = {
+    names: "乎鞠",
+    selected_name: "Komari",
+    icon: iconKomari,
+    stand_1: tsuyuri1,
+    stand_2: tsuyuri2,
+    options: ['1', "2"]
+}
+const ushio = {
+    names: "千絵田 海潮",
+    selected_name: "Ushio",
+    icon: iconUshi,
+    stand_1: tsuyuri1,
+    stand_2: tsuyuri2,
+    options: ['1', "2"]
+}
+const umino = {
+    names: "千絵田 海乃",
+    selected_name: "Umino",
+    icon: iconUmi,
+    stand_1: tsuyuri1,
+    stand_2: tsuyuri2,
+    options: ['1', "2"]
+}
+const resuna = {
+    names: "八遠寺 れすな",
+    selected_name: "Resuna",
+    icon: iconResuna,
+    stand_1: tsuyuri1,
+    stand_2: tsuyuri2,
+    options: ['1', "2"]
+}
+const pcList1 = [mamoru, chiyo, saika, juri, tsuyuri, nazuna, sousei, shitorasu, ryuko, ryou, kenji, komari, ushio, umino, resuna]
 
 
 export default function MayuChara() {
@@ -94,7 +184,7 @@ export default function MayuChara() {
 
     const [charaValue, setCharaValue] = useState();
 
-    const onClickButton = (val) => {
+    const onClickButton = (val, index) => {
         setCharaValue({
             names: val.names,
             selected_name: val.selected_name,
@@ -102,6 +192,7 @@ export default function MayuChara() {
             stand_1: val.stand_1,
             stand_2: val.stand_2,
             options: val.options,
+            index: index,
         })
         setMamoruOpen(true)
         setValue("1")
@@ -127,7 +218,7 @@ export default function MayuChara() {
                             {pcList1?.map((list, index) =>
                             (
                                 <div style={{ width: "20%", textAlign: "center" }} key={`aaaa_${index}`}>
-                                    <button type="primary" onClick={() => onClickButton(list)}>
+                                    <button type="primary" onClick={() => onClickButton(list, index)}>
                                         <Image
                                             src={list?.icon}
                                             alt="Image"
@@ -150,7 +241,7 @@ export default function MayuChara() {
                             {pcList1?.map((list, index) =>
                             (
                                 <Col span={8} key={`aaaa_${index}`}>
-                                    <button type="primary" onClick={() => onClickButton(list)}>
+                                    <button type="primary" onClick={() => onClickButton(list, index)}>
                                         <Image
                                             src={list?.icon}
                                             alt="Image"
@@ -178,13 +269,14 @@ export default function MayuChara() {
                         zIndex={14545}
                         footer={<></>}
                     >
+                        <Image
+                            alt="Shikoshikoback"
+                            src={Background}
+                            style={{ opacity: 0.33 }}
+                            layout={`fill`}
+                            objectFit={`cover`} />
                         {width > 768 ? (
-                            <><Image
-                                alt="Shikoshikoback"
-                                src={Background}
-                                style={{ opacity: 0.33 }}
-                                layout={`fill`}
-                                objectFit={`cover`} />
+                            <>
                                 <Row
                                     gutter={{ xs: 8, sm: 16, md: 24, }} align="middle"
                                 >
@@ -212,22 +304,14 @@ export default function MayuChara() {
                                             }}>
                                                 {charaValue?.names}
                                             </p>
-                                            {charaValue?.txt && (
-                                                <div style={{ zIndex: 194545, color: "black" }}>
-                                                    {CharaTxt(charaValue?.selected_name) ?? ""}
-                                                </div>
-                                            )}
+                                            <div style={{ zIndex: 194545, color: "black" }}>
+                                                {CharaTxt(charaValue?.selected_name) ?? ""}
+                                            </div>
                                         </div>
                                     </Col>
                                 </Row>
                             </>) : (
                             <>
-                                <Image
-                                    alt="Shikoshikoback"
-                                    src={Background}
-                                    style={{ opacity: 0.33 }}
-                                    layout={`fill`}
-                                    objectFit={`cover`} />
                                 <div>
                                     {value === "1" && (
                                         <Image
