@@ -15,12 +15,12 @@ const headerLink = [
     text: "Staff"
   },
   {
-    href: "./blog",
+    href: "./mayukara",
     text: "Product"
   },
   {
     href: "./blog",
-    text: "Contact"
+    text: "Special"
   }
 ]
 const borderStr = "2px ridge rgba(211, 220, 50, .6)"
@@ -28,18 +28,16 @@ const borderStr = "2px ridge rgba(211, 220, 50, .6)"
 function Header() {
   return (
     <header>
-      <Row justify="space-between" align="middle">
-        <Link href="/">
-          <div className="opacity-75 transition hover:opacity-100">
-            <Image
-              alt="Shikoshiko"
-              src={shikoIcon}
-              objectFit="contain"
-              height={120}
-            />
-          </div>
-        </Link>
-      </Row>
+      <Link href="/">
+        <div className="opacity-75 transition hover:opacity-100">
+          <Image
+            alt="Shikoshiko"
+            src={shikoIcon}
+            objectFit="contain"
+            height={120}
+          />
+        </div>
+      </Link>
       <Row justify="space-around" align="middle" style={{ border: borderStr }} >
         {/* <Card> */}
         {headerLink?.map((value, index) => {
