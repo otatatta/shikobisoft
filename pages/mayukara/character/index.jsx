@@ -1,11 +1,9 @@
 import OtherHeader from "../components/OtherHeader"
 import Footer from "../../component/Footer"
 import { Col, Row, Modal, Segmented } from 'antd';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import Image from 'next/image'
 import Background from "../../static/hp1_bg.png"
-import mamoru1 from "../../static/stands/HP1mmr.png"
-import mamoru2 from "../../static/stands/HP1mmr2.png"
 import iconMamoru from "../../static/icons/iconmmr.png"
 import iconChiyo from "../../static/icons/icon2ty.png"
 import iconSaika from "../../static/icons/icon3sik.png"
@@ -21,20 +19,15 @@ import iconKomari from "../../static/icons/icon12kmr.png"
 import iconUshi from "../../static/icons/icon13uso.png"
 import iconUmi from "../../static/icons/icon14umn.png"
 import iconResuna from "../../static/icons/icon15rsn.png"
-import chiyo1 from "../../static/stands/HP2cy.png"
-import saika1 from "../../static/stands/HP3sik.png"
-import juri1 from "../../static/stands/HP4jr.png"
-import juri2 from "../../static/stands/HP4jr2.png"
-import tsuyuri1 from "../../static/stands/HP5tyr.png"
-import tsuyuri2 from "../../static/stands/HP5tyr2.png"
 import CharaTxt from "./txts";
+import CharaStands from "./stands";
+
+
 
 const mamoru = {
     names: "犬無 守琉",
     selected_name: "Mamoru",
     icon: iconMamoru,
-    stand_1: mamoru1,
-    stand_2: mamoru2,
     options: ['1', "2"]
 }
 
@@ -42,23 +35,19 @@ const chiyo = {
     names: "砂羽村 千代",
     selected_name: "Chiyo",
     icon: iconChiyo,
-    stand_1: chiyo1,
-    options: ['1']
+    options: ['1', "2"]
 }
 const saika = {
     names: "砂羽村 才花",
     selected_name: "Saika",
     icon: iconSaika,
-    stand_1: saika1,
-    options: ['1']
+    options: ['1', "2"]
 }
 
 const juri = {
     names: "砂羽村 樹里",
     selected_name: "Juri",
     icon: iconJuri,
-    stand_1: juri1,
-    stand_2: juri2,
     options: ['1', "2"]
 }
 
@@ -66,94 +55,73 @@ const tsuyuri = {
     names: "白草 栗花落",
     selected_name: "Tsuyuri",
     icon: iconTsuyuri,
-    stand_1: tsuyuri1,
-    stand_2: tsuyuri2,
     options: ['1', "2"]
 }
 const nazuna = {
     names: "淡嶋 なずな",
     selected_name: "Nazuna",
     icon: iconNazuna,
-    stand_1: tsuyuri1,
-    stand_2: tsuyuri2,
     options: ['1', "2"]
 }
 const sousei = {
     names: "梅園 聡晟",
     selected_name: "Sousei",
     icon: iconSousei,
-    stand_1: tsuyuri1,
-    stand_2: tsuyuri2,
     options: ['1', "2"]
 }
 const shitorasu = {
     names: "梅園 司斗羅栖",
     selected_name: "Shitorasu",
     icon: iconShito,
-    stand_1: tsuyuri1,
-    stand_2: tsuyuri2,
     options: ['1', "2"]
 }
 const ryuko = {
     names: "折戸 流子",
     selected_name: "Ryuko",
     icon: iconRyuko,
-    stand_1: tsuyuri1,
-    stand_2: tsuyuri2,
     options: ['1', "2"]
 }
 const ryou = {
     names: "雨呂鎚 享",
     selected_name: "Ryou",
     icon: iconRyou,
-    stand_1: tsuyuri1,
-    stand_2: tsuyuri2,
     options: ['1', "2"]
 }
 const kenji = {
     names: "久留島 健治",
     selected_name: "Kenji",
     icon: iconKenji,
-    stand_1: tsuyuri1,
-    stand_2: tsuyuri2,
     options: ['1', "2"]
 }
 const komari = {
     names: "乎鞠",
     selected_name: "Komari",
     icon: iconKomari,
-    stand_1: tsuyuri1,
-    stand_2: tsuyuri2,
     options: ['1', "2"]
 }
 const ushio = {
     names: "千絵田 海潮",
     selected_name: "Ushio",
     icon: iconUshi,
-    stand_1: tsuyuri1,
-    stand_2: tsuyuri2,
     options: ['1', "2"]
 }
 const umino = {
     names: "千絵田 海乃",
     selected_name: "Umino",
     icon: iconUmi,
-    stand_1: tsuyuri1,
-    stand_2: tsuyuri2,
     options: ['1', "2"]
 }
 const resuna = {
     names: "八遠寺 れすな",
     selected_name: "Resuna",
     icon: iconResuna,
-    stand_1: tsuyuri1,
-    stand_2: tsuyuri2,
     options: ['1', "2"]
 }
 const pcList1 = [mamoru, chiyo, saika, juri, tsuyuri, nazuna, sousei, shitorasu, ryuko, ryou, kenji, komari, ushio, umino, resuna]
 
 
 export default function MayuChara() {
+
     const [mamoruOpen, setMamoruOpen] = useState(false);
     function getWindowDimensions() {
         const { innerWidth: width, innerHeight: height } = window;
@@ -189,8 +157,6 @@ export default function MayuChara() {
             names: val.names,
             selected_name: val.selected_name,
             icon: val.icon,
-            stand_1: val.stand_1,
-            stand_2: val.stand_2,
             options: val.options,
             index: index,
         })
@@ -199,9 +165,9 @@ export default function MayuChara() {
     }
 
     const [value, setValue] = useState('1');
-
-    console.log(width, height)
-    console.log(pcList1)
+    const charaStand = useMemo(() => {
+        return CharaStands(charaValue?.selected_name, value)
+    }, [charaValue?.selected_name, value])
 
     return (
         <>
@@ -276,55 +242,32 @@ export default function MayuChara() {
                             layout={`fill`}
                             objectFit={`cover`} />
                         {width > 768 ? (
-                            <>
-                                <Row
-                                    gutter={{ xs: 8, sm: 16, md: 24, }} align="middle"
-                                >
-                                    <Col span={8}>
-                                        <div>
-                                            {value === "1" && (
-                                                <Image
-                                                    src={charaValue?.stand_1}
-                                                    style={{ display: "inline-block" }}
-                                                    alt="Image" />
-                                            )}
-                                            {value === "2" && (
-                                                <Image
-                                                    src={charaValue?.stand_2}
-                                                    style={{ display: "inline-block" }}
-                                                    alt="Image" />
-                                            )}
+                            <Row
+                                gutter={{ xs: 8, sm: 16, md: 24, }} align="middle"
+                            >
+                                <Col span={8}>
+                                    <div>
+                                        {charaStand}
+                                    </div>
+                                </Col>
+                                <Col span={16} align="bottom">
+                                    <Segmented options={charaValue?.options ?? ["1"]} value={value} onChange={setValue} size={"middle"} />
+                                    <div>
+                                        <p style={{
+                                            fontSize: "32px"
+                                        }}>
+                                            {charaValue?.names}
+                                        </p>
+                                        <div style={{ zIndex: 194545, color: "black" }}>
+                                            {CharaTxt(charaValue?.selected_name) ?? ""}
                                         </div>
-                                    </Col>
-                                    <Col span={16} align="bottom">
-                                        <Segmented options={charaValue?.options ?? ["1"]} value={value} onChange={setValue} size={"middle"} />
-                                        <div>
-                                            <p style={{
-                                                fontSize: "32px"
-                                            }}>
-                                                {charaValue?.names}
-                                            </p>
-                                            <div style={{ zIndex: 194545, color: "black" }}>
-                                                {CharaTxt(charaValue?.selected_name) ?? ""}
-                                            </div>
-                                        </div>
-                                    </Col>
-                                </Row>
-                            </>) : (
+                                    </div>
+                                </Col>
+                            </Row>
+                        ) : (
                             <>
                                 <div>
-                                    {value === "1" && (
-                                        <Image
-                                            src={charaValue?.stand_1}
-                                            style={{ display: "inline-block" }}
-                                            alt="Image" />
-                                    )}
-                                    {value === "2" && (
-                                        <Image
-                                            src={charaValue?.stand_2}
-                                            style={{ display: "inline-block" }}
-                                            alt="Image" />
-                                    )}
+                                    {charaStand}
                                 </div>
                                 <div style={{
                                     position: "relative", bottom: "280px", backgroundColor: "rgba(255, 255, 255, .6)"
@@ -349,6 +292,7 @@ export default function MayuChara() {
                         )}
                     </Modal>
                 </div>
+
                 <Footer />
             </div>
         </>
