@@ -1,7 +1,6 @@
-import OtherHeader from "../components/OtherHeader"
-import Footer from "../../component/Footer"
 import { Col, Row, Modal, Segmented } from 'antd';
 import React, { useEffect, useState, useMemo } from 'react';
+import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 import Image from 'next/image'
 import Background from "../../static/hp1_bg.png"
 import iconMamoru from "../../static/icons/iconmmr.png"
@@ -22,15 +21,12 @@ import iconResuna from "../../static/icons/icon15rsn.png"
 import CharaTxt from "./txts";
 import CharaStands from "./stands";
 
-
-
 const mamoru = {
     names: "犬無 守琉",
     selected_name: "Mamoru",
     icon: iconMamoru,
     options: ['1', "2"]
 }
-
 const chiyo = {
     names: "砂羽村 千代",
     selected_name: "Chiyo",
@@ -43,14 +39,12 @@ const saika = {
     icon: iconSaika,
     options: ['1', "2"]
 }
-
 const juri = {
     names: "砂羽村 樹里",
     selected_name: "Juri",
     icon: iconJuri,
     options: ['1', "2"]
 }
-
 const tsuyuri = {
     names: "白草 栗花落",
     selected_name: "Tsuyuri",
@@ -171,7 +165,6 @@ export default function MayuChara() {
 
     return (
         <>
-            <OtherHeader />
             <div style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto", textAlign: "center" }}>
                 <div>
                     <p>キャラクター紹介</p>
@@ -184,7 +177,7 @@ export default function MayuChara() {
                             {pcList1?.map((list, index) =>
                             (
                                 <div style={{ width: "20%", textAlign: "center" }} key={`aaaa_${index}`}>
-                                    <button type="primary" onClick={() => onClickButton(list, index)}>
+                                    <button type="primary" style={{ width: "150x", height: "155px" }} onClick={() => onClickButton(list, index)}>
                                         <Image
                                             src={list?.icon}
                                             alt="Image"
@@ -207,7 +200,7 @@ export default function MayuChara() {
                             {pcList1?.map((list, index) =>
                             (
                                 <Col span={8} key={`aaaa_${index}`}>
-                                    <button type="primary" onClick={() => onClickButton(list, index)}>
+                                    <button type="primary" style={{ width: "105px", height: "105px" }} onClick={() => onClickButton(list, index)}>
                                         <Image
                                             src={list?.icon}
                                             alt="Image"
@@ -232,7 +225,7 @@ export default function MayuChara() {
                         width={"95%"}
                         bodyStyle={{ height: `${height}px` }}
                         cancelText="閉じる"
-                        zIndex={14545}
+                        zIndex={194545}
                         footer={<></>}
                     >
                         <Image
@@ -241,16 +234,20 @@ export default function MayuChara() {
                             style={{ opacity: 0.33 }}
                             layout={`fill`}
                             objectFit={`cover`} />
+                        <LeftOutlined />
                         {width > 768 ? (
                             <Row
                                 gutter={{ xs: 8, sm: 16, md: 24, }} align="middle"
                             >
+                                <Col span={2}>
+                                    <LeftOutlined style={{ fontSize: '64px', color: '#08c' }} />
+                                </Col>
                                 <Col span={8}>
                                     <div>
                                         {charaStand}
                                     </div>
                                 </Col>
-                                <Col span={16} align="bottom">
+                                <Col span={12} align="bottom">
                                     <Segmented options={charaValue?.options ?? ["1"]} value={value} onChange={setValue} size={"middle"} />
                                     <div>
                                         <p style={{
@@ -262,6 +259,11 @@ export default function MayuChara() {
                                             {CharaTxt(charaValue?.selected_name) ?? ""}
                                         </div>
                                     </div>
+                                </Col>
+                                <Col span={2}>
+                                    <button>
+                                        <RightOutlined style={{ fontSize: '64px', color: '#08c' }} />
+                                    </button>
                                 </Col>
                             </Row>
                         ) : (
@@ -292,8 +294,6 @@ export default function MayuChara() {
                         )}
                     </Modal>
                 </div>
-
-                <Footer />
             </div>
         </>
     );
