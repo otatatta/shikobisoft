@@ -3,7 +3,7 @@ export default function CarankoeStory() {
         <>
             <div style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto" }}>
                 <div>
-                    <p style={{ padding: "2rem" }}>
+                    <p style={{ padding: "2rem", fontSize: "14px" }}>
                         「 ――全部が全部、気色が悪いよな…… 」<br /><br />
 
 
