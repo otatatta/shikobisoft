@@ -72,6 +72,7 @@ const Graphics = () => (
                     height={120}
                     src={item.path}
                     preview={item.title !== "Noimg"}
+                    alt="noIMG"
                 />
             </List.Item>
         )}
