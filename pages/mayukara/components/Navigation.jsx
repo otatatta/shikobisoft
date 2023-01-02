@@ -3,6 +3,7 @@ import { Button, Drawer } from 'antd';
 import { MenuFoldOutlined, CloseOutlined } from '@ant-design/icons';
 import Image from "next/image";
 import TitleLogo from "../../static/titlelogo_256.png"
+import Link from "next/link";
 
 
 const Navigation = () => {
@@ -33,27 +34,51 @@ const Navigation = () => {
       </div>
       <Drawer title="" placement="right" onClose={onClose} closable={false} open={open} bodyStyle={{ backgroundColor: "rgb(123,213,111)", fontSize: "48px", textAlign: "center" }}>
         <div>
-          <Image
-            alt="titlelogo"
-            src={TitleLogo}
-            objectFit="contain"
-            layout={"intrinsic"} />
+          <Link href="./mayukara#top" >
+            <a className="headerLink" onClick={onClose} >
+              <Image
+                alt="titlelogo"
+                src={TitleLogo}
+                objectFit="contain"
+                layout={"intrinsic"} />
+            </a>
+          </Link>
         </div>
-        <div style={{ borderTop: "thick double #32a1ce" }}>
-          ー御噺ー
-        </div>
-        <div style={{ borderTop: "thick double #32a1ce" }}>
-          ー人物ー
-        </div>
-        <div style={{ borderTop: "thick double #32a1ce" }}>
-          ー画廊ー
-        </div>
-        <div style={{ borderTop: "thick double #32a1ce" }}>
-          ー小噺ー
-        </div>
-        <div style={{ borderTop: "thick double #32a1ce" }}>
-          ー電報ー
-        </div>
+        <Link href="./mayukara#story" >
+          <a className="headerLink" onClick={onClose} >
+            <div style={{ borderTop: "thick double #32a1ce" }}>
+              ー御噺ー
+            </div>
+          </a>
+        </Link>
+        <Link href="./mayukara#character" >
+          <a className="headerLink" onClick={onClose} >
+            <div style={{ borderTop: "thick double #32a1ce" }}>
+              ー人物ー
+            </div>
+          </a>
+        </Link>
+        <Link href="./mayukara#illust" >
+          <a className="headerLink" onClick={onClose} >
+            <div style={{ borderTop: "thick double #32a1ce" }}>
+              ー画廊ー
+            </div>
+          </a>
+        </Link>
+        <Link href="./mayukara#novel" >
+          <a className="headerLink" onClick={onClose} >
+            <div style={{ borderTop: "thick double #32a1ce" }}>
+              ー小噺ー
+            </div>
+          </a>
+        </Link>
+        <Link href="./mayukara#update" >
+          <a className="headerLink" onClick={onClose} >
+            <div style={{ borderTop: "thick double #32a1ce" }}>
+              ー電報ー
+            </div>
+          </a>
+        </Link>
         <div style={{ borderTop: "thick double #32a1ce" }}>
         </div>
       </Drawer></>

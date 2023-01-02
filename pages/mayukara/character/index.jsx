@@ -1,6 +1,6 @@
-import { Col, Row, Modal, Segmented } from 'antd';
-import React, { useEffect, useState, useMemo } from 'react';
-import { LeftOutlined, RightOutlined } from '@ant-design/icons';
+import { Col, Row, Modal, Segmented, Button } from 'antd';
+import React, { useEffect, useState, useMemo, useCallback } from 'react';
+import { LeftOutlined, RightOutlined, CloseOutlined } from '@ant-design/icons';
 import Image from 'next/image'
 import Background from "../../static/hp1_bg.png"
 import iconMamoru from "../../static/icons/iconmmr.png"
@@ -163,6 +163,20 @@ export default function MayuChara() {
         return CharaStands(charaValue?.selected_name, value)
     }, [charaValue?.selected_name, value])
 
+    const onCancel = () => {
+        setMamoruOpen(false)
+        setCharaValue(undefined)
+        setValue("1")
+    }
+
+    const onchangeChara = (newIndex) => {
+        if (newIndex !== undefined && pcList1[newIndex]?.selected_name) {
+            console.log(pcList1[newIndex])
+            setCharaValue({ ...pcList1[newIndex], index: newIndex })
+            setValue("1")
+        }
+    }
+
     return (
         <>
             <div style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto", textAlign: "center" }}>
@@ -177,13 +191,13 @@ export default function MayuChara() {
                             {pcList1?.map((list, index) =>
                             (
                                 <div style={{ width: "20%", textAlign: "center" }} key={`aaaa_${index}`}>
-                                    <button type="primary" style={{ width: "150x", height: "155px" }} onClick={() => onClickButton(list, index)}>
+                                    <Button style={{ width: "150x", height: "155px" }} onClick={() => onClickButton(list, index)}>
                                         <Image
                                             src={list?.icon}
                                             alt="Image"
                                             width={150}
                                             height={150} />,
-                                    </button>
+                                    </Button>
                                     <div>
                                         {list?.names}
                                     </div>
@@ -200,13 +214,13 @@ export default function MayuChara() {
                             {pcList1?.map((list, index) =>
                             (
                                 <Col span={8} key={`aaaa_${index}`}>
-                                    <button type="primary" style={{ width: "105px", height: "105px" }} onClick={() => onClickButton(list, index)}>
+                                    <Button style={{ width: "105px", height: "105px" }} onClick={() => onClickButton(list, index)}>
                                         <Image
                                             src={list?.icon}
                                             alt="Image"
                                             width={100}
                                             height={100} />,
-                                    </button>
+                                    </Button>
                                     <div>
                                         {list?.names}
                                     </div>
@@ -216,12 +230,9 @@ export default function MayuChara() {
                     )}
                     <Modal
                         centered
+                        closeIcon={<CloseOutlined style={{ fontSize: "48px", paddingTop: "8px" }} />}
                         visible={mamoruOpen}
-                        onCancel={() => {
-                            setMamoruOpen(false)
-                            setCharaValue(undefined)
-                            setValue("1")
-                        }}
+                        onCancel={onCancel}
                         width={"95%"}
                         bodyStyle={{ height: `${height}px` }}
                         cancelText="閉じる"
@@ -234,16 +245,18 @@ export default function MayuChara() {
                             style={{ opacity: 0.33 }}
                             layout={`fill`}
                             objectFit={`cover`} />
-                        <LeftOutlined />
                         {width > 768 ? (
                             <Row
                                 gutter={{ xs: 8, sm: 16, md: 24, }} align="middle"
                             >
                                 <Col span={2}>
-                                    <LeftOutlined style={{ fontSize: '64px', color: '#08c' }} />
+                                    {charaValue?.index && (
+                                        <Button type="text" onClick={() => onchangeChara(charaValue.index - 1)} icon={<LeftOutlined style={{ fontSize: '120px', color: '#fff', backgroundColor: "rgba(128,128,128,.5)" }} block />}>
+                                        </Button>
+                                    )}
                                 </Col>
                                 <Col span={8}>
-                                    <div>
+                                    <div style={{ marginBottom: "2rem" }}>
                                         {charaStand}
                                     </div>
                                 </Col>
@@ -258,12 +271,13 @@ export default function MayuChara() {
                                         <div style={{ zIndex: 194545, color: "black" }}>
                                             {CharaTxt(charaValue?.selected_name) ?? ""}
                                         </div>
+                                        <Button onClick={onCancel}>閉じる</Button>
                                     </div>
                                 </Col>
-                                <Col span={2}>
-                                    <button>
-                                        <RightOutlined style={{ fontSize: '64px', color: '#08c' }} />
-                                    </button>
+                                <Col span={2} align="right">
+                                    {charaValue?.index !== undefined && (
+                                        <Button type="text" onClick={() => onchangeChara(charaValue.index + 1)} icon={<RightOutlined style={{ fontSize: '120px', color: '#fff', backgroundColor: "rgba(128,128,128,.5)" }} block />}>
+                                        </Button>)}
                                 </Col>
                             </Row>
                         ) : (
