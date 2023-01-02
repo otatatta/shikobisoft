@@ -3,7 +3,6 @@ import Image from 'next/image'
 import { Card, Col, Row } from 'antd';
 import { client } from "../../libs/client";
 import shikoIcon from "../static/shikoIcon.png"
-import Header from "../component/Header"
 import Footer from "../component/Footer"
 
 //SSG
@@ -23,7 +22,11 @@ export const getStaticProps = async () => {
 export default function Home({ blog }) {
   return (
     <div>
-      <Header />
+      <header >
+        <h1>
+          しこしこソフト スタッフブログ
+        </h1>
+      </header>
       <main style={{ textAlign: "center", width: "100%", padding: "1rem" }} className={"site-card-wrapper"}>
         <Row gutter={16}>
           {blog.map((blog, index) => (
