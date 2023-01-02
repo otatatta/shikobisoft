@@ -1,22 +1,49 @@
-import OtherHeader from "../components/OtherHeader"
-import Footer from "../../component/Footer"
-import Image from 'next/image'
-import storyImg from "../../static/story.png"
-// import { Typography } from 'antd';
-
 export default function CarankoeStory() {
-    // const { Title } = Typography;
     return (
         <>
-            <OtherHeader />
             <div style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto" }}>
                 <div>
-                    <div style={{ padding: "1rem" }}>
-                        <Image
-                            src={storyImg}
-                            alt="Image" />
-                    </div>
-                    <Footer />
+                    <p style={{ padding: "2rem", fontSize: "14px" }}>
+                        「 ――全部が全部、気色が悪いよな…… 」<br /><br />
+
+
+                        呟く青年、守琉 -マモル- が向かうのは、故郷である片田舎の小さな町《 繭ノ葉町 -マユのハちょう- 》<br />
+
+                        大正只中にある日本の都会で、母親と共にささやかにと過ごす日常が崩された。<br />
+
+                        母親自身の、失踪によって。<br />
+
+                        時期がまるで狙いすまされたかのように、守琉のもとへ書簡が届く。<br />
+                        差出人の名は、自身が顔も覚えていない父親。<br />
+                        内容は母の訃報と、母と自身に置いて棄てられたはずの故郷で、執り行われるという母の送葬に関してだった。<br /><br />
+
+
+                        『 オマエたちが棄てた、この故郷に帰ってこい 』<br /><br />
+
+                        これ以上を知りたければ、と――<br />
+                        訃報を信じたくもない守琉へかけられた、記載されていないはずに感じ取れる意図。<br />
+                        母の死への疑心と、父への恐怖に駆られるなか、守琉は真実を確かめに帰郷を決めた。<br /><br />
+
+
+                        ――そして小さなこの町で出会う人々。<br /><br />
+
+                        恐怖し、傷心し、憔悴し、疑い、翳っていた守琉には、彼らの、彼女らとの交流は……<br />
+                        それら考えを呑みこみきる前に、宿泊する旅館《 孵縲不ノ館 -カヱラズのやかた- 》で起こる。<br /><br />
+
+
+                        「 ……どうして…… 」<br /><br />
+
+
+                        そんな掠れた女の声を皮切りに、惨劇が始まった。<br />
+                        守琉が繭ノ葉町へ帰郷したことで、呪いのように起こりだす人死に。<br />
+                        町で止まっていた刻は、<span style={{ color: "#FE0000", fontSize: "1.2em" }}>血</span>の廻りのように動き出す。<br />
+
+                        死人は、還ってはこない。人死には、止まらない。<br />
+                        それはもう、上がり切った劇の幕を途中に下すことは、できないのだと――<br />
+
+
+                        『 ――嗚呼、躍りましょう。踊らせましょう。この狂いきった、絡繰り舞台 』<br />
+                    </p>
                 </div>
             </div>
         </>
