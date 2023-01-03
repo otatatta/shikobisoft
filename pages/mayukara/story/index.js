@@ -1,8 +1,10 @@
+import Image from "next/image";
+import story from "../../static/story.png"
 export default function CarankoeStory() {
     return (
         <>
             <div style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto" }}>
-                <div>
+                {/* <div>
                     <p style={{ padding: "2rem", fontSize: "14px" }}>
                         「 ――全部が全部、気色が悪いよな…… 」<br /><br />
 
@@ -44,6 +46,14 @@ export default function CarankoeStory() {
 
                         『 ――嗚呼、躍りましょう。踊らせましょう。この狂いきった、絡繰り舞台 』<br />
                     </p>
+                </div> */}
+                <div style={{ height: "100%", width: "100%" }}>
+                    <Image
+                        alt="Shikoshikoback"
+                        src={story}
+                        objectFit="contain"
+                        layout={"intrinsic"}
+                    />
                 </div>
             </div>
         </>

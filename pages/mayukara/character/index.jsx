@@ -1,5 +1,5 @@
 import { Col, Row, Modal, Segmented, Button } from 'antd';
-import React, { useEffect, useState, useMemo, useCallback } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import { LeftOutlined, RightOutlined, CloseOutlined } from '@ant-design/icons';
 import Image from 'next/image'
 import Background from "../../static/hp1_bg.png"
@@ -180,29 +180,27 @@ export default function MayuChara() {
     return (
         <>
             <div style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto", textAlign: "center" }}>
-                <div>
-                    <p>キャラクター紹介</p>
-                </div>
                 <div style={{ padding: "1rem" }}>
                     {width > 768 ? (
                         <Row
                             gutter={16} align="middle"
                         >
-                            {pcList1?.map((list, index) =>
-                            (
-                                <div style={{ width: "20%", textAlign: "center" }} key={`aaaa_${index}`}>
-                                    <Button style={{ width: "150x", height: "155px" }} onClick={() => onClickButton(list, index)}>
-                                        <Image
-                                            src={list?.icon}
-                                            alt="Image"
-                                            width={150}
-                                            height={150} />,
-                                    </Button>
-                                    <div>
-                                        {list?.names}
+                            {pcList1?.map((list, index) => (
+                                <>
+                                    <div style={{ width: "20%", textAlign: "center" }} key={`aaaa_${index}`}>
+                                        <Button type="text" ghost shape="circle" style={{ width: "200x", height: "180px", clipPath: "circle(50%)" }} onClick={() => onClickButton(list, index)}>
+                                            <Image
+                                                src={list?.icon}
+                                                alt="Image"
+                                                width={160}
+                                                height={160} />,
+                                        </Button>
+                                        <div>
+                                            {list?.names}
+                                        </div>
                                     </div>
-                                </div>)
-                            )}
+                                </>
+                            ))}
                         </Row>
                     ) : (
                         <Row
@@ -214,7 +212,7 @@ export default function MayuChara() {
                             {pcList1?.map((list, index) =>
                             (
                                 <Col span={8} key={`aaaa_${index}`}>
-                                    <Button style={{ width: "105px", height: "105px" }} onClick={() => onClickButton(list, index)}>
+                                    <Button type="text" style={{ width: "105px", height: "105px" }} onClick={() => onClickButton(list, index)}>
                                         <Image
                                             src={list?.icon}
                                             alt="Image"
@@ -231,10 +229,10 @@ export default function MayuChara() {
                     <Modal
                         centered
                         closeIcon={<CloseOutlined style={{ fontSize: "48px", paddingTop: "8px" }} />}
-                        visible={mamoruOpen}
+                        open={mamoruOpen}
                         onCancel={onCancel}
                         width={"95%"}
-                        bodyStyle={{ height: `${height}px` }}
+                        bodyStyle={{ height: `820px` }}
                         cancelText="閉じる"
                         zIndex={194545}
                         footer={<></>}
@@ -250,12 +248,12 @@ export default function MayuChara() {
                                 gutter={{ xs: 8, sm: 16, md: 24, }} align="middle"
                             >
                                 <Col span={2}>
-                                    {charaValue?.index && (
+                                    {charaValue?.index > 0 && (
                                         <Button type="text" onClick={() => onchangeChara(charaValue.index - 1)} icon={<LeftOutlined style={{ fontSize: '120px', color: '#fff', backgroundColor: "rgba(128,128,128,.5)" }} block />}>
                                         </Button>
                                     )}
                                 </Col>
-                                <Col span={8}>
+                                <Col span={8} style={{ textAlign: "right" }}>
                                     <div style={{ marginBottom: "2rem" }}>
                                         {charaStand}
                                     </div>

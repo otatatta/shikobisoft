@@ -12,6 +12,7 @@ import { Col, Row, Carousel, } from 'antd';
 import Script from 'next/script'
 import BackTopButton from "./components/BackTopButton"
 import Graphics from "./graphics"
+
 const contentStyle = {
     height: '480px',
     color: '#fff',

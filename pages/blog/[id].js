@@ -47,8 +47,8 @@ export default function BlogId({ blog }) {
           dangerouslySetInnerHTML={{ __html: `${blog.content}` }}
         ></div>
         <Link href="../blog" >
-          <Button shape={"round"} >
-            <a className="headerLink" style={{ padding: "1rem" }}>一覧に戻る</a>
+          <Button shape={"round"} style={{ padding: "1rem" }}>
+            一覧に戻る
           </Button>
         </Link>
       </main>

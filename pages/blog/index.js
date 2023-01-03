@@ -34,27 +34,25 @@ export default function Home({ blog }) {
               <Card key={blog.id} style={{ width: 320 }}
                 hoverable>
                 <Link href={`blog/${blog.id}`}>
-                  <a href="">
-                    <p>
-                      {blog.title}
-                    </p>
-                    <div>
-                      {blog?.eyecatch ? (
-                        <Image
-                          src={blog.eyecatch?.url ?? shikoIcon}
-                          alt="blogIcon"
-                          width={300}
-                          height={300}
-                        />
-                      ) : (
-                        <Image
-                          src={shikoIcon}
-                          alt="No Image"
-                          width={300}
-                          height={300} />
-                      )}
-                    </div>
-                  </a>
+                  <p>
+                    {blog.title}
+                  </p>
+                  <div>
+                    {blog?.eyecatch ? (
+                      <Image
+                        src={blog.eyecatch?.url ?? shikoIcon}
+                        alt="blogIcon"
+                        width={300}
+                        height={300}
+                      />
+                    ) : (
+                      <Image
+                        src={shikoIcon}
+                        alt="No Image"
+                        width={300}
+                        height={300} />
+                    )}
+                  </div>
                 </Link>
               </Card>
             </Col>

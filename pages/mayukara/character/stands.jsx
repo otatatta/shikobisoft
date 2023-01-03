@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import mamoru1 from "../../static/stands/HP1mmr.png"
+import mamoru1 from "../../static/stands/HP1mmr1.png"
 import mamoru2 from "../../static/stands/HP1mmr2.png"
 import chiyo1 from "../../static/stands/HP2cy1.png"
 import chiyo2 from "../../static/stands/HP2cy2.png"
@@ -29,7 +29,7 @@ import umino2 from "../../static/stands/HP14umn2.png"
 import resuna1 from "../../static/stands/HP15rsn1.png"
 import resuna2 from "../../static/stands/HP15rsn2.png"
 
-export default function CharaStands(selected, value) {
+export default function CharaStands(selected, value, width, height) {
     const imgArea = (src) => {
         if (src) {
             return (
