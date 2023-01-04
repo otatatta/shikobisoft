@@ -4,6 +4,8 @@ import { Card, Col, Row } from 'antd';
 import { client } from "../../libs/client";
 import shikoIcon from "../static/shikoIcon.png"
 import Footer from "../component/Footer"
+// import { Shippori_Mincho } from '@next/font/google'
+// const mincho = Shippori_Mincho({ subsets: ['japanese'] })
 
 //SSG
 export const getStaticProps = async () => {
@@ -23,7 +25,7 @@ export default function Home({ blog }) {
   return (
     <div>
       <header >
-        <h1>
+        <h1 className={"mincho.className"} style={{ textAlign: "center" }}>
           しこしこソフト スタッフブログ
         </h1>
       </header>
@@ -42,15 +44,15 @@ export default function Home({ blog }) {
                       <Image
                         src={blog.eyecatch?.url ?? shikoIcon}
                         alt="blogIcon"
-                        width={300}
-                        height={300}
+                        width={280}
+                        height={280}
                       />
                     ) : (
                       <Image
                         src={shikoIcon}
                         alt="No Image"
-                        width={300}
-                        height={300} />
+                        width={280}
+                        height={280} />
                     )}
                   </div>
                 </Link>

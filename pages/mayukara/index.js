@@ -41,14 +41,14 @@ export default function Carankoe() {
                 <Navigation />
             </div>
             <div style={{ position: "absolute", top: "0px", width: "100%", zIndex: 545 }}>
-                <div style={{ marginLeft: "auto", marginRight: "auto" }} id="top">
+                <div style={{}} id="top">
                     <Image
                         alt="Shikoshiko"
                         src={karankoeTop}
                         objectFit="contain"
                         layout={"intrinsic"} />
                 </div>
-                <div style={{ background: "rgba(242, 222, 182, .9);" }}>
+                <div style={{ background: "rgba(242, 222, 182, .9)" }}>
                     <div style={{ height: "40px" }}>
 
                     </div>

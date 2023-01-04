@@ -24,6 +24,16 @@ const Navigation = () => {
   //   borderImageSlice: "calc(50 / 184 * 100 %) calc(80 / 284 * 100 %) fill",
   //   borderImageWidth: "30px 48px"
   // }
+  const menuList = (src) => (
+    // <div style={{ borderTop: "thick double #fff", color: "#fff" }} >
+    <Image
+      alt="titlelogo"
+      src={src}
+      style={{ objectFit: "contain" }}
+      layout={"intrinsic"}
+    />
+    // </div >
+  )
 
   return (
     <>
@@ -54,64 +64,31 @@ const Navigation = () => {
             <Image
               alt="titlelogo"
               src={TitleLogo}
-              objectFit="contain"
-              layout={"intrinsic"} />
+              style={{ objectFit: "contain" }}
+            />
           </Link>
         </div>
-        <Link href="./mayukara#story" onClick={onClose}>
-          <div style={{ borderTop: "thick double #fff", color: "#fff" }}>
-            <Image
-              alt="titlelogo"
-              src={story}
-              objectFit="contain"
-              layout={"intrinsic"} />
-          </div>
-        </Link>
         <div style={{ borderTop: "thick double #fff", color: "#fff" }} />
+        <Link href="./mayukara#story" onClick={onClose}>
+          {menuList(story)}
+        </Link>
         <Link href="./mayukara#character" onClick={onClose}>
-          {/* <div style={{ borderTop: "thick double #fff", color: "#fff" }}>
-            ー人物ー
-          </div> */}
-          <Image
+          {menuList(jinbutsu)}
+          {/* <Image
             alt="titlelogo"
             src={jinbutsu}
             objectFit="contain"
-            layout={"intrinsic"} />
+            layout={"intrinsic"} /> */}
         </Link>
-        <div style={{ borderTop: "thick double #fff", color: "#fff" }} />
         <Link href="./mayukara#illust" onClick={onClose} >
-          {/* <div style={{ borderTop: "thick double #fff", color: "#fff" }}>
-            ー画廊ー
-          </div> */}
-          <Image
-            alt="titlelogo"
-            src={garou}
-            objectFit="contain"
-            layout={"intrinsic"} />
+          {menuList(garou)}
         </Link>
-        <div style={{ borderTop: "thick double #fff", color: "#fff" }} />
         <Link href="./mayukara#novel" onClick={onClose} >
-          {/* <div style={{ borderTop: "thick double #fff", color: "#fff" }}>
-            ー小噺ー
-          </div> */}
-          <Image
-            alt="titlelogo"
-            src={kobanashi}
-            objectFit="contain"
-            layout={"intrinsic"} />
+          {menuList(kobanashi)}
         </Link>
-        <div style={{ borderTop: "thick double #fff", color: "#fff" }} />
         <Link href="./mayukara#update" onClick={onClose} >
-          {/* <div style={{ borderTop: "thick double #fff", color: "#fff" }}>
-            ー電報ー
-          </div> */}
-          <Image
-            alt="titlelogo"
-            src={denpou}
-            objectFit="contain"
-            layout={"intrinsic"} />
+          {menuList(denpou)}
         </Link>
-        <div style={{ borderTop: "thick double #fff", color: "#fff" }} />
       </Drawer></>
   );
 };

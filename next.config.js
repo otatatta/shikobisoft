@@ -15,6 +15,7 @@ const nextConfig = {
   future: {
     webpack5: true,
   },
+
 }
 
 module.exports = {
@@ -24,5 +25,10 @@ module.exports = {
       return config
     }
   }),
+  experimental: {
+    fontLoaders: [
+      { loader: '@next/font/google', options: { subsets: ['japanese'] } },
+    ],
+  },
   ...nextConfig
 }
