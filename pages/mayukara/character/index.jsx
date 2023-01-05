@@ -1,7 +1,7 @@
 import { Col, Row, Modal, Segmented, Button, Tooltip } from 'antd';
 import React, { useEffect, useState, useMemo } from 'react';
-import "./font.module.css"
-import { LeftOutlined, RightOutlined, DoubleLeftOutlined, DoubleRightOutlined, CloseOutlined } from '@ant-design/icons';
+import CharaTxtImg from "./txtsImg"
+import { LeftOutlined, RightOutlined, CloseOutlined } from '@ant-design/icons';
 import Image from 'next/image'
 import Background from "../../static/hp1_bg.png"
 import iconMamoru from "../../static/icons/iconmmr.png"
@@ -39,7 +39,7 @@ import nameResuna from "../../static/names/resuna.png"
 
 const mamoru = {
     names: "犬無 守琉",
-    name_sub: "Inunashi Mamoru",
+    name_sub: "Inunashi　Mamoru",
     name_img: nameMamoru,
     selected_name: "Mamoru",
     icon: iconMamoru,
@@ -47,7 +47,7 @@ const mamoru = {
 }
 const chiyo = {
     names: "砂羽村 千代",
-    name_sub: "Sawamura Chiyo",
+    name_sub: "Sawamura　Chiyo",
     name_img: nameChiyo,
     selected_name: "Chiyo",
     icon: iconChiyo,
@@ -55,6 +55,7 @@ const chiyo = {
 }
 const saika = {
     names: "砂羽村 才花",
+    name_sub: "Sawamura　Saika",
     name_img: nameSaika,
     selected_name: "Saika",
     icon: iconSaika,
@@ -62,6 +63,7 @@ const saika = {
 }
 const juri = {
     names: "砂羽村 樹里",
+    name_sub: "Sawamura　Juri",
     name_img: nameJuri,
     selected_name: "Juri",
     icon: iconJuri,
@@ -69,6 +71,7 @@ const juri = {
 }
 const tsuyuri = {
     names: "白草 栗花落",
+    name_sub: "Shirakusa　Tsuyuri",
     name_img: nameTsuyuri,
     selected_name: "Tsuyuri",
     icon: iconTsuyuri,
@@ -76,6 +79,7 @@ const tsuyuri = {
 }
 const nazuna = {
     names: "淡嶋 なずな",
+    name_sub: "Sawamura　Juri",
     name_img: nameNazuna,
     selected_name: "Nazuna",
     icon: iconNazuna,
@@ -198,6 +202,10 @@ export default function MayuChara() {
         return CharaStands(charaValue?.selected_name, value)
     }, [charaValue?.selected_name, value])
 
+    const charatxt = useMemo(() => {
+        return CharaTxtImg(charaValue?.selected_name)
+    }, [charaValue?.selected_name,])
+
     const onCancel = () => {
         setMamoruOpen(false)
         setCharaValue(undefined)
@@ -220,27 +228,25 @@ export default function MayuChara() {
                             gutter={16} align="middle"
                         >
                             {pcList1?.map((list, index) => (
-                                <>
-                                    <div style={{ width: "20%", textAlign: "center", paddingTop: "1rem" }} key={`aaaa_${index}`}>
+                                <div style={{ width: "20%", textAlign: "center", paddingTop: "1rem" }} key={`aaaa_${index}`}>
 
-                                        <Tooltip>
-                                            <Button type="text" ghost shape="circle" style={{ width: "200x", height: "180px", clipPath: "circle(50%)" }} onClick={() => onClickButton(list, index)}>
-                                                <Image
-                                                    src={list?.icon}
-                                                    alt="Image"
-                                                    width={160}
-                                                    height={160} />
-                                            </Button>
-                                            <Button type="text" ghost onClick={() => onClickButton(list, index)}>
-                                                <Image
-                                                    src={list?.name_img}
-                                                    alt="Image"
-                                                    height={30} />
+                                    <Tooltip>
+                                        <Button type="text" ghost shape="circle" style={{ width: "200x", height: "180px", clipPath: "circle(50%)" }} onClick={() => onClickButton(list, index)}>
+                                            <Image
+                                                src={list?.icon}
+                                                alt="Image"
+                                                width={160}
+                                                height={160} />
+                                        </Button>
+                                        <Button type="text" ghost onClick={() => onClickButton(list, index)}>
+                                            <Image
+                                                src={list?.name_img}
+                                                alt="Image"
+                                                height={30} />
 
-                                            </Button>
-                                        </Tooltip>
-                                    </div>
-                                </>
+                                        </Button>
+                                    </Tooltip>
+                                </div>
                             ))}
                         </Row>
                     ) : (
@@ -298,13 +304,13 @@ export default function MayuChara() {
                                         </Button>
                                     )}
                                 </Col>
-                                <Col span={7} style={{ textAlign: "right" }}>
+                                <Col span={6} style={{ textAlign: "right" }}>
                                     <div style={{ marginBottom: "2rem" }}>
                                         {charaStand}
                                     </div>
                                 </Col>
-                                <Col span={15} align="bottom">
-                                    <Row align="middle" style={{
+                                <Col span={16} align="top">
+                                    {/* <Row align="middle" style={{
                                         fontSize: "60px", marginTop: "0rem"
                                     }}>
                                         <DoubleLeftOutlined />
@@ -321,10 +327,13 @@ export default function MayuChara() {
                                     </Row>
                                     <div style={{ zIndex: 194545, color: "black", fontFamily: "serif", fontWeight: "bold" }}>
                                         {CharaTxt(charaValue?.selected_name) ?? ""}
-                                    </div>
-                                    <Row style={{ zIndex: 194545, color: "black", marginTop: "1rem", width: "100%" }} align="middle">
-                                        <Segmented options={charaValue?.options ?? ["1"]} value={value} onChange={setValue} size={"large"} />
+                                    </div> */}
+                                    {charatxt}
+                                    <Row style={{ zIndex: 194545, color: "black", width: "100%", position: "relative", bottom: "6vh" }} align="middle">
                                         <div style={{ marginLeft: "auto" }}>
+                                            <Segmented options={charaValue?.options ?? ["1"]} value={value} onChange={setValue} size={"large"} />
+                                        </div>
+                                        <div style={{ marginLeft: "auto", paddingRight: "50px" }}>
                                             <Button onClick={onCancel}>閉じる</Button>
                                         </div>
                                     </Row>

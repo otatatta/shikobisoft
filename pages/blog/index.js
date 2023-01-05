@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from 'next/image'
 import { Card, Col, Row } from 'antd';
 import { client } from "../../libs/client";
 import shikoIcon from "../static/shikoIcon.png"
