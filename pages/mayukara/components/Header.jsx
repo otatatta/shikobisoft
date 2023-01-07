@@ -30,11 +30,13 @@ function SectionHeader({ text }) {
     textAlign: "center",
     outline: "thick double #A3383E",
     borderRadius: "1rem",
-    marginTop:"1rem"
+    marginTop: "1rem"
   }
   const inner = {
     // width: "95 %",
     // height: "95 %",
+    width: "100%",
+    height: "100%",
     backgroundColor: "#A3383E",
     color: "#fff",
   }
@@ -50,7 +52,7 @@ function SectionHeader({ text }) {
             <Image
               alt="Shikoshiko"
               src={txtImg}
-              style={{ objectFit: "contain", width: "100%", height: "100%", maxWidth: "150px", maxHeight: "50px" }}
+              style={{ objectFit: "contain", maxWidth: "150px", maxHeight: "40px", paddingTop: "0.2rem" }}
               layout={"intrinsic"} />
           )}
         </div>

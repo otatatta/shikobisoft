@@ -1,6 +1,5 @@
 import { Col, Row, Modal, Segmented, Button, Tooltip } from 'antd';
 import React, { useEffect, useState, useMemo } from 'react';
-import CharaTxtImg from "./txtsImg"
 import { LeftOutlined, RightOutlined, CloseOutlined } from '@ant-design/icons';
 import Image from 'next/image'
 import Background from "../../static/hp1_bg.png"
@@ -20,6 +19,7 @@ import iconUshi from "../../static/icons/icon13uso.png"
 import iconUmi from "../../static/icons/icon14umn.png"
 import iconResuna from "../../static/icons/icon15rsn.png"
 import CharaTxt from "./txts";
+import CharaTxtImg from "./txtsImg";
 import CharaStands from "./stands";
 import nameMamoru from "../../static/names/mamoru.png"
 import nameChiyo from "../../static/names/chiyo.png"
@@ -202,9 +202,14 @@ export default function MayuChara() {
         return CharaStands(charaValue?.selected_name, value)
     }, [charaValue?.selected_name, value])
 
-    const charatxt = useMemo(() => {
-        return CharaTxtImg(charaValue?.selected_name)
-    }, [charaValue?.selected_name,])
+    const charatxt = useMemo(() =>
+        <Image
+            src={CharaTxtImg(charaValue?.selected_name)}
+            style={{ display: "inline-block" }}
+            alt="charatxt"
+        />
+        , [charaValue?.selected_name,])
+
 
     const onCancel = () => {
         setMamoruOpen(false)
@@ -222,13 +227,13 @@ export default function MayuChara() {
     return (
         <>
             <div style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto", textAlign: "center", fontFamily: "serif" }}>
-                <div style={{ padding: "1rem" }}>
+                <div style={{ padding: "2rem" }}>
                     {width > 768 ? (
                         <Row
                             gutter={16} align="middle"
                         >
                             {pcList1?.map((list, index) => (
-                                <div style={{ width: "20%", textAlign: "center", paddingTop: "1rem" }} key={`aaaa_${index}`}>
+                                <div style={{ width: "20%", textAlign: "center"}} key={`aaaa_${index}`}>
 
                                     <Tooltip>
                                         <Button type="text" ghost shape="circle" style={{ width: "200x", height: "180px", clipPath: "circle(50%)" }} onClick={() => onClickButton(list, index)}>
@@ -288,69 +293,69 @@ export default function MayuChara() {
                         zIndex={194545}
                         footer={<></>}
                     >
-                        <Image
-                            alt="Shikoshikoback"
-                            src={Background}
-                            style={{ opacity: 0.33 }}
-                            fill
-                            objectFit={`cover`} />
                         {width > 768 ? (
-                            <Row
-                                gutter={{ xs: 8, sm: 16, md: 24, }} align="middle" style={{ fontFamily: "Hannari" }}
-                            >
-                                <Col span={1}>
-                                    {charaValue?.index > 0 && (
-                                        <Button type="text" onClick={() => onchangeChara(charaValue.index - 1)} icon={<LeftOutlined style={{ fontSize: '120px', color: '#fff', backgroundColor: "rgba(128,128,128,.5)" }} block />}>
-                                        </Button>
-                                    )}
-                                </Col>
-                                <Col span={6} style={{ textAlign: "right" }}>
-                                    <div style={{ marginBottom: "2rem" }}>
-                                        {charaStand}
-                                    </div>
-                                </Col>
-                                <Col span={16} align="top">
-                                    {/* <Row align="middle" style={{
-                                        fontSize: "60px", marginTop: "0rem"
-                                    }}>
-                                        <DoubleLeftOutlined />
-                                        <div style={{ paddingTop: "1.2rem" }}>
-                                            <Image
-                                                src={charaValue?.name_img}
-                                                alt="Image"
-                                                height={37} />
-                                            <div style={{
-                                                fontSize: "20px", position: "relative", bottom: "20px", textAlign: "center", fontFamily: "serif"
-                                            }} >{charaValue?.name_sub}</div>
+                            <><Image
+                                alt="Shikoshikoback"
+                                src={Background}
+                                style={{ opacity: 0.33 }}
+                                fill
+                                objectFit={`cover`} /><Row
+                                    gutter={{ xs: 8, sm: 16, md: 24, }} align="middle" style={{ fontFamily: "Hannari" }}
+                                >
+                                    <Col span={1}>
+                                        {charaValue?.index > 0 && (
+                                            <Button type="text" onClick={() => onchangeChara(charaValue.index - 1)} icon={<LeftOutlined style={{ fontSize: '120px', color: '#fff', backgroundColor: "rgba(128,128,128,.5)" }} block />}>
+                                            </Button>
+                                        )}
+                                    </Col>
+                                    <Col span={6} style={{ textAlign: "right" }}>
+                                        <div style={{ marginBottom: "2rem" }}>
+                                            {charaStand}
                                         </div>
-                                        <DoubleRightOutlined />
-                                    </Row>
-                                    <div style={{ zIndex: 194545, color: "black", fontFamily: "serif", fontWeight: "bold" }}>
-                                        {CharaTxt(charaValue?.selected_name) ?? ""}
-                                    </div> */}
-                                    {charatxt}
-                                    <Row style={{ zIndex: 194545, color: "black", width: "100%", position: "relative", bottom: "6vh" }} align="middle">
-                                        <div style={{ marginLeft: "auto" }}>
-                                            <Segmented options={charaValue?.options ?? ["1"]} value={value} onChange={setValue} size={"large"} />
-                                        </div>
-                                        <div style={{ marginLeft: "auto", paddingRight: "50px" }}>
-                                            <Button onClick={onCancel}>閉じる</Button>
-                                        </div>
-                                    </Row>
-                                </Col>
-                                <Col span={1} align="right">
-                                    {charaValue?.index !== undefined && (
-                                        <Button type="text" onClick={() => onchangeChara(charaValue.index + 1)} icon={<RightOutlined style={{ fontSize: '120px', color: '#fff', backgroundColor: "rgba(128,128,128,.5)" }} block />}>
-                                        </Button>)}
-                                </Col>
-                            </Row>
+                                    </Col>
+                                    <Col span={16} align="top">
+                                        {charatxt}
+                                        <Row style={{ zIndex: 194545, color: "black", width: "100%", position: "relative", bottom: "6vh" }} align="middle">
+
+                                            <div style={{ marginLeft: "auto", paddingRight: "100px" }}>
+                                                <span style={{ paddingRight: "100px" }}>
+                                                    <Segmented options={charaValue?.options ?? ["1"]} value={value} onChange={setValue} size={"large"} />
+                                                </span>
+                                                <Button onClick={onCancel}>閉じる</Button>
+                                            </div>
+                                        </Row>
+                                    </Col>
+                                    <Col span={1} align="right">
+                                        {charaValue?.index !== undefined && (
+                                            <Button type="text" onClick={() => onchangeChara(charaValue.index + 1)} icon={<RightOutlined style={{ fontSize: '120px', color: '#fff', backgroundColor: "rgba(128,128,128,.5)" }} block />}>
+                                            </Button>)}
+                                    </Col>
+                                </Row></>
                         ) : (
                             <>
-                                <div>
+                                <Image
+                                    alt="Shikoshikoback"
+                                    src={Background}
+                                    style={{ opacity: 0.33 }}
+                                    fill
+                                    objectFit={`cover`} />
+                                <div style={{ position: "relative", right: "30px" }}>
                                     {charaStand}
                                 </div>
+                                <Row justify={"space-between"} style={{
+                                    position: "relative", bottom: "60vh"
+                                }}>
+                                    {charaValue?.index > 0 ? (
+                                        <Button type="text" onClick={() => onchangeChara(charaValue.index - 1)} icon={<LeftOutlined style={{ fontSize: '120px', color: '#fff', backgroundColor: "rgba(128,128,128,.5)" }} />}>
+                                        </Button>
+                                    ) : (<div></div>)}
+
+                                    {charaValue?.index !== undefined && (
+                                        <Button type="text" onClick={() => onchangeChara(charaValue.index + 1)} icon={<RightOutlined style={{ fontSize: '120px', color: '#fff', backgroundColor: "rgba(128,128,128,.5)" }} />}>
+                                        </Button>)}
+                                </Row>
                                 <div style={{
-                                    position: "relative", bottom: "280px", backgroundColor: "rgba(255, 255, 255, .6)"
+                                    position: "relative", bottom: "320px", backgroundColor: "rgba(255, 255, 255, .6)"
                                 }}>
                                     <div style={{
                                         fontSize: "32px", marginLeft: "1rem"
@@ -365,7 +370,9 @@ export default function MayuChara() {
                                     }}>
                                         {CharaTxt(charaValue?.selected_name) ?? ""}
                                     </div>
-                                    <Segmented options={charaValue?.options ?? ["1"]} value={value} onChange={setValue} size={"middle"} />
+                                    <div style={{ textAlign: "center" }}>
+                                        <Segmented options={charaValue?.options ?? ["1"]} value={value} onChange={setValue} size={"large"} />
+                                    </div>
                                 </div>
 
                             </>

@@ -49,7 +49,7 @@ export default function Carankoe() {
                         layout={"intrinsic"} />
                 </div>
                 <div style={{ background: "rgba(242, 222, 182, .9)" }}>
-                    <div style={{ height: "40px" }}>
+                    <div style={{ height: "20px" }}>
 
                     </div>
                     <div id="story" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto" }}>
@@ -62,13 +62,13 @@ export default function Carankoe() {
                     </div>
                     <div id="illust" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto" }}>
                         <SectionHeader text="画廊" />
-                        <div style={{ padding: "1rem" }}>
+                        <div style={{ padding: "2rem", }}>
                             <Graphics />
                         </div>
                     </div>
                     <div id="novel" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto" }}>
                         <SectionHeader text="小噺" />
-                        <div style={{ padding: "1rem" }}>
+                        <div style={{ padding: "2rem" }}>
                             <Carousel autoplay>
                                 <div>
                                     <h3 style={contentStyle}>～準備中～</h3>
@@ -83,31 +83,32 @@ export default function Carankoe() {
                         </div>
 
                     </div>
-                    <div id="update" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto" }}>
+                    <div id="update" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto", fontFamily: "cursive" }}>
                         <SectionHeader text="電報" />
-                        <Row gutter={16} style={{ margin: "20px" }} justify="space-between">
-                            <Col xs={24} sm={11} md={11} lg={11} xl={10} >
-                                <div style={{ borderBottom: "solid rgb(99,99,99)", fontSize: "24px" }}>
+                        <Row gutter={16} style={{ margin: "2rem" }} justify="space-between">
+                            <Col xs={24} sm={11} md={11} lg={11} xl={10} style={{ background: "rgba(232, 212, 172, .6)" }} >
+                                <div style={{ borderBottom: "solid rgb(99,99,99)", fontSize: "28px" }}>
                                     更新情報
                                 </div>
                                 <div
                                     style={{
-                                        height: "600px",
+                                        height: "500px",
                                         overflowY: "scroll",
-                                        marginTop: "2rem"
+                                        marginTop: "2rem",
+                                        fontSize: "16px"
                                     }}>
                                     <p>
-                                        ・<span>2023.01.04</span> サイトオープンしました
+                                        ・<span style={{ color: "#222" }}>2023.01.04</span> <span style={{ paddingLeft: "1rem" }}>サイトオープンしました</span>
                                     </p>
                                 </div>
                             </Col>
-                            <Col xs={24} sm={12} md={12} lg={12} xl={10}>
-                                <div style={{ borderBottom: "solid rgb(99,99,99)", fontSize: "24px" }}>
+                            <Col xs={24} sm={12} md={12} lg={12} xl={10} style={{ background: "rgba(232, 212, 172, .6)" }}>
+                                <div style={{ borderBottom: "solid rgb(99,99,99)", fontSize: "28px" }}>
                                     Twitter
                                 </div>
                                 <div
                                     style={{
-                                        height: "600px",
+                                        height: "500px",
                                         overflowY: "scroll",
                                         marginTop: "2rem"
                                     }}>

@@ -2,8 +2,8 @@ export default function CharaTxt(selected) {
     switch (selected) {
         case "Mamoru":
             return (
-                <div style={{ fontSize: "14px" }}>
-                    <p style={{ fontSize: "28px" }}>
+                <div style={{ fontSize: "16px" }}>
+                    <p style={{ fontSize: "24px" }}>
                         『 ――全部が全部、気色が悪いよな…… 』<br />
                     </p>
                     <p >
@@ -37,8 +37,8 @@ export default function CharaTxt(selected) {
             )
         case "Chiyo":
             return (
-                <div style={{ fontSize: "14px" }}>
-                    <p style={{ fontSize: "28px" }}>
+                <div style={{ fontSize: "16px" }}>
+                    <p style={{ fontSize: "24px" }}>
                         『 町の外のこと、いっぱいウチに教えて欲しいんだぁ 』<br />
                     </p>
                     <p >
@@ -66,8 +66,8 @@ export default function CharaTxt(selected) {
             )
         case "Saika":
             return (
-                <div style={{ fontSize: "14px" }}>
-                    <p style={{ fontSize: "28px" }}>
+                <div style={{ fontSize: "16px" }}>
+                    <p style={{ fontSize: "24px" }}>
                         『 まったく、アナタという人は……本当に…… 』<br />
                     </p>
                     砂羽村三姉妹の長女。<br />
@@ -82,8 +82,10 @@ export default function CharaTxt(selected) {
             )
         case "Juri":
             return (
-                <p style={{ fontSize: "14px" }}>
-                    『 ねえさまたちは、ジュリの誇りなのですっ！ 』<br />
+                <p style={{ fontSize: "16px" }}>
+                    <p style={{ fontSize: "24px" }}>
+                        『 ねえさまたちは、ジュリの誇りなのですっ！ 』<br />
+                    </p>
                     砂羽村三姉妹の末女。<br />
                     姉たちのことを心から慕い、その助けになりたいと日々を働く姉たちの手伝いをかって出ている頑張り屋。<br />
                     性経験は皆無だが性へ関する羞恥心なども無く、異性を悦ばせられるが為の行いだと捉えている。<br />
@@ -95,8 +97,10 @@ export default function CharaTxt(selected) {
             )
         case "Tsuyuri":
             return (
-                <p style={{ fontSize: "14px" }}>
-                    『 ワタクシと、そちらさま。きっとご縁がありますわよ 』<br />
+                <p style={{ fontSize: "16px" }}>
+                    <p style={{ fontSize: "24px" }}>
+                        『 ワタクシと、そちらさま。きっとご縁がありますわよ 』<br />
+                    </p>
                     慰安のためと繭ノ葉町を訪れ、守琉と同じ旅館へと宿泊しに来ている女性。<br />
                     正体はその声を知る人が聴けば判るほど、有名なラヂオ女優である。<br />
                     本人いわく《勘》がとにかく良いらしく、何かと守琉に対して協力的な態度をとる。<br />
@@ -107,8 +111,10 @@ export default function CharaTxt(selected) {
             )
         case "Nazuna":
             return (
-                <p style={{ fontSize: "14px" }}>
-                    『 むっ。なずなは立派に、コチラの使用人ですよ！ 』<br />
+                <p style={{ fontSize: "16px" }}>
+                    <p style={{ fontSize: "24px" }}>
+                        『 むっ。なずなは立派に、コチラの使用人ですよ！ 』<br />
+                    </p>
                     繭ノ葉町《御三家》の一つ、【梅園家】に就く使用人。<br />
                     当主や若旦那の世話役をしているが、他の男性に対しては一歩、二歩をも退いた態度をとる。<br />
                     間が抜けており、使用人としては心許ない働きをしていることで、周りからはその都度に呆れられている様子。<br />
@@ -119,8 +125,10 @@ export default function CharaTxt(selected) {
             )
         case "Sousei":
             return (
-                <p style={{ fontSize: "14px" }}>
-                    『 ようこそ来てくれたね。……待っていたんだよ 』<br />
+                <p style={{ fontSize: "16px" }}>
+                    <p style={{ fontSize: "24px" }}>
+                        『 ようこそ来てくれたね。……待っていたんだよ 』<br />
+                    </p>
                     繭ノ葉町《御三家》の一つ、【梅園家】現当主であり、繭ノ葉の町長を務める。<br />
                     町に関し絶大な権力を持つが、力に反したかのよう本人は温厚でとても物腰柔らかい態度をとる。<br />
                     身体が弱いようで、定期的に医師である久留島健治に診てもらっている。<br />
@@ -131,8 +139,10 @@ export default function CharaTxt(selected) {
             )
         case "Shitorasu":
             return (
-                <p style={{ fontSize: "14px" }}>
-                    『 いやはや、――守琉クンに興味が尽きないね 』<br />
+                <p style={{ fontSize: "16px" }}>
+                    <p style={{ fontSize: "24px" }}>
+                        『 いやはや、――守琉クンに興味が尽きないね 』<br />
+                    </p>
                     旅館《孵縲不ノ館》を経営する若旦那。常に飄々としており、笑顔を絶やさない。<br />
                     女将である才花とは夫婦関係のはずであるが、業務以上の付き合いが薄い。<br />
                     とても美形であり言い寄ってくる女性が多いが、本人は来るもの拒まず去るもの追わずで受け入れ、関係を持っている。<br />
@@ -144,8 +154,10 @@ export default function CharaTxt(selected) {
             )
         case "Ryuko":
             return (
-                <p style={{ fontSize: "14px" }}>
-                    『 きっとこれは……私たちオトナへの〝ノロイ〟なのでしょうね…… 』<br />
+                <p style={{ fontSize: "16px" }}>
+                    <p style={{ fontSize: "24px" }}>
+                        『 きっとこれは……私たちオトナへの〝ノロイ〟なのでしょうね…… 』<br />
+                    </p>
                     旅館《孵縲不ノ館》で主に清掃、調理の担当をしている使用人の女性。<br />
                     使用人とは思えぬほどの上品さを持って人と接しているが、なにかと幸薄さのせいか苦労が見える。<br />
                     町に残る風習や信仰に対して極度に怯えている節がある。<br />
@@ -156,8 +168,10 @@ export default function CharaTxt(selected) {
             )
         case "Ryou":
             return (
-                <p style={{ fontSize: "14px" }}>
-                    『 アンタにそこ居られると、コッチは仕事にならねぇんだよ 』<br />
+                <p style={{ fontSize: "16px" }}>
+                    <p style={{ fontSize: "24px" }}>
+                        『 アンタにそこ居られると、コッチは仕事にならねぇんだよ 』<br />
+                    </p>
                     旅館《孵縲不ノ館》で主に庭の手入れ、工具管理などの担当をしている使用人の男性。<br />
                     使用人とは思えぬほど無愛想な態度をとるが、同じ使用人立場である なずなや流子には気を遣ったり、突っ込みをこなしたりする。<br />
                     とくに間の抜けた なずなとのやり取りは、しばし漫才のようである。<br />
@@ -167,8 +181,10 @@ export default function CharaTxt(selected) {
             )
         case "Kenji":
             return (
-                <p style={{ fontSize: "14px" }}>
-                    『 非現実的な事柄は受け入れることが難しい……しかし…… 』<br />
+                <p style={{ fontSize: "16px" }}>
+                    <p style={{ fontSize: "24px" }}>
+                        『 非現実的な事柄は受け入れることが難しい……しかし…… 』<br />
+                    </p>
                     繭ノ葉町で診療所を経営する医師であり、《御三家》の一つ【久留島家】現当主。<br />
                     聡晟の訪問診療のため、度々と梅園家へ通っている。かつては梅園家の家庭教師も務めていたほど親交が深い。<br />
                     高身長なせいか一見は威圧的に、態度も無愛想にも見えるのだが、そう見られてしまうことを本人は少し気にしている模様。<br />
@@ -178,8 +194,10 @@ export default function CharaTxt(selected) {
             )
         case "Komari":
             return (
-                <p style={{ fontSize: "14px" }}>
-                    『 ――そちの名を、識ってるぞ 』<br />
+                <p style={{ fontSize: "16px" }}>
+                    <p style={{ fontSize: "24px" }}>
+                        『 ――そちの名を、識ってるぞ 』<br />
+                    </p>
                     繭ノ葉町で出会う、巫女のような狩り衣姿の童女。<br />
                     何かと言葉を投げかけてくるが、内容は非現実的で要領も得ないものである。<br />
                     守琉を度々と気にかけ、守琉も童女にどこか母の面影を見ることとなるが……。<br />
@@ -189,8 +207,10 @@ export default function CharaTxt(selected) {
             )
         case "Ushio":
             return (
-                <p style={{ fontSize: "14px" }}>
-                    『 ？　お昼ってどんぶりなの？ 』<br />
+                <p style={{ fontSize: "16px" }}>
+                    <p style={{ fontSize: "24px" }}>
+                        『 ？　お昼ってどんぶりなの？ 』<br />
+                    </p>
                     双子の姉。<br />
                     どんくさそうな方のうし乳。<br />
                     八遠寺れすなの下僕である。<br />
@@ -200,8 +220,10 @@ export default function CharaTxt(selected) {
             )
         case "Umino":
             return (
-                <p style={{ fontSize: "14px" }}>
-                    『 はえ～ひとつ賢くなれたねえ 』<br />
+                <p style={{ fontSize: "16px" }}>
+                    <p style={{ fontSize: "24px" }}>
+                        『 はえ～ひとつ賢くなれたねえ 』<br />
+                    </p>
                     双子の妹。<br />
                     キャピキャピとしてる方のうし乳。<br />
                     八遠寺れすなの下僕である。<br />
@@ -211,8 +233,10 @@ export default function CharaTxt(selected) {
             )
         case "Resuna":
             return (
-                <p style={{ fontSize: "14px" }}>
-                    『 ごめんなさいな。私、ヒトを驚かせるのが好きなものでして 』<br />
+                <p style={{ fontSize: "16px" }}>
+                    <p style={{ fontSize: "24px" }}>
+                        『 ごめんなさいな。私、ヒトを驚かせるのが好きなものでして 』<br />
+                    </p>
                     繭ノ葉町に存在する娼館《翅爾蝶館》の女主人。<br />
                     下僕の女の子を二人連れては、オモチャとして弄っている。<br />
                     面白いことを見つけたがり、つまらないことを嫌う。<br />

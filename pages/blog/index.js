@@ -3,8 +3,7 @@ import { Card, Col, Row } from 'antd';
 import { client } from "../../libs/client";
 import shikoIcon from "../static/shikoIcon.png"
 import Footer from "../component/Footer"
-// import { Shippori_Mincho } from '@next/font/google'
-// const mincho = Shippori_Mincho({ subsets: ['japanese'] })
+import Image from "next/image";
 
 //SSG
 export const getStaticProps = async () => {
@@ -24,7 +23,7 @@ export default function Home({ blog }) {
   return (
     <div>
       <header >
-        <h1 className={"mincho.className"} style={{ textAlign: "center" }}>
+        <h1 style={{ textAlign: "center" }}>
           しこしこソフト スタッフブログ
         </h1>
       </header>

@@ -35,7 +35,7 @@ export default function CharaStands(selected, value, width, height) {
             return (
                 <Image
                     src={src}
-                    style={{ display: "inline-block" }}
+                    style={{ display: "inline-block" , width:"auto"}}
                     alt="Image" />
             )
         } return <></>
