@@ -1,5 +1,5 @@
-import { Col, Row, Modal, Segmented, Button } from 'antd';
-import React, { useEffect, useState, useMemo, useCallback } from 'react';
+import { Col, Row, Modal, Segmented, Button, Tooltip } from 'antd';
+import React, { useEffect, useState, useMemo } from 'react';
 import { LeftOutlined, RightOutlined, CloseOutlined } from '@ant-design/icons';
 import Image from 'next/image'
 import Background from "../../static/hp1_bg.png"
@@ -19,94 +19,131 @@ import iconUshi from "../../static/icons/icon13uso.png"
 import iconUmi from "../../static/icons/icon14umn.png"
 import iconResuna from "../../static/icons/icon15rsn.png"
 import CharaTxt from "./txts";
+import CharaTxtImg from "./txtsImg";
 import CharaStands from "./stands";
+import nameMamoru from "../../static/names/mamoru.png"
+import nameChiyo from "../../static/names/chiyo.png"
+import nameSaika from "../../static/names/saika.png"
+import nameJuri from "../../static/names/juri.png"
+import nameTsuyuri from "../../static/names/tuyuri.png"
+import nameNazuna from "../../static/names/nazuna.png"
+import nameSousei from "../../static/names/sousei.png"
+import nameShitora from "../../static/names/shitora.png"
+import nameRyuko from "../../static/names/ryuko.png"
+import nameRyo from "../../static/names/kyou.png"
+import nameKenji from "../../static/names/kenji.png"
+import nameKomari from "../../static/names/komari.png"
+import nameUshio from "../../static/names/ushio.png"
+import nameUmino from "../../static/names/umino.png"
+import nameResuna from "../../static/names/resuna.png"
 
 const mamoru = {
     names: "犬無 守琉",
+    name_sub: "Inunashi　Mamoru",
+    name_img: nameMamoru,
     selected_name: "Mamoru",
     icon: iconMamoru,
     options: ['1', "2"]
 }
 const chiyo = {
     names: "砂羽村 千代",
+    name_sub: "Sawamura　Chiyo",
+    name_img: nameChiyo,
     selected_name: "Chiyo",
     icon: iconChiyo,
     options: ['1', "2"]
 }
 const saika = {
     names: "砂羽村 才花",
+    name_sub: "Sawamura　Saika",
+    name_img: nameSaika,
     selected_name: "Saika",
     icon: iconSaika,
     options: ['1', "2"]
 }
 const juri = {
     names: "砂羽村 樹里",
+    name_sub: "Sawamura　Juri",
+    name_img: nameJuri,
     selected_name: "Juri",
     icon: iconJuri,
     options: ['1', "2"]
 }
 const tsuyuri = {
     names: "白草 栗花落",
+    name_sub: "Shirakusa　Tsuyuri",
+    name_img: nameTsuyuri,
     selected_name: "Tsuyuri",
     icon: iconTsuyuri,
     options: ['1', "2"]
 }
 const nazuna = {
     names: "淡嶋 なずな",
+    name_sub: "Sawamura　Juri",
+    name_img: nameNazuna,
     selected_name: "Nazuna",
     icon: iconNazuna,
     options: ['1', "2"]
 }
 const sousei = {
     names: "梅園 聡晟",
+    name_img: nameSousei,
     selected_name: "Sousei",
     icon: iconSousei,
     options: ['1', "2"]
 }
 const shitorasu = {
     names: "梅園 司斗羅栖",
+    name_img: nameShitora,
     selected_name: "Shitorasu",
     icon: iconShito,
     options: ['1', "2"]
 }
 const ryuko = {
     names: "折戸 流子",
+    name_img: nameRyuko,
     selected_name: "Ryuko",
     icon: iconRyuko,
     options: ['1', "2"]
 }
 const ryou = {
     names: "雨呂鎚 享",
+    name_img: nameRyo,
     selected_name: "Ryou",
     icon: iconRyou,
     options: ['1', "2"]
 }
 const kenji = {
     names: "久留島 健治",
+    name_img: nameKenji,
     selected_name: "Kenji",
     icon: iconKenji,
     options: ['1', "2"]
 }
 const komari = {
     names: "乎鞠",
+    name_img: nameKomari,
     selected_name: "Komari",
     icon: iconKomari,
     options: ['1', "2"]
 }
 const ushio = {
     names: "千絵田 海潮",
+    name_img: nameUshio,
     selected_name: "Ushio",
     icon: iconUshi,
     options: ['1', "2"]
 }
 const umino = {
     names: "千絵田 海乃",
+    name_img: nameUmino,
     selected_name: "Umino",
     icon: iconUmi,
     options: ['1', "2"]
 }
 const resuna = {
     names: "八遠寺 れすな",
+    name_img: nameResuna,
     selected_name: "Resuna",
     icon: iconResuna,
     options: ['1', "2"]
@@ -149,6 +186,8 @@ export default function MayuChara() {
     const onClickButton = (val, index) => {
         setCharaValue({
             names: val.names,
+            name_sub: val.name_sub,
+            name_img: val.name_img,
             selected_name: val.selected_name,
             icon: val.icon,
             options: val.options,
@@ -163,6 +202,15 @@ export default function MayuChara() {
         return CharaStands(charaValue?.selected_name, value)
     }, [charaValue?.selected_name, value])
 
+    const charatxt = useMemo(() =>
+        <Image
+            src={CharaTxtImg(charaValue?.selected_name)}
+            style={{ display: "inline-block" }}
+            alt="charatxt"
+        />
+        , [charaValue?.selected_name,])
+
+
     const onCancel = () => {
         setMamoruOpen(false)
         setCharaValue(undefined)
@@ -171,38 +219,47 @@ export default function MayuChara() {
 
     const onchangeChara = (newIndex) => {
         if (newIndex !== undefined && pcList1[newIndex]?.selected_name) {
-            console.log(pcList1[newIndex])
-            setCharaValue({ ...pcList1[newIndex], index: newIndex })
+            if (pcList1[newIndex]?.selected_name) {
+                setCharaValue({ ...pcList1[newIndex], index: newIndex })
+                setValue("1")
+            }
+        } else {
+            setCharaValue({ ...pcList1[0], index: 0 })
             setValue("1")
         }
     }
 
     return (
         <>
-            <div style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto", textAlign: "center" }}>
-                <div>
-                    <p>キャラクター紹介</p>
-                </div>
-                <div style={{ padding: "1rem" }}>
+            <div style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto", textAlign: "center", fontFamily: "serif", marginTop: "2rem" }}>
+                <div style={{ padding: "0, 2rem" }}>
                     {width > 768 ? (
                         <Row
                             gutter={16} align="middle"
                         >
-                            {pcList1?.map((list, index) =>
-                            (
-                                <div style={{ width: "20%", textAlign: "center" }} key={`aaaa_${index}`}>
-                                    <Button style={{ width: "150x", height: "155px" }} onClick={() => onClickButton(list, index)}>
-                                        <Image
-                                            src={list?.icon}
-                                            alt="Image"
-                                            width={150}
-                                            height={150} />,
-                                    </Button>
-                                    <div>
-                                        {list?.names}
-                                    </div>
-                                </div>)
-                            )}
+                            {pcList1?.map((list, index) => (
+                                <div style={{ width: "20%", textAlign: "center", marginTop: "20px" }} key={`aaaa_${index}`}>
+                                    <Tooltip>
+                                        <div>
+                                            <Button type="text" ghost shape="circle" style={{ width: "200x", height: "180px", clipPath: "circle(50%)" }} onClick={() => onClickButton(list, index)}>
+                                                <Image
+                                                    src={list?.icon}
+                                                    alt="Image"
+                                                    width={160}
+                                                    height={160} />
+                                            </Button>
+                                        </div>
+                                        <div>
+                                            <Button type="text" ghost onClick={() => onClickButton(list, index)}>
+                                                <Image
+                                                    src={list?.name_img}
+                                                    alt="Image"
+                                                    height={30} />
+                                            </Button>
+                                        </div>
+                                    </Tooltip>
+                                </div>
+                            ))}
                         </Row>
                     ) : (
                         <Row
@@ -213,17 +270,21 @@ export default function MayuChara() {
                         >
                             {pcList1?.map((list, index) =>
                             (
-                                <Col span={8} key={`aaaa_${index}`}>
-                                    <Button style={{ width: "105px", height: "105px" }} onClick={() => onClickButton(list, index)}>
+                                <Col span={12} key={`aaaa_${index}`}>
+                                    <Button type="text" style={{ width: "105px", height: "105px" }} onClick={() => onClickButton(list, index)}>
                                         <Image
                                             src={list?.icon}
                                             alt="Image"
                                             width={100}
-                                            height={100} />,
+                                            height={100} />
                                     </Button>
-                                    <div>
-                                        {list?.names}
-                                    </div>
+                                    <Button type="text" ghost onClick={() => onClickButton(list, index)}>
+                                        <Image
+                                            src={list?.name_img}
+                                            alt="Image"
+                                            height={15} />
+
+                                    </Button>
                                 </Col>)
                             )}
                         </Row>
@@ -231,62 +292,78 @@ export default function MayuChara() {
                     <Modal
                         centered
                         closeIcon={<CloseOutlined style={{ fontSize: "48px", paddingTop: "8px" }} />}
-                        visible={mamoruOpen}
+                        open={mamoruOpen}
                         onCancel={onCancel}
                         width={"95%"}
-                        bodyStyle={{ height: `${height}px` }}
+                        bodyStyle={{ height: `820px` }}
                         cancelText="閉じる"
                         zIndex={194545}
                         footer={<></>}
                     >
-                        <Image
-                            alt="Shikoshikoback"
-                            src={Background}
-                            style={{ opacity: 0.33 }}
-                            layout={`fill`}
-                            objectFit={`cover`} />
                         {width > 768 ? (
-                            <Row
-                                gutter={{ xs: 8, sm: 16, md: 24, }} align="middle"
-                            >
-                                <Col span={2}>
-                                    {charaValue?.index && (
-                                        <Button type="text" onClick={() => onchangeChara(charaValue.index - 1)} icon={<LeftOutlined style={{ fontSize: '120px', color: '#fff', backgroundColor: "rgba(128,128,128,.5)" }} block />}>
-                                        </Button>
-                                    )}
-                                </Col>
-                                <Col span={8}>
-                                    <div style={{ marginBottom: "2rem" }}>
-                                        {charaStand}
-                                    </div>
-                                </Col>
-                                <Col span={12} align="bottom">
-                                    <Segmented options={charaValue?.options ?? ["1"]} value={value} onChange={setValue} size={"middle"} />
-                                    <div>
-                                        <p style={{
-                                            fontSize: "32px"
-                                        }}>
-                                            {charaValue?.names}
-                                        </p>
-                                        <div style={{ zIndex: 194545, color: "black" }}>
-                                            {CharaTxt(charaValue?.selected_name) ?? ""}
-                                        </div>
-                                        <Button onClick={onCancel}>閉じる</Button>
-                                    </div>
-                                </Col>
-                                <Col span={2} align="right">
-                                    {charaValue?.index !== undefined && (
-                                        <Button type="text" onClick={() => onchangeChara(charaValue.index + 1)} icon={<RightOutlined style={{ fontSize: '120px', color: '#fff', backgroundColor: "rgba(128,128,128,.5)" }} block />}>
-                                        </Button>)}
-                                </Col>
-                            </Row>
+                            <><Image
+                                alt="Shikoshikoback"
+                                src={Background}
+                                style={{ opacity: 0.25 }}
+                                fill
+                                objectFit={`cover`} /><Row
+                                    gutter={{ xs: 8, sm: 16, md: 24, }} align="middle" style={{ fontFamily: "Hannari" }}
+                                >
+                                    <Col span={1}>
+                                        {charaValue?.index > 0 && (
+                                            <Button type="text" onClick={() => onchangeChara(charaValue.index - 1)} icon={<LeftOutlined style={{ fontSize: '120px', color: '#fff', backgroundColor: "rgba(128,128,128,.5)" }} block />}>
+                                            </Button>
+                                        )}
+                                    </Col>
+                                    <Col span={6} style={{ textAlign: "right" }}>
+                                        <Row>
+                                            <div style={{ marginBottom: "2rem" }}>
+                                                {charaStand}
+                                            </div>
+                                            <span style={{ marginLeft: "auto", position: "relative", bottom: "10vh", left: "3vh", border: "2px solid rgba(50, 50, 50, .9)" }}>
+                                                <Segmented style={{ border: "2px" }} options={charaValue?.options ?? ["1"]} value={value} onChange={setValue} size={"large"} />
+                                            </span>
+                                        </Row>
+                                    </Col>
+                                    <Col span={16} align="top">
+                                        {charatxt}
+                                        <Row style={{ zIndex: 194545, color: "black", width: "100%", position: "relative", bottom: "6vh" }} align="middle">
+                                            <div style={{ marginLeft: "auto", paddingRight: "100px" }}>
+                                                <Button onClick={onCancel}>閉じる</Button>
+                                            </div>
+                                        </Row>
+                                    </Col>
+                                    <Col span={1} align="right">
+                                        {charaValue?.index !== undefined && (
+                                            <Button type="text" onClick={() => onchangeChara(charaValue.index + 1)} icon={<RightOutlined style={{ fontSize: '120px', color: '#fff', backgroundColor: "rgba(128,128,128,.5)" }} block />}>
+                                            </Button>)}
+                                    </Col>
+                                </Row></>
                         ) : (
                             <>
-                                <div>
+                                <Image
+                                    alt="Shikoshikoback"
+                                    src={Background}
+                                    style={{ opacity: 0.25 }}
+                                    fill
+                                    objectFit={`cover`} />
+                                <div style={{ position: "relative", right: "30px" }}>
                                     {charaStand}
                                 </div>
+                                <Row justify={"space-between"} style={{
+                                    position: "relative", bottom: "60vh"
+                                }}>
+                                    {charaValue?.index > 0 ? (
+                                        <Button type="text" onClick={() => onchangeChara(charaValue.index - 1)} icon={<LeftOutlined style={{ fontSize: '120px', color: '#fff', backgroundColor: "rgba(128,128,128,.5)" }} />}>
+                                        </Button>
+                                    ) : (<div></div>)}
+
+                                    {charaValue?.index !== undefined && (
+                                        <Button type="text" onClick={() => onchangeChara(charaValue.index + 1)} icon={<RightOutlined style={{ fontSize: '120px', color: '#fff', backgroundColor: "rgba(128,128,128,.5)" }} />}>
+                                        </Button>)}
+                                </Row>
                                 <div style={{
-                                    position: "relative", bottom: "280px", backgroundColor: "rgba(255, 255, 255, .6)"
+                                    position: "relative", bottom: "320px", backgroundColor: "rgba(255, 255, 255, .6)"
                                 }}>
                                     <div style={{
                                         fontSize: "32px", marginLeft: "1rem"
@@ -301,7 +378,9 @@ export default function MayuChara() {
                                     }}>
                                         {CharaTxt(charaValue?.selected_name) ?? ""}
                                     </div>
-                                    <Segmented options={charaValue?.options ?? ["1"]} value={value} onChange={setValue} size={"middle"} />
+                                    <div style={{ textAlign: "center" }}>
+                                        <Segmented options={charaValue?.options ?? ["1"]} value={value} onChange={setValue} size={"large"} />
+                                    </div>
                                 </div>
 
                             </>

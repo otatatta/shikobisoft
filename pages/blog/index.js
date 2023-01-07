@@ -1,9 +1,9 @@
 import Link from "next/link";
-import Image from 'next/image'
 import { Card, Col, Row } from 'antd';
 import { client } from "../../libs/client";
 import shikoIcon from "../static/shikoIcon.png"
 import Footer from "../component/Footer"
+import Image from "next/image";
 
 //SSG
 export const getStaticProps = async () => {
@@ -23,7 +23,7 @@ export default function Home({ blog }) {
   return (
     <div>
       <header >
-        <h1>
+        <h1 style={{ textAlign: "center" }}>
           しこしこソフト スタッフブログ
         </h1>
       </header>
@@ -34,27 +34,25 @@ export default function Home({ blog }) {
               <Card key={blog.id} style={{ width: 320 }}
                 hoverable>
                 <Link href={`blog/${blog.id}`}>
-                  <a href="">
-                    <p>
-                      {blog.title}
-                    </p>
-                    <div>
-                      {blog?.eyecatch ? (
-                        <Image
-                          src={blog.eyecatch?.url ?? shikoIcon}
-                          alt="blogIcon"
-                          width={300}
-                          height={300}
-                        />
-                      ) : (
-                        <Image
-                          src={shikoIcon}
-                          alt="No Image"
-                          width={300}
-                          height={300} />
-                      )}
-                    </div>
-                  </a>
+                  <p>
+                    {blog.title}
+                  </p>
+                  <div>
+                    {blog?.eyecatch ? (
+                      <Image
+                        src={blog.eyecatch?.url ?? shikoIcon}
+                        alt="blogIcon"
+                        width={280}
+                        height={280}
+                      />
+                    ) : (
+                      <Image
+                        src={shikoIcon}
+                        alt="No Image"
+                        width={280}
+                        height={280} />
+                    )}
+                  </div>
                 </Link>
               </Card>
             </Col>

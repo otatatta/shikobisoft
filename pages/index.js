@@ -1,27 +1,46 @@
+import React, { useState, useLayoutEffect } from 'react';
 import Head from 'next/head'
 import Footer from "./component/Footer";
-import { Empty } from 'antd';
+import { Modal } from 'antd';
+import Router from 'next/router'
 
 
 
 export default function Home() {
-  return (
-    <div className="flex min-h-screen flex-col items-center justify-center py-2 ">
-      <Head>
-        <title>しこしこソフト | SHIKOSHIKO SOFT</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <div style={{ textAlign: "center", width: "100%" }}>
-        <h2>BlogS</h2>
-        <p>
-          しこスタッフが日常を綴る <br />
-          しこログ不定期更新
-        </p>
-        <Empty />
-      </div>
-      <Empty />
+  const [open, setOpen] = useState(false);
 
-      <Footer />
-    </div >
+  const onOk = () => {
+    Router.push("./mayukara")
+  };
+  const onCancel = () => {
+    setOpen(false);
+    Router.push("./blog")
+  };
+  useLayoutEffect(() => setOpen(true), [])
+
+  return (
+    <><Head>
+      <title>しこしこソフト | SHIKOSHIKO SOFT</title>
+      <link rel="icon" href="/favicon.ico" />
+    </Head>
+      <div className="flex min-h-screen flex-col items-center justify-center py-2 ">
+        <Modal
+          title="年齢確認"
+          open={open}
+          onOk={onOk}
+          onCancel={onCancel}
+          centered
+          closable={false}
+          okText='はい'
+          cancelText='いいえ'
+        >
+          <p style={{ fontSize: "14px", textAlign: "left" }}>
+            しこしこソフトへようこそ!!<br /><br />
+            このサイトには18歳未満の方にが回覧できないコンテンツが含まれています。<br />
+            あなたは18歳以上ですか?<br />
+          </p>
+        </Modal>
+        <Footer />
+      </div></>
   );
 }

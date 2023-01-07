@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import mamoru1 from "../../static/stands/HP1mmr.png"
+import mamoru1 from "../../static/stands/HP1mmr1.png"
 import mamoru2 from "../../static/stands/HP1mmr2.png"
 import chiyo1 from "../../static/stands/HP2cy1.png"
 import chiyo2 from "../../static/stands/HP2cy2.png"
@@ -21,7 +21,8 @@ import ryo1 from "../../static/stands/HP10ku1.png"
 import ryo2 from "../../static/stands/HP10ku2.png"
 import kenji1 from "../../static/stands/HP11knj1.png"
 import kenji2 from "../../static/stands/HP11knj2.png"
-import komari1 from "../../static/stands/HP12kmr.png"
+import komari1 from "../../static/stands/HP12kmr1.png"
+import komari2 from "../../static/stands/HP12kmr2.png"
 import ushio1 from "../../static/stands/HP13uso1.png"
 import ushio2 from "../../static/stands/HP13uso2.png"
 import umino1 from "../../static/stands/HP14umn1.png"
@@ -29,13 +30,13 @@ import umino2 from "../../static/stands/HP14umn2.png"
 import resuna1 from "../../static/stands/HP15rsn1.png"
 import resuna2 from "../../static/stands/HP15rsn2.png"
 
-export default function CharaStands(selected, value) {
+export default function CharaStands(selected, value, width, height) {
     const imgArea = (src) => {
         if (src) {
             return (
                 <Image
                     src={src}
-                    style={{ display: "inline-block" }}
+                    style={{ display: "inline-block" , width:"auto"}}
                     alt="Image" />
             )
         } return <></>
@@ -178,7 +179,7 @@ export default function CharaStands(selected, value) {
 
                     )}
                     {value === "2" && (
-                        imgArea(komari1)
+                        imgArea(komari2)
                     )}
                 </>
             )

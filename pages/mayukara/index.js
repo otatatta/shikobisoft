@@ -1,17 +1,19 @@
 import React from 'react';
 import Footer from "../component/Footer"
-import karankoeTop from "../static/karankoe.jpg"
+import karankoeTop from "../static/siteKEY.png"
 import Background from "../static/hp2_TOP.jpg"
+import junbi from "../static/zyunbi.jpg"
 import Image from "next/image";
 import CarankoeStory from "./story";
 import Navigation from "./components/Navigation"
 import SectionHeader from "./components/Header"
 import FloatButtons from "./components/FloatButtons"
 import MayuChara from "./character"
-import { Col, Row, Carousel, } from 'antd';
+import { Col, Row } from 'antd';
 import Script from 'next/script'
 import BackTopButton from "./components/BackTopButton"
 import Graphics from "./graphics"
+
 const contentStyle = {
     height: '480px',
     color: '#fff',
@@ -30,8 +32,9 @@ export default function Carankoe() {
                     <Image
                         alt="Shikoshikoback"
                         src={Background}
-                        height="1080px"
-                        width="1920px"
+                        width="100%"
+                        objectFit="contain"
+                        layout={"intrinsic"}
                         style={{ zIndex: -4545 }}
                     />
                 </div>
@@ -40,73 +43,70 @@ export default function Carankoe() {
                 <Navigation />
             </div>
             <div style={{ position: "absolute", top: "0px", width: "100%", zIndex: 545 }}>
-                <div style={{ marginLeft: "auto", marginRight: "auto" }} id="top">
+                <div style={{}} id="top">
                     <Image
                         alt="Shikoshiko"
                         src={karankoeTop}
+                        style={{ width: "100%" }}
                         objectFit="contain"
                         layout={"intrinsic"} />
                 </div>
-                <div style={{ background: "rgba(242, 222, 182, .9);" }}>
-                    <div style={{ height: "40px" }}>
+                <div style={{ background: "rgba(242, 222, 182, .9)" }}>
+                    <div style={{ height: "20px" }}>
 
                     </div>
                     <div id="story" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto" }}>
                         <SectionHeader text="御噺" />
                         <CarankoeStory />
                     </div>
-                    <div id="character" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto" }}>
+                    <div id="character" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto", marginTop: "3rem" }}>
                         <SectionHeader text="人物" />
                         <MayuChara />
                     </div>
-                    <div id="illust" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto" }}>
+                    <div id="illust" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto", marginTop: "4rem" }}>
                         <SectionHeader text="画廊" />
-                        <div style={{ padding: "1rem" }}>
+                        <div style={{ padding: "2rem", marginTop: "2rem" }}>
                             <Graphics />
                         </div>
                     </div>
                     <div id="novel" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto" }}>
                         <SectionHeader text="小噺" />
-                        <div style={{ padding: "1rem" }}>
-                            <Carousel autoplay>
-                                <div>
-                                    <h3 style={contentStyle}>～準備中～</h3>
-                                </div>
-                                <div>
-                                    <h3 style={contentStyle}>～準備中～</h3>
-                                </div>
-                                <div>
-                                    <h3 style={contentStyle}>～準備中～</h3>
-                                </div>
-                            </Carousel>
+                        <div style={{ padding: "2rem", marginTop: "2rem" }}>
+                            <Image
+                                alt="Shikoshiko"
+                                src={junbi}
+                                style={{ width: "100%" }}
+                                objectFit="contain"
+                                layout={"intrinsic"} />
                         </div>
 
                     </div>
-                    <div id="update" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto" }}>
+                    <div id="update" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto", fontFamily: "cursive" }}>
                         <SectionHeader text="電報" />
-                        <Row gutter={16} style={{ margin: "20px" }} justify="space-between">
-                            <Col xs={24} sm={11} md={11} lg={11} xl={10} >
-                                <div style={{ borderBottom: "solid rgb(99,99,99)", fontSize: "24px" }}>
+                        <Row gutter={16} style={{ margin: "2rem" }} justify="space-between">
+                            <Col xs={24} sm={11} md={11} lg={11} xl={10} style={{ background: "rgba(232, 212, 172, .6)" }} >
+                                <div style={{ borderBottom: "solid rgb(99,99,99)", fontSize: "28px" }}>
                                     更新情報
                                 </div>
                                 <div
                                     style={{
-                                        height: "600px",
+                                        height: "500px",
                                         overflowY: "scroll",
-                                        marginTop: "2rem"
+                                        marginTop: "2rem",
+                                        fontSize: "16px"
                                     }}>
                                     <p>
-                                        ・<span>2023.01.04</span> サイトオープンしました
+                                        ・<span style={{ color: "#222" }}>2023.01.08</span> <span style={{ paddingLeft: "1rem" }}>サイトオープンしました</span>
                                     </p>
                                 </div>
                             </Col>
-                            <Col xs={24} sm={12} md={12} lg={12} xl={10}>
-                                <div style={{ borderBottom: "solid rgb(99,99,99)", fontSize: "24px" }}>
+                            <Col xs={24} sm={12} md={12} lg={12} xl={10} style={{ background: "rgba(232, 212, 172, .6)" }}>
+                                <div style={{ borderBottom: "solid rgb(99,99,99)", fontSize: "28px" }}>
                                     Twitter
                                 </div>
                                 <div
                                     style={{
-                                        height: "600px",
+                                        height: "500px",
                                         overflowY: "scroll",
                                         marginTop: "2rem"
                                     }}>

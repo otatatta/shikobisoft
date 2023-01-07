@@ -1,16 +1,38 @@
 import React, { useState } from 'react';
-import { Button, Drawer } from 'antd';
+import { Button, Drawer, Space } from 'antd';
 import { MenuFoldOutlined, CloseOutlined } from '@ant-design/icons';
 import Image from "next/image";
 import TitleLogo from "../../static/titlelogo_256.png"
+import denpou from "../../static/name_denpou.png"
+import garou from "../../static/name_garou.png"
+import jinbutsu from "../../static/name_jinbutsu.png"
+import kobanashi from "../../static/name_kobanashi.png"
+import story from "../../static/name_story.png"
 import Link from "next/link";
-
+import { Link as Scroll } from 'react-scroll';
 
 const Navigation = () => {
   const [open, setOpen] = useState(false);
   const showDrawer = () => {
     setOpen(!open);
   };
+
+  const menuList = (src) => (
+    <Image
+      alt="titlelogo"
+      src={src}
+      style={{ objectFit: "contain" }}
+      layout={"intrinsic"}
+    />)
+
+  // const scrollWindow = (elem) => {
+  //     const element = document.getElementById(elem);
+  //     const rect = element.getBoundingClientRect();
+  //     const elemtop = rect.top + window.pageYOffset;
+  //     document.documentElement.scrollTop = elemtop;
+  //     setOpen(false);
+  // }
+
   const onClose = () => {
     setOpen(false);
   };
@@ -18,69 +40,52 @@ const Navigation = () => {
   return (
     <>
       <div style={{ textAlign: "right" }}>
-        <Button type="primary" onClick={showDrawer} style={{ marginLeft: "auto", zIndex: 1919545 }}>
-          {open ? (
-            <>
+        {open ? (
+          <Button type="text" onClick={showDrawer} style={{ zIndex: 1919545 }}>
+            <Space style={{ color: "#fff", fontSize: "18px" }}>
               <CloseOutlined />
               閉じる
-            </>
-          ) : (
-            <>
-              <MenuFoldOutlined />
-              項目
-            </>
-          )}
-        </Button>
+            </Space>
+          </Button>
+        ) : (
+          <>
+            <Button shape="round" onClick={showDrawer} style={{ zIndex: 1919545, backgroundColor: "rgb(86,88,84)", height: "40px" }}>
+              <Space style={{ color: "#fff", fontSize: "18px", margin: "1rem", marginTop: "0px" }}>
+                <MenuFoldOutlined />
+                <span>
+                  項目
+                </span>
+              </Space>
+            </Button>
+          </>
+        )}
       </div>
-      <Drawer title="" placement="right" onClose={onClose} closable={false} open={open} bodyStyle={{ backgroundColor: "rgb(123,213,111)", fontSize: "48px", textAlign: "center" }}>
+      <Drawer title="" placement="right" onClose={onClose} closable={false} open={open} bodyStyle={{ backgroundColor: "rgb(143,128,44)", fontSize: "48px", textAlign: "center" }}>
         <div>
-          <Link href="./mayukara#top" >
-            <a className="headerLink" onClick={onClose} >
-              <Image
-                alt="titlelogo"
-                src={TitleLogo}
-                objectFit="contain"
-                layout={"intrinsic"} />
-            </a>
-          </Link>
+          <Scroll to="top" smooth={true} duration={600} onClick={onClose} saveHashHistory>
+            <Image
+              alt="titlelogo"
+              src={TitleLogo}
+              style={{ objectFit: "contain" }}
+            />
+          </Scroll>
         </div>
-        <Link href="./mayukara#story" >
-          <a className="headerLink" onClick={onClose} >
-            <div style={{ borderTop: "thick double #32a1ce" }}>
-              ー御噺ー
-            </div>
-          </a>
-        </Link>
-        <Link href="./mayukara#character" >
-          <a className="headerLink" onClick={onClose} >
-            <div style={{ borderTop: "thick double #32a1ce" }}>
-              ー人物ー
-            </div>
-          </a>
-        </Link>
-        <Link href="./mayukara#illust" >
-          <a className="headerLink" onClick={onClose} >
-            <div style={{ borderTop: "thick double #32a1ce" }}>
-              ー画廊ー
-            </div>
-          </a>
-        </Link>
-        <Link href="./mayukara#novel" >
-          <a className="headerLink" onClick={onClose} >
-            <div style={{ borderTop: "thick double #32a1ce" }}>
-              ー小噺ー
-            </div>
-          </a>
-        </Link>
-        <Link href="./mayukara#update" >
-          <a className="headerLink" onClick={onClose} >
-            <div style={{ borderTop: "thick double #32a1ce" }}>
-              ー電報ー
-            </div>
-          </a>
-        </Link>
-        <div style={{ borderTop: "thick double #32a1ce" }}>
-        </div>
+        <div style={{ borderTop: "thick double #fff", color: "#fff" }} />
+        <Scroll to="story" smooth={true} duration={600} onClick={onClose} saveHashHistory>
+          {menuList(story)}
+        </Scroll>
+        <Scroll to="character" smooth={true} duration={600} onClick={onClose} saveHashHistory>
+          {menuList(jinbutsu)}
+        </Scroll>
+        <Scroll to="illust" smooth={true} duration={600} onClick={onClose} saveHashHistory>
+          {menuList(garou)}
+        </Scroll>
+        <Scroll to="novel" smooth={true} duration={600} onClick={onClose} saveHashHistory>
+          {menuList(kobanashi)}
+        </Scroll>
+        <Scroll to="update" smooth={true} duration={600} onClick={onClose} saveHashHistory>
+          {menuList(denpou)}
+        </Scroll>
       </Drawer></>
   );
 };
