@@ -63,7 +63,7 @@ export default function Carankoe() {
                         <SectionHeader text="人物" />
                         <MayuChara />
                     </div>
-                    <div id="illust" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto", marginTop: "3rem" }}>
+                    <div id="illust" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto", marginTop: "4rem" }}>
                         <SectionHeader text="画廊" />
                         <div style={{ padding: "2rem", marginTop: "2rem" }}>
                             <Graphics />
@@ -96,7 +96,7 @@ export default function Carankoe() {
                                         fontSize: "16px"
                                     }}>
                                     <p>
-                                        ・<span style={{ color: "#222" }}>2023.01.04</span> <span style={{ paddingLeft: "1rem" }}>サイトオープンしました</span>
+                                        ・<span style={{ color: "#222" }}>2023.01.08</span> <span style={{ paddingLeft: "1rem" }}>サイトオープンしました</span>
                                     </p>
                                 </div>
                             </Col>

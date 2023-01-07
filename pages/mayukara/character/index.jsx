@@ -219,14 +219,19 @@ export default function MayuChara() {
 
     const onchangeChara = (newIndex) => {
         if (newIndex !== undefined && pcList1[newIndex]?.selected_name) {
-            setCharaValue({ ...pcList1[newIndex], index: newIndex })
+            if (pcList1[newIndex]?.selected_name) {
+                setCharaValue({ ...pcList1[newIndex], index: newIndex })
+                setValue("1")
+            }
+        } else {
+            setCharaValue({ ...pcList1[0], index: 0 })
             setValue("1")
         }
     }
 
     return (
         <>
-            <div style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto", textAlign: "center", fontFamily: "serif" }}>
+            <div style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto", textAlign: "center", fontFamily: "serif", marginTop: "2rem" }}>
                 <div style={{ padding: "0, 2rem" }}>
                     {width > 768 ? (
                         <Row
@@ -234,7 +239,6 @@ export default function MayuChara() {
                         >
                             {pcList1?.map((list, index) => (
                                 <div style={{ width: "20%", textAlign: "center", marginTop: "20px" }} key={`aaaa_${index}`}>
-
                                     <Tooltip>
                                         <div>
                                             <Button type="text" ghost shape="circle" style={{ width: "200x", height: "180px", clipPath: "circle(50%)" }} onClick={() => onClickButton(list, index)}>

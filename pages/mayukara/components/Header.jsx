@@ -1,10 +1,10 @@
 import React, { useMemo } from "react";
 import Image from "next/image";
-import arasuji from "../../static/arasuji.png"
-import denpou from "../../static/denpou.png"
-import garou from "../../static/garou.png"
-import jinbutsu from "../../static/jinbutsu.png"
-import kobanashi from "../../static/kobanashi.png"
+import arasuji from "../../static/bar-arasuji.png"
+import denpou from "../../static/bar-denpo.png"
+import garou from "../../static/bar-garo.png"
+import jinbutsu from "../../static/bar-jinbutsu.png"
+import kobanashi from "../../static/bar-kobanashi.png"
 
 function SectionHeader({ text }) {
   const txtImg = useMemo(() => {
@@ -33,8 +33,6 @@ function SectionHeader({ text }) {
     marginTop: "1rem"
   }
   const inner = {
-    // width: "95 %",
-    // height: "95 %",
     width: "100%",
     height: "100%",
     backgroundColor: "#A3383E",
@@ -43,18 +41,17 @@ function SectionHeader({ text }) {
 
   return (
     <>
-      {/* <div style={{ width: "100%", backgroundColor: "#A3383E", height: "3rem", textAlign: "center", fontSize: "2rem" }}>
-      <p style={{ color: "rgb(255, 255, 255)" }}>ー{text}ー</p>
-    </div> */}
       <div style={outer}>
         <div style={inner}>
-          {txtImg && (
-            <Image
-              alt="Shikoshiko"
-              src={txtImg}
-              style={{ objectFit: "contain", maxWidth: "150px", maxHeight: "40px", paddingTop: "0.2rem" }}
-              layout={"intrinsic"} />
-          )}
+          <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+            {txtImg && (
+              <Image
+                alt="Shikoshiko"
+                src={txtImg}
+                style={{ objectFit: "contain", maxHeight: "46px" }}
+                layout={"cover"} />
+            )}
+          </div>
         </div>
       </div>
     </>
