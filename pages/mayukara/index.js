@@ -1,14 +1,15 @@
 import React from 'react';
 import Footer from "../component/Footer"
-import karankoeTop from "../static/karankoe.jpg"
+import karankoeTop from "../static/siteKEY.png"
 import Background from "../static/hp2_TOP.jpg"
+import junbi from "../static/zyunbi.jpg"
 import Image from "next/image";
 import CarankoeStory from "./story";
 import Navigation from "./components/Navigation"
 import SectionHeader from "./components/Header"
 import FloatButtons from "./components/FloatButtons"
 import MayuChara from "./character"
-import { Col, Row, Carousel, } from 'antd';
+import { Col, Row } from 'antd';
 import Script from 'next/script'
 import BackTopButton from "./components/BackTopButton"
 import Graphics from "./graphics"
@@ -31,8 +32,9 @@ export default function Carankoe() {
                     <Image
                         alt="Shikoshikoback"
                         src={Background}
-                        height="1080px"
-                        width="1920px"
+                        width="100%"
+                        objectFit="contain"
+                        layout={"intrinsic"}
                         style={{ zIndex: -4545 }}
                     />
                 </div>
@@ -45,6 +47,7 @@ export default function Carankoe() {
                     <Image
                         alt="Shikoshiko"
                         src={karankoeTop}
+                        style={{ width: "100%" }}
                         objectFit="contain"
                         layout={"intrinsic"} />
                 </div>
@@ -56,30 +59,25 @@ export default function Carankoe() {
                         <SectionHeader text="御噺" />
                         <CarankoeStory />
                     </div>
-                    <div id="character" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto" }}>
+                    <div id="character" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto", marginTop: "3rem" }}>
                         <SectionHeader text="人物" />
                         <MayuChara />
                     </div>
-                    <div id="illust" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto" }}>
+                    <div id="illust" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto", marginTop: "3rem" }}>
                         <SectionHeader text="画廊" />
-                        <div style={{ padding: "2rem", }}>
+                        <div style={{ padding: "2rem", marginTop: "2rem" }}>
                             <Graphics />
                         </div>
                     </div>
                     <div id="novel" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto" }}>
                         <SectionHeader text="小噺" />
-                        <div style={{ padding: "2rem" }}>
-                            <Carousel autoplay>
-                                <div>
-                                    <h3 style={contentStyle}>～準備中～</h3>
-                                </div>
-                                <div>
-                                    <h3 style={contentStyle}>～準備中～</h3>
-                                </div>
-                                <div>
-                                    <h3 style={contentStyle}>～準備中～</h3>
-                                </div>
-                            </Carousel>
+                        <div style={{ padding: "2rem", marginTop: "2rem" }}>
+                            <Image
+                                alt="Shikoshiko"
+                                src={junbi}
+                                style={{ width: "100%" }}
+                                objectFit="contain"
+                                layout={"intrinsic"} />
                         </div>
 
                     </div>

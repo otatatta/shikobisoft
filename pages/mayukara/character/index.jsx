@@ -227,29 +227,32 @@ export default function MayuChara() {
     return (
         <>
             <div style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto", textAlign: "center", fontFamily: "serif" }}>
-                <div style={{ padding: "2rem" }}>
+                <div style={{ padding: "0, 2rem" }}>
                     {width > 768 ? (
                         <Row
                             gutter={16} align="middle"
                         >
                             {pcList1?.map((list, index) => (
-                                <div style={{ width: "20%", textAlign: "center"}} key={`aaaa_${index}`}>
+                                <div style={{ width: "20%", textAlign: "center", marginTop: "20px" }} key={`aaaa_${index}`}>
 
                                     <Tooltip>
-                                        <Button type="text" ghost shape="circle" style={{ width: "200x", height: "180px", clipPath: "circle(50%)" }} onClick={() => onClickButton(list, index)}>
-                                            <Image
-                                                src={list?.icon}
-                                                alt="Image"
-                                                width={160}
-                                                height={160} />
-                                        </Button>
-                                        <Button type="text" ghost onClick={() => onClickButton(list, index)}>
-                                            <Image
-                                                src={list?.name_img}
-                                                alt="Image"
-                                                height={30} />
-
-                                        </Button>
+                                        <div>
+                                            <Button type="text" ghost shape="circle" style={{ width: "200x", height: "180px", clipPath: "circle(50%)" }} onClick={() => onClickButton(list, index)}>
+                                                <Image
+                                                    src={list?.icon}
+                                                    alt="Image"
+                                                    width={160}
+                                                    height={160} />
+                                            </Button>
+                                        </div>
+                                        <div>
+                                            <Button type="text" ghost onClick={() => onClickButton(list, index)}>
+                                                <Image
+                                                    src={list?.name_img}
+                                                    alt="Image"
+                                                    height={30} />
+                                            </Button>
+                                        </div>
                                     </Tooltip>
                                 </div>
                             ))}
@@ -269,7 +272,7 @@ export default function MayuChara() {
                                             src={list?.icon}
                                             alt="Image"
                                             width={100}
-                                            height={100} />,
+                                            height={100} />
                                     </Button>
                                     <Button type="text" ghost onClick={() => onClickButton(list, index)}>
                                         <Image
@@ -297,7 +300,7 @@ export default function MayuChara() {
                             <><Image
                                 alt="Shikoshikoback"
                                 src={Background}
-                                style={{ opacity: 0.33 }}
+                                style={{ opacity: 0.25 }}
                                 fill
                                 objectFit={`cover`} /><Row
                                     gutter={{ xs: 8, sm: 16, md: 24, }} align="middle" style={{ fontFamily: "Hannari" }}
@@ -309,18 +312,19 @@ export default function MayuChara() {
                                         )}
                                     </Col>
                                     <Col span={6} style={{ textAlign: "right" }}>
-                                        <div style={{ marginBottom: "2rem" }}>
-                                            {charaStand}
-                                        </div>
+                                        <Row>
+                                            <div style={{ marginBottom: "2rem" }}>
+                                                {charaStand}
+                                            </div>
+                                            <span style={{ marginLeft: "auto", position: "relative", bottom: "10vh", left: "3vh", border: "2px solid rgba(50, 50, 50, .9)" }}>
+                                                <Segmented style={{ border: "2px" }} options={charaValue?.options ?? ["1"]} value={value} onChange={setValue} size={"large"} />
+                                            </span>
+                                        </Row>
                                     </Col>
                                     <Col span={16} align="top">
                                         {charatxt}
                                         <Row style={{ zIndex: 194545, color: "black", width: "100%", position: "relative", bottom: "6vh" }} align="middle">
-
                                             <div style={{ marginLeft: "auto", paddingRight: "100px" }}>
-                                                <span style={{ paddingRight: "100px" }}>
-                                                    <Segmented options={charaValue?.options ?? ["1"]} value={value} onChange={setValue} size={"large"} />
-                                                </span>
                                                 <Button onClick={onCancel}>閉じる</Button>
                                             </div>
                                         </Row>
@@ -336,7 +340,7 @@ export default function MayuChara() {
                                 <Image
                                     alt="Shikoshikoback"
                                     src={Background}
-                                    style={{ opacity: 0.33 }}
+                                    style={{ opacity: 0.25 }}
                                     fill
                                     objectFit={`cover`} />
                                 <div style={{ position: "relative", right: "30px" }}>

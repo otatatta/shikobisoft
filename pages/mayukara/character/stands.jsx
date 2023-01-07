@@ -22,6 +22,7 @@ import ryo2 from "../../static/stands/HP10ku2.png"
 import kenji1 from "../../static/stands/HP11knj1.png"
 import kenji2 from "../../static/stands/HP11knj2.png"
 import komari1 from "../../static/stands/HP12kmr1.png"
+import komari2 from "../../static/stands/HP12kmr2.png"
 import ushio1 from "../../static/stands/HP13uso1.png"
 import ushio2 from "../../static/stands/HP13uso2.png"
 import umino1 from "../../static/stands/HP14umn1.png"
@@ -178,7 +179,7 @@ export default function CharaStands(selected, value, width, height) {
 
                     )}
                     {value === "2" && (
-                        imgArea(komari1)
+                        imgArea(komari2)
                     )}
                 </>
             )
