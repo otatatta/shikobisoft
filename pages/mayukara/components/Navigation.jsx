@@ -9,31 +9,33 @@ import jinbutsu from "../../static/name_jinbutsu.png"
 import kobanashi from "../../static/name_kobanashi.png"
 import story from "../../static/name_story.png"
 import Link from "next/link";
+import { Link as Scroll } from 'react-scroll';
 
 const Navigation = () => {
   const [open, setOpen] = useState(false);
   const showDrawer = () => {
     setOpen(!open);
   };
-  const onClose = () => {
-    setOpen(false);
-  };
 
-  // const borderstyle = {
-  //   borderImage: "url('/media/examples/border-florid.svg') round",
-  //   borderImageSlice: "calc(50 / 184 * 100 %) calc(80 / 284 * 100 %) fill",
-  //   borderImageWidth: "30px 48px"
-  // }
   const menuList = (src) => (
-    // <div style={{ borderTop: "thick double #fff", color: "#fff" }} >
     <Image
       alt="titlelogo"
       src={src}
       style={{ objectFit: "contain" }}
       layout={"intrinsic"}
-    />
-    // </div >
-  )
+    />)
+
+  // const scrollWindow = (elem) => {
+  //     const element = document.getElementById(elem);
+  //     const rect = element.getBoundingClientRect();
+  //     const elemtop = rect.top + window.pageYOffset;
+  //     document.documentElement.scrollTop = elemtop;
+  //     setOpen(false);
+  // }
+
+  const onClose = () => {
+    setOpen(false);
+  };
 
   return (
     <>
@@ -60,35 +62,30 @@ const Navigation = () => {
       </div>
       <Drawer title="" placement="right" onClose={onClose} closable={false} open={open} bodyStyle={{ backgroundColor: "rgb(143,128,44)", fontSize: "48px", textAlign: "center" }}>
         <div>
-          <Link href="/mayukara#top" onClick={onClose}>
+          <Scroll to="top" smooth={true} duration={600} onClick={onClose} saveHashHistory>
             <Image
               alt="titlelogo"
               src={TitleLogo}
               style={{ objectFit: "contain" }}
             />
-          </Link>
+          </Scroll>
         </div>
         <div style={{ borderTop: "thick double #fff", color: "#fff" }} />
-        <Link href="./mayukara#story" onClick={onClose}>
+        <Scroll to="story" smooth={true} duration={600} onClick={onClose} saveHashHistory>
           {menuList(story)}
-        </Link>
-        <Link href="./mayukara#character" onClick={onClose}>
+        </Scroll>
+        <Scroll to="character" smooth={true} duration={600} onClick={onClose} saveHashHistory>
           {menuList(jinbutsu)}
-          {/* <Image
-            alt="titlelogo"
-            src={jinbutsu}
-            objectFit="contain"
-            layout={"intrinsic"} /> */}
-        </Link>
-        <Link href="./mayukara#illust" onClick={onClose} >
+        </Scroll>
+        <Scroll to="illust" smooth={true} duration={600} onClick={onClose} saveHashHistory>
           {menuList(garou)}
-        </Link>
-        <Link href="./mayukara#novel" onClick={onClose} >
+        </Scroll>
+        <Scroll to="novel" smooth={true} duration={600} onClick={onClose} saveHashHistory>
           {menuList(kobanashi)}
-        </Link>
-        <Link href="./mayukara#update" onClick={onClose} >
+        </Scroll>
+        <Scroll to="update" smooth={true} duration={600} onClick={onClose} saveHashHistory>
           {menuList(denpou)}
-        </Link>
+        </Scroll>
       </Drawer></>
   );
 };
