@@ -11,8 +11,8 @@ import kyoTxt from "../../static/stands/HP10ku.png"
 import kenjiTxt from "../../static/stands/HP11knj.png"
 import komariTxt from "../../static/stands/HP12kmr.png"
 import usoTxt from "../../static/stands/HP13uso.png"
-import umnTxt from "../../static/stands/HP4jr.png"
-import resunaTxt from "../../static/stands/HP4jr.png"
+import umnTxt from "../../static/stands/HP14umn.png"
+import resunaTxt from "../../static/stands/HP15rsn.png"
 
 export default function CharaTxtImg(selected) {
 
