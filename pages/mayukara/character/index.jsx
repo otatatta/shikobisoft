@@ -329,7 +329,7 @@ export default function MayuChara() {
                                     </Col>
                                     <Col span={6} style={{ textAlign: "right" }}>
                                         <Row>
-                                            <div style={{ marginBottom: "2rem" }}>
+                                            <div style={{ position: "relative", bottom: "40px" }}>
                                                 {charaStand}
                                             </div>
                                             <span style={{ position: "relative", bottom: "12vh", left: "48vh", zIndex: "19194545", border: "2px solid rgba(50, 50, 50, .9)" }}>
