@@ -382,7 +382,7 @@ export default function MayuChara() {
                                         </Button>)}
                                 </Row>
                                 <div style={{
-                                    position: "relative", bottom: "340px", backgroundColor: "rgba(255, 255, 255, .6)"
+                                    position: "relative", bottom: "340px", backgroundColor: "rgba(255, 255, 255, .8)"
                                 }}>
                                     <div style={{
                                         fontSize: "32px", marginLeft: "1rem"
