@@ -96,7 +96,7 @@ export default function Carankoe() {
                                         fontSize: "16px"
                                     }}>
                                     <p>
-                                        ・<span style={{ color: "#222" }}>2023.01.08</span> <span style={{ paddingLeft: "1rem" }}>サイトオープンしました</span>
+                                        ・<span style={{ color: "#222" }}>2023.01.09</span> <span style={{ paddingLeft: "1rem" }}>サイトオープンしました</span>
                                     </p>
                                 </div>
                             </Col>
