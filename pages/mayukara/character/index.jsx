@@ -283,20 +283,24 @@ export default function MayuChara() {
                             {pcList1?.map((list, index) =>
                             (
                                 <Col span={12} key={`aaaa_${index}`}>
-                                    <Button type="text" style={{ width: "105px", height: "105px" }} onClick={() => onClickButton(list, index)}>
-                                        <Image
-                                            src={list?.icon}
-                                            alt="Image"
-                                            width={100}
-                                            height={100} />
-                                    </Button>
-                                    <Button type="text" ghost onClick={() => onClickButton(list, index)}>
-                                        <Image
-                                            src={list?.name_img}
-                                            alt="Image"
-                                            height={15} />
+                                    <div>
+                                        <Button type="text" style={{ width: "105px", height: "105px" }} onClick={() => onClickButton(list, index)}>
+                                            <Image
+                                                src={list?.icon}
+                                                alt="Image"
+                                                width={100}
+                                                height={100} />
+                                        </Button>
+                                    </div>
+                                    <div>
+                                        <Button type="text" ghost onClick={() => onClickButton(list, index)}>
+                                            <Image
+                                                src={list?.name_img}
+                                                alt="Image"
+                                                height={15} />
 
-                                    </Button>
+                                        </Button>
+                                    </div>
                                 </Col>)
                             )}
                         </Row>
