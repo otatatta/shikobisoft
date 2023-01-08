@@ -21,6 +21,7 @@ import iconResuna from "../../static/icons/icon15rsn.png"
 import CharaTxt from "./txts";
 import CharaTxtImg from "./txtsImg";
 import CharaStands from "./stands";
+import CharaStandsMobile from "./standsmobile";
 import nameMamoru from "../../static/names/mamoru.png"
 import nameChiyo from "../../static/names/chiyo.png"
 import nameSaika from "../../static/names/saika.png"
@@ -79,7 +80,7 @@ const tsuyuri = {
 }
 const nazuna = {
     names: "淡嶋 なずな",
-    name_sub: "Sawamura　Juri",
+    name_sub: "Awashima Nazuna",
     name_img: nameNazuna,
     selected_name: "Nazuna",
     icon: iconNazuna,
@@ -87,6 +88,7 @@ const nazuna = {
 }
 const sousei = {
     names: "梅園 聡晟",
+    name_sub: "Umezono Sousei",
     name_img: nameSousei,
     selected_name: "Sousei",
     icon: iconSousei,
@@ -94,6 +96,7 @@ const sousei = {
 }
 const shitorasu = {
     names: "梅園 司斗羅栖",
+    name_sub: "Umezono Shitorasu",
     name_img: nameShitora,
     selected_name: "Shitorasu",
     icon: iconShito,
@@ -101,6 +104,7 @@ const shitorasu = {
 }
 const ryuko = {
     names: "折戸 流子",
+    name_sub: "Orito Ryuko",
     name_img: nameRyuko,
     selected_name: "Ryuko",
     icon: iconRyuko,
@@ -108,6 +112,7 @@ const ryuko = {
 }
 const ryou = {
     names: "雨呂鎚 享",
+    name_sub: "Awashima Urotuti Kyou",
     name_img: nameRyo,
     selected_name: "Ryou",
     icon: iconRyou,
@@ -115,6 +120,7 @@ const ryou = {
 }
 const kenji = {
     names: "久留島 健治",
+    name_sub: "Kurushima Kenji",
     name_img: nameKenji,
     selected_name: "Kenji",
     icon: iconKenji,
@@ -122,6 +128,7 @@ const kenji = {
 }
 const komari = {
     names: "乎鞠",
+    name_sub: "Komari",
     name_img: nameKomari,
     selected_name: "Komari",
     icon: iconKomari,
@@ -129,6 +136,7 @@ const komari = {
 }
 const ushio = {
     names: "千絵田 海潮",
+    name_sub: "Chieda Ushio",
     name_img: nameUshio,
     selected_name: "Ushio",
     icon: iconUshi,
@@ -136,6 +144,7 @@ const ushio = {
 }
 const umino = {
     names: "千絵田 海乃",
+    name_sub: "Chieda Umino",
     name_img: nameUmino,
     selected_name: "Umino",
     icon: iconUmi,
@@ -143,6 +152,7 @@ const umino = {
 }
 const resuna = {
     names: "八遠寺 れすな",
+    name_sub: "Hachionji Resuna",
     name_img: nameResuna,
     selected_name: "Resuna",
     icon: iconResuna,
@@ -199,7 +209,9 @@ export default function MayuChara() {
 
     const [value, setValue] = useState('1');
     const charaStand = useMemo(() => {
-        return CharaStands(charaValue?.selected_name, value)
+        if (width > 768) {
+            return CharaStands(charaValue?.selected_name, value)
+        } else { return CharaStandsMobile(charaValue?.selected_name, value) }
     }, [charaValue?.selected_name, value])
 
     const charatxt = useMemo(() =>
@@ -317,10 +329,10 @@ export default function MayuChara() {
                                     </Col>
                                     <Col span={6} style={{ textAlign: "right" }}>
                                         <Row>
-                                            <div style={{ marginBottom: "2rem" }}>
+                                            <div style={{ position: "relative", bottom: "40px" }}>
                                                 {charaStand}
                                             </div>
-                                            <span style={{ marginLeft: "auto", position: "relative", bottom: "10vh", left: "3vh", border: "2px solid rgba(50, 50, 50, .9)" }}>
+                                            <span style={{ position: "relative", bottom: "12vh", left: "48vh", zIndex: "19194545", border: "2px solid rgba(50, 50, 50, .9)" }}>
                                                 <Segmented style={{ border: "2px" }} options={charaValue?.options ?? ["1"]} value={value} onChange={setValue} size={"large"} />
                                             </span>
                                         </Row>
@@ -347,7 +359,7 @@ export default function MayuChara() {
                                     style={{ opacity: 0.25 }}
                                     fill
                                     objectFit={`cover`} />
-                                <div style={{ position: "relative", right: "30px" }}>
+                                <div style={{ position: "relative", display: "flex", justifyContent: "center", width: "" }}>
                                     {charaStand}
                                 </div>
                                 <Row justify={"space-between"} style={{
@@ -363,23 +375,30 @@ export default function MayuChara() {
                                         </Button>)}
                                 </Row>
                                 <div style={{
-                                    position: "relative", bottom: "320px", backgroundColor: "rgba(255, 255, 255, .6)"
+                                    position: "relative", bottom: "340px", backgroundColor: "rgba(255, 255, 255, .6)"
                                 }}>
                                     <div style={{
                                         fontSize: "32px", marginLeft: "1rem"
                                     }}>
-                                        {charaValue?.names}
+                                        《{charaValue?.names}》
+                                        <div style={{
+                                            fontSize: "16px", marginLeft: "1rem"
+                                        }}>
+                                            ー{charaValue?.name_sub}ー
+                                        </div>
                                     </div>
                                     <div style={{
+                                        marginTop: "1rem",
                                         height: "200px",
                                         overflowY: "scroll",
                                         zIndex: 194545,
-                                        marginLeft: "1rem"
-                                    }}>
-                                        {CharaTxt(charaValue?.selected_name) ?? ""}
+                                        marginLeft: "1rem",
+                                        fontSize: "16px",
+                                        lineHeight: "24px"
+                                    }}>{CharaTxt(charaValue?.selected_name) ?? ""}
                                     </div>
                                     <div style={{ textAlign: "center" }}>
-                                        <Segmented options={charaValue?.options ?? ["1"]} value={value} onChange={setValue} size={"large"} />
+                                        <Segmented options={charaValue?.options ?? ["1"]} value={value} onChange={setValue} size={"middle"} />
                                     </div>
                                 </div>
 
