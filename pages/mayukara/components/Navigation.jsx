@@ -8,7 +8,6 @@ import garou from "../../static/name_garou.png"
 import jinbutsu from "../../static/name_jinbutsu.png"
 import kobanashi from "../../static/name_kobanashi.png"
 import story from "../../static/name_story.png"
-import Link from "next/link";
 import { Link as Scroll } from 'react-scroll';
 
 const Navigation = () => {
@@ -24,14 +23,6 @@ const Navigation = () => {
       style={{ objectFit: "contain" }}
       layout={"intrinsic"}
     />)
-
-  // const scrollWindow = (elem) => {
-  //     const element = document.getElementById(elem);
-  //     const rect = element.getBoundingClientRect();
-  //     const elemtop = rect.top + window.pageYOffset;
-  //     document.documentElement.scrollTop = elemtop;
-  //     setOpen(false);
-  // }
 
   const onClose = () => {
     setOpen(false);

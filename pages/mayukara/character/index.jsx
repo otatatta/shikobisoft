@@ -1,5 +1,5 @@
 import { Col, Row, Modal, Segmented, Button, Tooltip, Spin } from 'antd';
-import React, { useEffect, useState, useMemo } from 'react';
+import React, { useState, useMemo } from 'react';
 import { LeftOutlined, RightOutlined, CloseOutlined, LoadingOutlined } from '@ant-design/icons';
 import Image from 'next/image'
 import Background from "../../static/hp1_bg.png"
@@ -161,35 +161,10 @@ const resuna = {
 const pcList1 = [mamoru, chiyo, saika, juri, tsuyuri, nazuna, sousei, shitorasu, ryuko, ryou, kenji, komari, ushio, umino, resuna]
 
 
-export default function MayuChara() {
+export default function MayuChara({ width }) {
 
     const [mamoruOpen, setMamoruOpen] = useState(false);
-    function getWindowDimensions() {
-        const { innerWidth: width, innerHeight: height } = window;
-        return {
-            width,
-            height,
-        };
-    }
-    const [width, setWidth] = useState(0);
-    const [height, setHeight] = useState(0);
 
-    useEffect(() => {
-        const { width, height } = getWindowDimensions();
-
-        setWidth(width);
-        setHeight(height);
-    }, []);
-    useEffect(() => {
-        function handleResize() {
-            const { width, height } = getWindowDimensions();
-            setWidth(width)
-            setHeight(height)
-        }
-
-        window.addEventListener("resize", handleResize);
-        return () => window.removeEventListener("resize", handleResize)
-    }, [])
 
     const [charaValue, setCharaValue] = useState();
 

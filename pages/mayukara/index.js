@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Footer from "../component/Footer"
 import karankoeTop from "../static/siteKEY.png"
 import Background from "../static/hp2_TOP.jpg"
@@ -13,18 +13,37 @@ import { Col, Row } from 'antd';
 import Script from 'next/script'
 import BackTopButton from "./components/BackTopButton"
 import Graphics from "./graphics"
-
-const contentStyle = {
-    height: '480px',
-    color: '#fff',
-    lineHeight: '480px',
-    textAlign: 'center',
-    background: '#369da9',
-    fontSize: '36px',
-};
+import DlFloatButtons from "./components/DlButton"
 
 
 export default function Carankoe() {
+    function getWindowDimensions() {
+        const { innerWidth: width, innerHeight: height } = window;
+        return {
+            width,
+            height,
+        };
+    }
+    const [width, setWidth] = useState(0);
+    const [height, setHeight] = useState(0);
+
+    useEffect(() => {
+        const { width, height } = getWindowDimensions();
+
+        setWidth(width);
+        setHeight(height);
+    }, []);
+    useEffect(() => {
+        function handleResize() {
+            const { width, height } = getWindowDimensions();
+            setWidth(width)
+            setHeight(height)
+        }
+
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize)
+    }, [])
+
     return (
         <>
             <div style={{ position: "fixed", top: "0px", zIndex: -4545 }}>
@@ -61,7 +80,7 @@ export default function Carankoe() {
                     </div>
                     <div id="character" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto", marginTop: "3rem" }}>
                         <SectionHeader text="人物" />
-                        <MayuChara />
+                        <MayuChara width={width} />
                     </div>
                     <div id="illust" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto", marginTop: "4rem" }}>
                         <SectionHeader text="画廊" />
@@ -69,6 +88,11 @@ export default function Carankoe() {
                             <Graphics />
                         </div>
                     </div>
+                    {width > 768 && (
+                        <div style={{ position: "relative", top: "40px" }}>
+                            <DlFloatButtons />
+                        </div>
+                    )}
                     <div id="novel" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto" }}>
                         <SectionHeader text="小噺" />
                         <div style={{ padding: "2rem", marginTop: "2rem" }}>

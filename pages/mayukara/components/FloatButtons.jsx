@@ -8,16 +8,6 @@ const FloatButtons = () => (
                 <Button type="primary" shape="circle" icon={<TwitterOutlined />} />
             </a>
         </Tooltip>
-        {/* <span style={{ margin: "10px" }}></span> */}
-        {/* <Tooltip placement="bottom" title={"instagram"}>
-            <Button type="primary" shape="circle" icon={<InstagramOutlined />} />
-        </Tooltip>
-        <span style={{ margin: "10px" }}></span> */}
-        {/* <Tooltip placement="bottom" title={"LINE"}>
-            <Button type="primary" shape="circle">
-                LINE
-            </Button>
-        </Tooltip> */}
     </div >
 );
 export default FloatButtons;
