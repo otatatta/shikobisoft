@@ -1,42 +1,47 @@
 import Image from 'next/image'
-import mamoru1 from "../../static/stands/HP1mmr1.png"
-import mamoru2 from "../../static/stands/HP1mmr2.png"
-import chiyo1 from "../../static/stands/HP2cy1.png"
-import chiyo2 from "../../static/stands/HP2cy2.png"
-import saika1 from "../../static/stands/HP3sik1.png"
-import saika2 from "../../static/stands/HP3sik2.png"
-import juri1 from "../../static/stands/HP4jr1.png"
-import juri2 from "../../static/stands/HP4jr2.png"
-import tsuyuri1 from "../../static/stands/HP5tyr1.png"
-import tsuyuri2 from "../../static/stands/HP5tyr2.png"
-import nazuna1 from "../../static/stands/HP6nzn1.png"
-import nazuna2 from "../../static/stands/HP6nzn2.png"
-import sousei1 from "../../static/stands/HP7susi1.png"
-import sousei2 from "../../static/stands/HP7susi2.png"
-import sitoras1 from "../../static/stands/HP8strs1.png"
-import sitoras2 from "../../static/stands/HP8strs2.png"
-import ryuko1 from "../../static/stands/HP9rk1.png"
-import ryuko2 from "../../static/stands/HP9rk2.png"
-import ryo1 from "../../static/stands/HP10ku1.png"
-import ryo2 from "../../static/stands/HP10ku2.png"
-import kenji1 from "../../static/stands/HP11knj1.png"
-import kenji2 from "../../static/stands/HP11knj2.png"
-import komari1 from "../../static/stands/HP12kmr1.png"
-import komari2 from "../../static/stands/HP12kmr2.png"
-import ushio1 from "../../static/stands/HP13uso1.png"
-import ushio2 from "../../static/stands/HP13uso2.png"
-import umino1 from "../../static/stands/HP14umn1.png"
-import umino2 from "../../static/stands/HP14umn2.png"
-import resuna1 from "../../static/stands/HP15rsn1.png"
-import resuna2 from "../../static/stands/HP15rsn2.png"
+import mamoru1 from "../../static/mobile/m1mmr1.png"
+import mamoru2 from "../../static/mobile/m1mmr2.png"
+import mamoru3 from "../../static/mobile/m1mmr3.png"
+import chiyo1 from "../../static/mobile/m2cy1.png"
+import chiyo2 from "../../static/mobile/m2cy2.png"
+import chiyo3 from "../../static/mobile/m2cy3.png"
+import saika1 from "../../static/mobile/m3sik1.png"
+import saika2 from "../../static/mobile/m3sik2.png"
+import saika3 from "../../static/mobile/m3sik3.png"
+import juri1 from "../../static/mobile/m4jr1.png"
+import juri2 from "../../static/mobile/m4jr2.png"
+import tsuyuri1 from "../../static/mobile/m5tyr1.png"
+import tsuyuri2 from "../../static/mobile/m5tyr2.png"
+import tsuyuri3 from "../../static/mobile/m5tyr3.png"
+import nazuna1 from "../../static/mobile/m6nzn1.png"
+import nazuna2 from "../../static/mobile/m6nzn2.png"
+import nazuna3 from "../../static/mobile/m6nzn3.png"
+import sousei1 from "../../static/mobile/m7susi1.png"
+import sousei2 from "../../static/mobile/m7susi2.png"
+import sitoras1 from "../../static/mobile/m8strs1.png"
+import sitoras2 from "../../static/mobile/m8strs2.png"
+import ryuko1 from "../../static/mobile/m9rk1.png"
+import ryuko2 from "../../static/mobile/m9rk2.png"
+import ryo1 from "../../static/mobile/m10ku1.png"
+import ryo2 from "../../static/mobile/m10ku2.png"
+import kenji1 from "../../static/mobile/m11knj1.png"
+import kenji2 from "../../static/mobile/m11knj2.png"
+import komari1 from "../../static/mobile/m12kmr1.png"
+import komari2 from "../../static/mobile/m12kmr2.png"
+import ushio1 from "../../static/mobile/m13uso1.png"
+import ushio2 from "../../static/mobile/m13uso2.png"
+import umino1 from "../../static/mobile/m14umn1.png"
+import umino2 from "../../static/mobile/m14umn2.png"
+import resuna1 from "../../static/mobile/m15rsn1.png"
+import resuna2 from "../../static/mobile/m15rsn2.png"
 
-export default function CharaStandsMobile(selected, value, width, height) {
+export default function CharaStandsMobile(selected, value) {
     const imgArea = (src) => {
         if (src) {
             return (
                 <Image
                     src={src}
-                    style={{ display: "inline-block" , width:"auto"}}
+                    style={{ display: "inline-block", width: "auto" }}
                     alt="Image" />
             )
         } return <></>
@@ -51,6 +56,9 @@ export default function CharaStandsMobile(selected, value, width, height) {
                     {value === "2" && (
                         imgArea(mamoru2)
                     )}
+                    {value === "3" && (
+                        imgArea(mamoru3)
+                    )}
                 </>
             )
         case "Chiyo":
@@ -62,6 +70,9 @@ export default function CharaStandsMobile(selected, value, width, height) {
                     {value === "2" && (
                         imgArea(chiyo2)
                     )}
+                    {value === "3" && (
+                        imgArea(chiyo3)
+                    )}
                 </>
             )
         case "Saika":
@@ -72,6 +83,9 @@ export default function CharaStandsMobile(selected, value, width, height) {
                     )}
                     {value === "2" && (
                         imgArea(saika2)
+                    )}
+                    {value === "3" && (
+                        imgArea(saika3)
                     )}
                 </>
             )
@@ -97,6 +111,9 @@ export default function CharaStandsMobile(selected, value, width, height) {
                     {value === "2" && (
                         imgArea(tsuyuri2)
                     )}
+                    {value === "3" && (
+                        imgArea(tsuyuri3)
+                    )}
                 </>
             )
         case "Nazuna":
@@ -108,6 +125,9 @@ export default function CharaStandsMobile(selected, value, width, height) {
                     )}
                     {value === "2" && (
                         imgArea(nazuna2)
+                    )}
+                    {value === "3" && (
+                        imgArea(nazuna3)
                     )}
                 </>
             )

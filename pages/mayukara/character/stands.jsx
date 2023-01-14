@@ -1,16 +1,21 @@
 import Image from 'next/image'
 import mamoru1 from "../../static/stands/S1mmr1.png"
 import mamoru2 from "../../static/stands/S1mmr2.png"
+import mamoru3 from "../../static/stands/S1mmr3.png"
 import chiyo1 from "../../static/stands/S2cy1.png"
 import chiyo2 from "../../static/stands/S2cy2.png"
+import chiyo3 from "../../static/stands/S2cy3.png"
 import saika1 from "../../static/stands/S3sik1.png"
 import saika2 from "../../static/stands/S3sik2.png"
+import saika3 from "../../static/stands/S3sik3.png"
 import juri1 from "../../static/stands/S4jr1.png"
 import juri2 from "../../static/stands/S4jr2.png"
 import tsuyuri1 from "../../static/stands/S5tyr1.png"
 import tsuyuri2 from "../../static/stands/S5tyr2.png"
+import tsuyuri3 from "../../static/stands/S5tyr3.png"
 import nazuna1 from "../../static/stands/S6nzn1.png"
 import nazuna2 from "../../static/stands/S6nzn2.png"
+import nazuna3 from "../../static/stands/S6nzn3.png"
 import sousei1 from "../../static/stands/S7susi1.png"
 import sousei2 from "../../static/stands/S7susi2.png"
 import sitoras1 from "../../static/stands/S8strs1.png"
@@ -51,6 +56,9 @@ export default function CharaStands(selected, value, width, height) {
                     {value === "2" && (
                         imgArea(mamoru2)
                     )}
+                    {value === "3" && (
+                        imgArea(mamoru3)
+                    )}
                 </>
             )
         case "Chiyo":
@@ -62,6 +70,9 @@ export default function CharaStands(selected, value, width, height) {
                     {value === "2" && (
                         imgArea(chiyo2)
                     )}
+                    {value === "3" && (
+                        imgArea(chiyo3)
+                    )}
                 </>
             )
         case "Saika":
@@ -72,6 +83,9 @@ export default function CharaStands(selected, value, width, height) {
                     )}
                     {value === "2" && (
                         imgArea(saika2)
+                    )}
+                    {value === "3" && (
+                        imgArea(saika3)
                     )}
                 </>
             )
@@ -97,6 +111,9 @@ export default function CharaStands(selected, value, width, height) {
                     {value === "2" && (
                         imgArea(tsuyuri2)
                     )}
+                    {value === "3" && (
+                        imgArea(tsuyuri3)
+                    )}
                 </>
             )
         case "Nazuna":
@@ -108,6 +125,9 @@ export default function CharaStands(selected, value, width, height) {
                     )}
                     {value === "2" && (
                         imgArea(nazuna2)
+                    )}
+                    {value === "3" && (
+                        imgArea(nazuna3)
                     )}
                 </>
             )

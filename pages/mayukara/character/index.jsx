@@ -44,7 +44,7 @@ const mamoru = {
     name_img: nameMamoru,
     selected_name: "Mamoru",
     icon: iconMamoru,
-    options: ['1', "2"]
+    options: ['1', "2", "3"]
 }
 const chiyo = {
     names: "砂羽村 千代",
@@ -52,7 +52,7 @@ const chiyo = {
     name_img: nameChiyo,
     selected_name: "Chiyo",
     icon: iconChiyo,
-    options: ['1', "2"]
+    options: ['1', "2", "3"]
 }
 const saika = {
     names: "砂羽村 才花",
@@ -60,7 +60,7 @@ const saika = {
     name_img: nameSaika,
     selected_name: "Saika",
     icon: iconSaika,
-    options: ['1', "2"]
+    options: ['1', "2", "3"]
 }
 const juri = {
     names: "砂羽村 樹里",
@@ -76,7 +76,7 @@ const tsuyuri = {
     name_img: nameTsuyuri,
     selected_name: "Tsuyuri",
     icon: iconTsuyuri,
-    options: ['1', "2"]
+    options: ['1', "2", "3"]
 }
 const nazuna = {
     names: "淡嶋 なずな",
@@ -84,7 +84,7 @@ const nazuna = {
     name_img: nameNazuna,
     selected_name: "Nazuna",
     icon: iconNazuna,
-    options: ['1', "2"]
+    options: ['1', "2", "3"]
 }
 const sousei = {
     names: "梅園 聡晟",
@@ -383,7 +383,7 @@ export default function MayuChara({ width }) {
                                         lineHeight: "24px"
                                     }}>{CharaTxt(charaValue?.selected_name) ?? ""}
                                     </div>
-                                    <div style={{ textAlign: "center" }}>
+                                    <div style={{ textAlign: "center", margin: "1rem" }}>
                                         <Segmented options={charaValue?.options ?? ["1"]} value={value} onChange={setValue} size={"middle"} />
                                     </div>
                                 </div>
