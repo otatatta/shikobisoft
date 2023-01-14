@@ -314,7 +314,7 @@ export default function MayuChara({ width }) {
                                                 <div style={{ position: "relative", bottom: "40px" }}>
                                                     {charaStand}
                                                 </div>
-                                                <span style={{ position: "relative", bottom: "12vh", left: "48vh", zIndex: "19194545", border: "2px solid rgba(50, 50, 50, .9)" }}>
+                                                <span style={{ position: "relative", bottom: "12vh", left: "45vh", zIndex: "19194545", border: "2px solid rgba(50, 50, 50, .9)" }}>
                                                     <Segmented style={{ border: "2px" }} options={charaValue?.options ?? ["1"]} value={value} onChange={setValue} size={"large"} />
                                                 </span>
                                             </Row>
