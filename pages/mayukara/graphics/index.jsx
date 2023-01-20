@@ -5,8 +5,8 @@ const noimg = "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bd
 
 const data = [
     {
-        title: 'Noimg',
-        path: noimg,
+        title: 'cg_1',
+        path: "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/cba29e966f114f4b844bc5b2d5f76ac2/cg02-1.png",
     },
     {
         title: 'Noimg',
@@ -53,7 +53,8 @@ const data = [
         path: noimg,
     },
 ];
-const Graphics = () => (
+const Graphics = ({ setHideButton }) => (
+
     <List
         grid={{
             gutter: 16,
@@ -65,15 +66,28 @@ const Graphics = () => (
             xxl: 3,
         }}
         dataSource={data}
-        renderItem={(item) => (
-            <List.Item colStyle={{ textAlign: "center" }}>
-                <Image
+        renderItem={(item, index) => (
+            <List.Item colStyle={{ textAlign: "center" }} key={`cg_${index}`}>
+                {item.title !== "Noimg" ? (<Image
                     width={200}
                     height={120}
                     src={item.path}
-                    preview={item.title !== "Noimg"}
-                    alt="noIMG"
-                />
+                    preview={{
+                        src: item.path, onVisibleChange: (value) => {
+                            setHideButton(value);
+                        }
+                    }}
+                    alt={`cg_${index}`}
+                    placeholder={<p>place</p>}
+                />) : (
+                    <Image
+                        width={200}
+                        height={120}
+                        src={item.path}
+                        preview={item.title !== "Noimg"}
+                        alt={"noIMG"}
+                    />
+                )}
             </List.Item>
         )}
     />

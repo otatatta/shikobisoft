@@ -26,6 +26,7 @@ export default function Carankoe() {
     }
     const [width, setWidth] = useState(0);
     const [height, setHeight] = useState(0);
+    const [hideButton, setHideButton] = useState(0);
 
     useEffect(() => {
         const { width, height } = getWindowDimensions();
@@ -58,9 +59,11 @@ export default function Carankoe() {
                     />
                 </div>
             </div>
-            <div style={{ position: "fixed", top: "10px", width: "100%", zIndex: 14545 }}>
-                <Navigation />
-            </div>
+            {!hideButton && (
+                <div style={{ position: "fixed", top: "10px", width: "100%", zIndex: 14545 }}>
+                    <Navigation />
+                </div>
+            )}
             <div style={{ position: "absolute", top: "0px", width: "100%", zIndex: 545 }}>
                 <div style={{}} id="top">
                     <Image
@@ -85,7 +88,7 @@ export default function Carankoe() {
                     <div id="illust" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto", marginTop: "4rem" }}>
                         <SectionHeader text="画廊" />
                         <div style={{ padding: "2rem", marginTop: "2rem" }}>
-                            <Graphics />
+                            <Graphics setHideButton={setHideButton} />
                         </div>
                     </div>
                     {width > 768 && (
