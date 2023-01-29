@@ -13,7 +13,8 @@ import {Col, Row} from 'antd';
 import Script from 'next/script'
 import BackTopButton from "./components/BackTopButton"
 import Graphics from "./graphics"
-// import DlFloatButtons from "./components/DlButton"
+import {DefaultSeo} from 'next-seo';
+import Head from "next/head"
 
 
 export default function Carankoe() {
@@ -47,6 +48,27 @@ export default function Carankoe() {
 
     return (
         <>
+            <Head>
+                <title>繭イのカランコエ top</title>
+                <meta charSet="utf-8" />
+                <meta name="description" content="繭イのカランコエ(まよいのからんこえ)トップページです" />
+            </Head>
+            <DefaultSeo
+                defaultTitle="しこしこソフト繭イのカランコエTop"
+                description="しこしこソフト繭イのカランコエ(まよいのからんこえ)トップページです"
+                openGraph={{
+                    type: "website",
+                    title: "しこしこソフト繭イのカランコエ",
+                    description: "しこしこソフト繭イのカランコエ",
+                    site_name: "繭イのカランコエHP",
+                    url: "https://shikobisoft.vercel.app/mayukara",
+                }}
+                twitter={{
+                    handle: "4545software",
+                    site: "4545software",
+                    cardType: 'summary',
+                }}
+            />
             <div style={{position: "fixed", top: "0px", zIndex: -4545}}>
                 <div style={{height: "100%", width: "100%"}}>
                     <Image
