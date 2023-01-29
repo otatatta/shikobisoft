@@ -33,7 +33,7 @@ export default function TsetParticles() {
                     move: {
                         directions: "none",
                         enable: true,
-                        random: false,
+                        random: true,
                         speed: 6,
                         straight: false,
                     },
@@ -55,22 +55,106 @@ export default function TsetParticles() {
                             height: 634
                         }
                     },
-
+                    attract: {
+                        distance: 200,
+                        enable: false,
+                        rotate: {
+                            x: 600,
+                            y: 600
+                        }
+                    },
+                    gravity: {
+                        acceleration: 9.81,
+                        enable: true,
+                        inverse: false,
+                        maxSpeed: 50
+                    },
                     rotate: {
                         value: 0,
                         random: true,
                         direction: "counter-clockwise",
                         animation: {
                             enable: true,
-                            speed: 15,
+                            speed: 10,
                             sync: false
                         }
                     },
                     size: {
                         value: {min: 10, max: 50},
                     },
+                    life: {
+                        count: 0,
+                        delay: {
+                            random: {
+                                enable: false,
+                                minimumValue: 0
+                            },
+                            value: 0,
+                            sync: false
+                        },
+                        duration: {
+                            random: {
+                                enable: false,
+                                minimumValue: 0.0001
+                            },
+                            value: 0,
+                            sync: false
+                        }
+                    },
+                    destroy: {
+                        bounds: {},
+                        mode: "none",
+                        split: {
+                            count: 1,
+                            factor: {
+                                random: {
+                                    enable: false,
+                                    minimumValue: 0
+                                },
+                                value: 3
+                            },
+                            rate: {
+                                random: {
+                                    enable: false,
+                                    minimumValue: 0
+                                },
+                                value: {
+                                    min: 4,
+                                    max: 9
+                                }
+                            },
+                            sizeOffset: true
+                        }
+                    },
+                    push: {
+                        default: true,
+                        groups: {},
+                        quantity: 4,
+                    },
+                    remove: {
+                        quantity: 2
+                    },
+                    repulse: {
+                        distance: 200,
+                        duration: 0.4,
+                        factor: 100,
+                        speed: 1,
+                        maxSpeed: 10,
+                        easing: "ease-out-quad"
+                    },
+                },
+
+                interactivity: {
+                    detectsOn: "window",
+                    events: {
+                        onClick: {
+                            enable: true,
+                            mode: "none"
+                        },
+                    },
                 },
                 detectRetina: true,
+                pauseOnBlur: true,
             }}
         />
     );
