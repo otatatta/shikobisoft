@@ -13,7 +13,7 @@ import { Col, Row } from 'antd';
 import Script from 'next/script'
 import BackTopButton from "./components/BackTopButton"
 import Graphics from "./graphics"
-import DlFloatButtons from "./components/DlButton"
+// import DlFloatButtons from "./components/DlButton"
 
 
 export default function Carankoe() {
@@ -91,11 +91,11 @@ export default function Carankoe() {
                             <Graphics setHideButton={setHideButton} />
                         </div>
                     </div>
-                    {width > 768 && (
+                    {/* {width > 768 && (
                         <div style={{ position: "relative", top: "40px" }}>
                             <DlFloatButtons />
                         </div>
-                    )}
+                    )} */}
                     <div id="novel" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto" }}>
                         <SectionHeader text="小噺" />
                         <div style={{ padding: "2rem", marginTop: "2rem" }}>
