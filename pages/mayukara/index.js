@@ -51,6 +51,7 @@ export default function Carankoe() {
             <Head>
                 <title>繭イのカランコエ top</title>
                 <meta charSet="utf-8" />
+                <meta name="keyword" content="しこしこソフト,繭イのカランコエ,UUY,無灯華,同人サークル,同人ゲーム" />
                 <meta name="description" content="繭イのカランコエ(まよいのからんこえ)トップページです" />
             </Head>
             <DefaultSeo
