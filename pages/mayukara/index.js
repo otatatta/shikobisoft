@@ -8,6 +8,7 @@ import CarankoeStory from "./story";
 import Navigation from "./components/Navigation"
 import SectionHeader from "./components/Header"
 import FloatButtons from "./components/FloatButtons"
+import HanaParticles from "./components/HanaParticles"
 import MayuChara from "./character"
 import {Col, Row} from 'antd';
 import Script from 'next/script'
@@ -73,6 +74,7 @@ export default function Carankoe() {
                         objectFit="contain"
                         layout={"intrinsic"} />
                 </div>
+                <HanaParticles />
                 <div style={{background: "rgba(242, 222, 182, .9)"}}>
                     <div style={{height: "20px"}}>
 
