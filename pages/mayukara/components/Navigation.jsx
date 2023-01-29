@@ -30,7 +30,7 @@ const Navigation = () => {
 
   return (
     <>
-      <div style={{ textAlign: "right" }}>
+      <div style={{ textAlign: "right", marginRight:"2rem" }}>
         {open ? (
           <Button type="text" onClick={showDrawer} style={{ zIndex: 1919545 }}>
             <Space style={{ color: "#fff", fontSize: "18px" }}>
