@@ -111,7 +111,7 @@ export default function Carankoe() {
                     <div id="illust" style={{maxWidth: "1280px", marginLeft: "auto", marginRight: "auto", marginTop: "4rem"}}>
                         <SectionHeader text="画廊" />
                         <div style={{padding: "2rem", marginTop: "2rem"}}>
-                            <Graphics setHideButton={setHideButton} />
+                            <Graphics setHideButton={setHideButton} width={width} />
                         </div>
                     </div>
                     {/* {width > 768 && (
