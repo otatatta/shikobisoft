@@ -6,7 +6,7 @@ import tori from "../../static/alpha_dl.png"
 const DlFloatButtons = () => (
     <div>
         <Tooltip placement="bottomLeft" >
-            <a href="https://uuy.mydns.jp/4545soft/karankoe.html" style={{ display: "block", width: "400px" }}>
+            <a href="http://uuy.mydns.jp/4545soft/karankoe.html" style={{ display: "block", width: "400px" }}>
                 <Image
                     alt="titlelogo"
                     src={tori}

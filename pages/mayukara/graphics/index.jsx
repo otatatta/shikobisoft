@@ -16,7 +16,7 @@ const data = [
   },
   {
     modal_index: "1",
-    title: "cg_2",
+    title: "Noimg",
     path: noimg,
   },
   {
@@ -35,7 +35,7 @@ const data = [
     path: noimg,
   },
   {
-    title: "cg_3",
+    title: "Noimg",
     path: noimg,
   },
   {
@@ -118,11 +118,19 @@ const Graphics = ({ width }) => {
         xl: 4,
         xxl: 4,
       }}
+      itemLayout="vertical"
       dataSource={data}
       renderItem={(item, index) => (
         <>
-          <List.Item colStyle={{ textAlign: "center" }} key={`cg_${index}`}>
-            <div>
+          <List.Item
+            colStyle={{
+              textAlign: "center",
+              marginTop: "2rem",
+              height: "140px",
+            }}
+            key={`cg_${index}`}
+          >
+            <Col key={`aaaa_${index}`}>
               {item.title !== "Noimg" ? (
                 <Button
                   type="text"
@@ -150,7 +158,7 @@ const Graphics = ({ width }) => {
                   alt={"noIMG"}
                 />
               )}
-            </div>
+            </Col>
           </List.Item>
           <Modal
             centered
@@ -174,6 +182,7 @@ const Graphics = ({ width }) => {
               ref={ref}
               onMouseEnter={() => handleMouseEnter()}
               onMouseLeave={() => handleMouseLeave()}
+              onClick={() => setIsHover(!isHover)}
             >
               {showImg && (
                 <Image
