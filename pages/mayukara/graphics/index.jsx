@@ -73,8 +73,11 @@ const Graphics = ({ width }) => {
     path2: noimg,
   });
   const height = useMemo(() => {
-    if (width >= 1000) {
+    if (width >= 1032) {
       return 562.5;
+    }
+    if (768 < width < 1032) {
+      return ((width - 32) * 9) / 16;
     }
     return ((width - 16) * 9) / 16;
   }, [width]);
@@ -198,6 +201,7 @@ const Graphics = ({ width }) => {
               color: "#fff",
               position: "relative",
               top: "-80px",
+              right: "10px",
             }}
           />
         }
@@ -235,10 +239,10 @@ const Graphics = ({ width }) => {
                 >
                   <LeftOutlined
                     style={{
-                      fontSize: "100px",
+                      fontSize: "70px",
                       color: "#fff",
                       position: "relative",
-                      left: "-60px",
+                      left: "-40px",
                     }}
                   />
                 </Button>
@@ -251,10 +255,10 @@ const Graphics = ({ width }) => {
                 >
                   <RightOutlined
                     style={{
-                      fontSize: "100px",
+                      fontSize: "70px",
                       color: "#fff",
                       position: "relative",
-                      left: "-35px",
+                      left: "-30px",
                     }}
                   />
                 </Button>
