@@ -252,47 +252,44 @@ export default function MayuChara({ width }) {
       >
         <div style={{ padding: "0, 2rem" }}>
           {width > 768 ? (
-            <Row gutter={16} align="middle">
+            <Row gutter={16} md="4" lg="4" xl="4" xxl="4" align="middle">
               {pcList1?.map((list, index) => (
                 <div
                   style={{
-                    width: "20%",
+                    width: "255px",
+                    // width: "20%",
                     textAlign: "center",
                     marginTop: "20px",
                   }}
                   key={`aaaa_${index}`}
                 >
-                  <Tooltip>
-                    <div>
-                      <Button
-                        type="text"
-                        ghost
-                        shape="circle"
-                        style={{
-                          width: "200x",
-                          height: "180px",
-                          clipPath: "circle(50%)",
-                        }}
-                        onClick={() => onClickButton(list, index)}
-                      >
-                        <Image
-                          src={list?.icon}
-                          alt="Image"
-                          width={160}
-                          height={160}
-                        />
-                      </Button>
-                    </div>
-                    <div>
-                      <Button
-                        type="text"
-                        ghost
-                        onClick={() => onClickButton(list, index)}
-                      >
-                        <Image src={list?.name_img} alt="Image" height={30} />
-                      </Button>
-                    </div>
-                  </Tooltip>
+                  <div>
+                    <Button
+                      type="text"
+                      shape="circle"
+                      style={{
+                        width: "180x",
+                        height: "180px",
+                        clipPath: "circle(50%)",
+                      }}
+                      onClick={() => onClickButton(list, index)}
+                    >
+                      <Image
+                        src={list?.icon}
+                        alt="Image"
+                        width={160}
+                        height={160}
+                      />
+                    </Button>
+                  </div>
+                  <div>
+                    <Button
+                      type="text"
+                      onClick={() => onClickButton(list, index)}
+                    >
+                      <Image src={list?.name_img} alt="Image" height={30} />
+                    </Button>
+                  </div>
                 </div>
               ))}
             </Row>
@@ -323,7 +320,6 @@ export default function MayuChara({ width }) {
                   <div>
                     <Button
                       type="text"
-                      ghost
                       onClick={() => onClickButton(list, index)}
                     >
                       <Image src={list?.name_img} alt="Image" height={15} />

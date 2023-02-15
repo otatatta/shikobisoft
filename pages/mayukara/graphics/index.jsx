@@ -76,7 +76,7 @@ const Graphics = ({ width }) => {
     if (width >= 1000) {
       return 562.5;
     }
-    return (width * 9) / 16;
+    return ((width - 16) * 9) / 16;
   }, [width]);
 
   const [isHover, setIsHover] = useState(false);
@@ -89,11 +89,8 @@ const Graphics = ({ width }) => {
   };
 
   const showImg = useMemo(() => {
-    if (isHover) {
-      if (imgData.path2) {
-        return imgData.path2;
-      }
-      return imgData.path;
+    if (isHover && imgData.path2) {
+      return imgData.path2;
     }
     return imgData.path;
   }, [imgData.path, imgData.path2, isHover]);
@@ -107,136 +104,166 @@ const Graphics = ({ width }) => {
     }
   };
 
+  const [startX, setStartX] = useState(0);
+  const [endX, setEndX] = useState(0);
+  const flickStart = (e) => {
+    setStartX(e.touches[0].pageX);
+  };
+
+  const flicking = (e) => {
+    setEndX(e.touches[0].pageX);
+  };
+
+  const flickEnd = (e) => {
+    // if (50 < endX || endX < -50) {
+    //   if (-50 < startX - endX < 50) {
+    //   } else {
+    //     onchangeCG();
+    //   }
+    // }
+    // setStartX(0);
+    // setEndX(0);
+  };
+
   return (
-    <List
-      grid={{
-        gutter: 16,
-        xs: 1,
-        sm: 2,
-        md: 4,
-        lg: 4,
-        xl: 4,
-        xxl: 4,
-      }}
-      itemLayout="vertical"
-      dataSource={data}
-      renderItem={(item, index) => (
-        <>
-          <List.Item
-            colStyle={{
-              textAlign: "center",
-              marginTop: "2rem",
-              height: "140px",
-            }}
-            key={`cg_${index}`}
-          >
-            <Col key={`aaaa_${index}`}>
-              {item.title !== "Noimg" ? (
-                <Button
-                  type="text"
-                  ghost
-                  onClick={() => {
-                    setOpen(true);
-                    setImgData(item);
-                  }}
-                >
+    <>
+      <List
+        grid={{
+          gutter: 16,
+          xs: 1,
+          sm: 2,
+          md: 4,
+          lg: 4,
+          xl: 4,
+          xxl: 4,
+        }}
+        itemLayout="vertical"
+        dataSource={data}
+        renderItem={(item, index) => (
+          <>
+            <List.Item
+              colStyle={{
+                textAlign: "center",
+                marginTop: "2rem",
+                height: "140px",
+              }}
+              key={`cg_${index}`}
+            >
+              <Col key={`aaaa_${index}`}>
+                {item.title !== "Noimg" ? (
+                  <Button
+                    type="text"
+                    onClick={() => {
+                      setOpen(true);
+                      setImgData(item);
+                    }}
+                  >
+                    <AntdImage
+                      width={200}
+                      height={120}
+                      src={item.path}
+                      alt={`cg_${index}`}
+                      placeholder={<p>place</p>}
+                      preview={false}
+                    />
+                  </Button>
+                ) : (
                   <AntdImage
                     width={200}
                     height={120}
                     src={item.path}
-                    alt={`cg_${index}`}
-                    placeholder={<p>place</p>}
-                    preview={false}
+                    preview={item.title !== "Noimg"}
+                    alt={"noIMG"}
+                  />
+                )}
+              </Col>
+            </List.Item>
+          </>
+        )}
+      />
+      <Modal
+        centered
+        confirmLoading
+        open={open}
+        onOk={() => setModal1Open(false)}
+        onCancel={() => setOpen(false)}
+        bodyStyle={{ height: `${height}px` }}
+        width={1000}
+        footer={<></>}
+        closeIcon={
+          <CloseOutlined
+            style={{
+              fontSize: "64px",
+              paddingTop: "8px",
+              color: "#fff",
+              position: "relative",
+              top: "-80px",
+            }}
+          />
+        }
+      >
+        <div
+          style={{ zIndex: "999999", height: "100%" }}
+          id="test"
+          ref={ref}
+          onMouseEnter={() => handleMouseEnter()}
+          onMouseLeave={() => handleMouseLeave()}
+          onClick={() => setIsHover(!isHover)}
+          onTouchStart={(e) => flickStart(e)}
+          onTouchMove={(e) => flicking(e)}
+          onTouchEnd={(e) => flickEnd(e)}
+        >
+          {showImg && (
+            <Image
+              alt="Shikoshikoback"
+              src={showImg}
+              sizes="(max-width: 1000px) 100vw"
+              fill
+            />
+          )}
+          {width > 768 && (
+            <Row
+              justify="space-around"
+              align="middle"
+              style={{ height: "100%" }}
+            >
+              <Col flex={1} align="">
+                <Button
+                  type="text"
+                  style={{ width: "40px", height: "120px" }}
+                  onClick={() => onchangeCG()}
+                >
+                  <LeftOutlined
+                    style={{
+                      fontSize: "100px",
+                      color: "#fff",
+                      position: "relative",
+                      left: "-60px",
+                    }}
                   />
                 </Button>
-              ) : (
-                <AntdImage
-                  width={200}
-                  height={120}
-                  src={item.path}
-                  preview={item.title !== "Noimg"}
-                  alt={"noIMG"}
-                />
-              )}
-            </Col>
-          </List.Item>
-          <Modal
-            centered
-            confirmLoading
-            maskStyle={{ color: "rgba(128,128,128,.5)" }}
-            open={open}
-            onOk={() => setModal1Open(false)}
-            onCancel={() => setOpen(false)}
-            bodyStyle={{ height: `${height}px` }}
-            width={1000}
-            footer={<></>}
-            closeIcon={
-              <CloseOutlined
-                style={{ fontSize: "48px", paddingTop: "8px", color: "#fff" }}
-              />
-            }
-          >
-            <div
-              style={{ zIndex: "999999", height: "100%" }}
-              id="test"
-              ref={ref}
-              onMouseEnter={() => handleMouseEnter()}
-              onMouseLeave={() => handleMouseLeave()}
-              onClick={() => setIsHover(!isHover)}
-            >
-              {showImg && (
-                <Image
-                  alt="Shikoshikoback"
-                  src={showImg}
-                  sizes="(max-width: 1000px) 100vw"
-                  fill
-                />
-              )}
-              <Row
-                justify="space-around"
-                align="middle"
-                style={{ height: "100%" }}
-              >
-                <Col flex={1} align="">
-                  <Button
-                    type="text"
-                    ghost
-                    style={{ width: "40px", height: "120px" }}
-                    onClick={() => onchangeCG()}
-                  >
-                    <LeftOutlined
-                      style={{
-                        fontSize: "100px",
-                        color: "#fff",
-                        position: "relative",
-                        left: "-60px",
-                      }}
-                    />
-                  </Button>
-                </Col>
-                <Col flex={1} style={{ textAlign: "right" }}>
-                  <Button
-                    type="text"
-                    ghost
-                    style={{ width: "40px", height: "120px" }}
-                    onClick={() => onchangeCG()}
-                  >
-                    <RightOutlined
-                      style={{
-                        fontSize: "100px",
-                        color: "#fff",
-                        position: "relative",
-                        left: "-30px",
-                      }}
-                    />
-                  </Button>
-                </Col>
-              </Row>
-            </div>
-          </Modal>
-        </>
-      )}
-    />
+              </Col>
+              <Col flex={1} style={{ textAlign: "right" }}>
+                <Button
+                  type="text"
+                  style={{ width: "40px", height: "120px" }}
+                  onClick={() => onchangeCG()}
+                >
+                  <RightOutlined
+                    style={{
+                      fontSize: "100px",
+                      color: "#fff",
+                      position: "relative",
+                      left: "-35px",
+                    }}
+                  />
+                </Button>
+              </Col>
+            </Row>
+          )}
+        </div>
+      </Modal>
+    </>
   );
 };
 export default Graphics;
