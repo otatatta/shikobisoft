@@ -15,6 +15,7 @@ import BackTopButton from "./components/BackTopButton"
 import Graphics from "./graphics"
 import {DefaultSeo} from 'next-seo';
 import Head from "next/head"
+import DlFloatButtons from "./components/DlButton"
 
 
 export default function Carankoe() {
@@ -110,15 +111,15 @@ export default function Carankoe() {
                     </div>
                     <div id="illust" style={{maxWidth: "1280px", marginLeft: "auto", marginRight: "auto", marginTop: "4rem"}}>
                         <SectionHeader text="画廊" />
-                        <div style={{padding: "2rem", marginTop: "2rem"}}>
-                            <Graphics setHideButton={setHideButton} />
+                        <div style={{padding: "2rem"}}>
+                            <Graphics setHideButton={setHideButton} width={width} />
                         </div>
                     </div>
-                    {/* {width > 768 && (
-                        <div style={{ position: "relative", top: "40px" }}>
+                    {width > 768 && (
+                        <div style={{position: "relative", top: "20px"}}>
                             <DlFloatButtons />
                         </div>
-                    )} */}
+                    )}
                     <div id="novel" style={{maxWidth: "1280px", marginLeft: "auto", marginRight: "auto"}}>
                         <SectionHeader text="小噺" />
                         <div style={{padding: "2rem", marginTop: "2rem"}}>
@@ -146,10 +147,13 @@ export default function Carankoe() {
                                         fontSize: "16px"
                                     }}>
                                     <p>
-                                        ・<span style={{color: "#222"}}>2023.01.29</span> <span style={{paddingLeft: "1rem"}}>キービジュアルを更新しました</span>
+                                        ・<span style={{color: "#222"}}>2023.02.14</span> <span style={{paddingLeft: "1rem"}}>CGを追加しました。</span>
                                     </p>
                                     <p>
-                                        ・<span style={{color: "#222"}}>2023.01.09</span> <span style={{paddingLeft: "1rem"}}>サイトオープンしました</span>
+                                        ・<span style={{color: "#222"}}>2023.01.29</span> <span style={{paddingLeft: "1rem"}}>キービジュアルを更新しました。</span>
+                                    </p>
+                                    <p>
+                                        ・<span style={{color: "#222"}}>2023.01.09</span> <span style={{paddingLeft: "1rem"}}>サイトオープンしました。</span>
                                     </p>
                                 </div>
                             </Col>
