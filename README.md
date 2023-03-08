@@ -1,12 +1,16 @@
 # shikobisoft
-ssss
 
-https://blog.microcms.io/nextjs-picture-imgix/
+- 繭イノカランコエ
+https://shikobisoft.vercel.app/mayukara
 
-https://github.com/dc7290/nextjs-picture/blob/main/next.config.js
-
-
-https://www.npmjs.com/package/nookies
-
-
+- ブログ
 https://shikobisoft.vercel.app/blog
+
+- デプロイ
+vercel
+
+- フレームワーク
+next.js
+
+- ブログ更新用
+microCMS
