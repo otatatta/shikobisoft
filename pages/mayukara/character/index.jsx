@@ -257,7 +257,6 @@ export default function MayuChara({ width }) {
                 <div
                   style={{
                     width: "255px",
-                    // width: "20%",
                     textAlign: "center",
                     marginTop: "20px",
                   }}
@@ -347,9 +346,8 @@ export default function MayuChara({ width }) {
                 <Image
                   alt="Shikoshikoback"
                   src={Background}
-                  style={{ opacity: 0.25 }}
+                  style={{ opacity: 0.25, objectFit: "cover" }}
                   fill
-                  objectFit={`cover`}
                 />
                 {charaStand ? (
                   <Row
@@ -450,16 +448,14 @@ export default function MayuChara({ width }) {
                 <Image
                   alt="Shikoshikoback"
                   src={Background}
-                  style={{ opacity: 0.25 }}
+                  style={{ opacity: 0.25, objectFit: "cover" }}
                   fill
-                  objectFit={`cover`}
                 />
                 <div
                   style={{
                     position: "relative",
                     display: "flex",
                     justifyContent: "center",
-                    width: "",
                   }}
                 >
                   {charaStand}

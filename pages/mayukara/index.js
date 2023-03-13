@@ -1,6 +1,6 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useMemo} from 'react';
 import Footer from "../component/Footer"
-import karankoeTop from "../static/siteKEY.png"
+import karankoeTop from "../static/sitekey_3.png"
 import Background from "../static/hp2_TOP.jpg"
 import junbi from "../static/zyunbi.jpg"
 import Image from "next/image";
@@ -47,6 +47,20 @@ export default function Carankoe() {
         return () => window.removeEventListener("resize", handleResize)
     }, [])
 
+    const updateHistory = useMemo(() => [
+        {date: "2023.03.14", txt: "キービジュアルを更新しました。"},
+        {date: "2023.02.14", txt: "新規CGを2枚を追加しました。"},
+        {date: "2023.01.29", txt: "キービジュアルを更新しました。"},
+        {date: "2023.01.09", txt: "サイトオープンしました。"}
+    ], [])
+
+    const updated = useMemo(() => updateHistory?.map((val, index) => (
+        <p key={`updated_${index}`}>
+            ・<span style={{color: "#222"}}>{val.date}</span> <span style={{paddingLeft: "1rem"}}>{val.txt}</span>
+        </p>
+    )
+    ), [updateHistory])
+
     return (
         <>
             <Head>
@@ -77,9 +91,8 @@ export default function Carankoe() {
                         alt="Shikoshikoback"
                         src={Background}
                         width="100%"
-                        objectFit="contain"
                         layout={"intrinsic"}
-                        style={{zIndex: -4545}}
+                        style={{zIndex: -4545, objectFit: "cover"}}
                     />
                 </div>
             </div>
@@ -91,11 +104,14 @@ export default function Carankoe() {
             <div style={{position: "absolute", top: "0px", width: "100%", zIndex: 545}}>
                 <div style={{}} id="top">
                     <Image
-                        alt="Shikoshiko"
+                        alt="key_visual"
                         src={karankoeTop}
-                        style={{width: "100%"}}
-                        objectFit="contain"
-                        layout={"intrinsic"} />
+                        style={{
+                            width: "100%",
+                            objectFit: "contain",
+                            maxWidth: '100%',
+                            height: 'auto',
+                        }} />
                 </div>
                 <div style={{background: "rgba(242, 222, 182, .9)"}}>
                     <div style={{height: "20px"}}>
@@ -126,9 +142,12 @@ export default function Carankoe() {
                             <Image
                                 alt="Shikoshiko"
                                 src={junbi}
-                                style={{width: "100%"}}
-                                objectFit="contain"
-                                layout={"intrinsic"} />
+                                style={{
+                                    width: "100%",
+                                    objectFit: "contain",
+                                    maxWidth: '100%',
+                                    height: 'auto',
+                                }} />
                         </div>
 
                     </div>
@@ -146,15 +165,7 @@ export default function Carankoe() {
                                         marginTop: "2rem",
                                         fontSize: "16px"
                                     }}>
-                                    <p>
-                                        ・<span style={{color: "#222"}}>2023.02.14</span> <span style={{paddingLeft: "1rem"}}>CGを追加しました。</span>
-                                    </p>
-                                    <p>
-                                        ・<span style={{color: "#222"}}>2023.01.29</span> <span style={{paddingLeft: "1rem"}}>キービジュアルを更新しました。</span>
-                                    </p>
-                                    <p>
-                                        ・<span style={{color: "#222"}}>2023.01.09</span> <span style={{paddingLeft: "1rem"}}>サイトオープンしました。</span>
-                                    </p>
+                                    {updated}
                                 </div>
                             </Col>
                             <Col xs={24} sm={12} md={12} lg={12} xl={10} style={{background: "rgba(232, 212, 172, .6)"}}>

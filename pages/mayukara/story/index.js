@@ -8,8 +8,10 @@ export default function CarankoeStory() {
                     <Image
                         alt="Shikoshikoback"
                         src={story}
-                        objectFit="contain"
-                        layout={"intrinsic"}
+                        style={{
+                            maxWidth: '100%',
+                            height: 'auto',
+                          }}
                     />
                 </div>
             </div>
