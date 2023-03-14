@@ -16,8 +16,10 @@ const data = [
   },
   {
     modal_index: "1",
-    title: "Noimg",
-    path: noimg,
+    title: "cg_2",
+    path: "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/e31054fede2c4f319e42e7e692599738/sample02a.png",
+    path2:
+      "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/a2f26c1de17a40b39b5534c1d4e509ab/sample02b.png",
   },
   {
     modal_index: "2",
@@ -98,13 +100,19 @@ const Graphics = ({ width }) => {
     return imgData.path;
   }, [imgData.path, imgData.path2, isHover]);
 
-  const onchangeCG = () => {
+  const onchangeBeforeCG = () => {
     if (imgData.modal_index === "0") {
       setImgData(data[2]);
+      return;
     }
+    setImgData(data[Number(imgData.modal_index) - 1]);
+  };
+  const onchangeNextCG = () => {
     if (imgData.modal_index === "2") {
       setImgData(data[0]);
+      return;
     }
+    setImgData(data[Number(imgData.modal_index) + 1]);
   };
 
   const [startX, setStartX] = useState(0);
@@ -235,7 +243,7 @@ const Graphics = ({ width }) => {
                 <Button
                   type="text"
                   style={{ width: "40px", height: "120px" }}
-                  onClick={() => onchangeCG()}
+                  onClick={() => onchangeBeforeCG()}
                 >
                   <LeftOutlined
                     style={{
@@ -251,7 +259,7 @@ const Graphics = ({ width }) => {
                 <Button
                   type="text"
                   style={{ width: "40px", height: "120px" }}
-                  onClick={() => onchangeCG()}
+                  onClick={() => onchangeNextCG()}
                 >
                   <RightOutlined
                     style={{
