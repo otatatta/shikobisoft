@@ -29,8 +29,11 @@ const data = [
       "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/eadb3530556b4f0097e96e937747e9a8/sample03b.png",
   },
   {
-    title: "Noimg",
-    path: noimg,
+    modal_index: "3",
+    title: "cg_4",
+    path: "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/8d177000b33044e1a8d12eed8a2864de/sample04a.png",
+    path2:
+      "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/139a38353bf344ddb2fa6b6020f3bcff/sample04b.png",
   },
   {
     title: "Noimg",
@@ -102,13 +105,13 @@ const Graphics = ({ width }) => {
 
   const onchangeBeforeCG = () => {
     if (imgData.modal_index === "0") {
-      setImgData(data[2]);
+      setImgData(data[3]);
       return;
     }
     setImgData(data[Number(imgData.modal_index) - 1]);
   };
   const onchangeNextCG = () => {
-    if (imgData.modal_index === "2") {
+    if (imgData.modal_index === "3") {
       setImgData(data[0]);
       return;
     }
