@@ -105,13 +105,13 @@ const Graphics = ({ width }) => {
 
   const onchangeBeforeCG = () => {
     if (imgData.modal_index === "0") {
-      setImgData(data[2]);
+      setImgData(data[3]);
       return;
     }
     setImgData(data[Number(imgData.modal_index) - 1]);
   };
   const onchangeNextCG = () => {
-    if (imgData.modal_index === "2") {
+    if (imgData.modal_index === "3") {
       setImgData(data[0]);
       return;
     }
