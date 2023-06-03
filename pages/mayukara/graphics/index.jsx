@@ -6,7 +6,7 @@ import { LeftOutlined, RightOutlined, CloseOutlined } from "@ant-design/icons";
 const noimg =
   "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/0283dcaf2e624790ae5274ed6d351c56/mayuimage.jpg?w=300";
 
-const data = [
+const imageData = [
   {
     modal_index: "0",
     title: "cg_1",
@@ -40,12 +40,16 @@ const data = [
     path: noimg,
   },
   {
-    title: "Noimg",
-    path: noimg,
+    modal_index: "4",
+    title: "cg_6",
+    path: "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/ef30e7ab71b947179aa365ae187a0025/sample06.png",
   },
   {
-    title: "Noimg",
-    path: noimg,
+    modal_index: "5",
+    title: "cg_7",
+    path: "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/51a5a60205bf4d90870fdc81116c075e/sample07a.png",
+    path2:
+      "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/4915e7e008ba465ca1c65390231ae9b0/sample07b.png",
   },
   {
     title: "Noimg",
@@ -70,9 +74,10 @@ const data = [
 ];
 
 const Graphics = ({ width }) => {
+  const data = useMemo(() => imageData?.filter((i) => i?.modal_index), []);
   const [open, setOpen] = useState(false);
   const [imgData, setImgData] = useState({
-    modal_index: "1",
+    modal_index: "0",
     title: "cg_1",
     path: noimg,
     path2: noimg,
@@ -82,9 +87,9 @@ const Graphics = ({ width }) => {
       return 562.5;
     }
     if (768 < width < 1032) {
-      return ((width - 32) * 9) / 16;
+      return (((width - 32) * 9) / 16) * 0.9628;
     }
-    return ((width - 16) * 9) / 16;
+    return (((width - 32) * 9) / 16) * 0.95;
   }, [width]);
 
   const [isHover, setIsHover] = useState(false);
@@ -105,13 +110,13 @@ const Graphics = ({ width }) => {
 
   const onchangeBeforeCG = () => {
     if (imgData.modal_index === "0") {
-      setImgData(data[3]);
+      setImgData(data[data?.length - 1]);
       return;
     }
     setImgData(data[Number(imgData.modal_index) - 1]);
   };
   const onchangeNextCG = () => {
-    if (imgData.modal_index === "3") {
+    if (imgData.modal_index === `${data?.length - 1}`) {
       setImgData(data[0]);
       return;
     }
@@ -152,7 +157,7 @@ const Graphics = ({ width }) => {
           xxl: 4,
         }}
         itemLayout="vertical"
-        dataSource={data}
+        dataSource={imageData}
         renderItem={(item, index) => (
           <>
             <List.Item
@@ -201,7 +206,7 @@ const Graphics = ({ width }) => {
         open={open}
         onOk={() => setModal1Open(false)}
         onCancel={() => setOpen(false)}
-        bodyStyle={{ height: `${height}px` }}
+        bodyStyle={{ height: `${height * 0.9625}px` }}
         width={1000}
         footer={<></>}
         closeIcon={
@@ -232,7 +237,7 @@ const Graphics = ({ width }) => {
             <Image
               alt="Shikoshikoback"
               src={showImg}
-              sizes="(max-width: 1000px) 100vw"
+              sizes="(max-width: 1000px) 100vh"
               fill
             />
           )}
