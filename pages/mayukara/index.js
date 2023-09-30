@@ -48,6 +48,8 @@ export default function Carankoe() {
     }, [])
 
     const updateHistory = useMemo(() => [
+        {date: "2023.10.01", txt: "新規立ち絵を4枚追加しました。"},
+        {date: "2023.10.01", txt: "新規CGを1枚追加しました。"},
         {date: "2023.06.04", txt: "新規CGを2枚追加しました。"},
         {date: "2023.03.22", txt: "新規CGと立ち絵を追加しました。"},
         {date: "2023.03.15", txt: "新規CGを追加しました。"},
