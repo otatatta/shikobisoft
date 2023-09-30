@@ -60,8 +60,11 @@ const imageData = [
     path: noimg,
   },
   {
-    title: "Noimg",
-    path: noimg,
+    modal_index: "6",
+    title: "cg_10",
+    path: "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/170b19a30dc049d2824bcc039d1c0c5b/sample10a.png",
+    path2:
+      "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/8ebdb5ea5bc94fefbfcad699ffd39425/sample10b.png",
   },
   {
     title: "Noimg",
