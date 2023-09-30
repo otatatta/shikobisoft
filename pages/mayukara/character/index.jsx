@@ -349,7 +349,7 @@ export default function MayuChara({ width }) {
               position: "relative",
             }}
             width={width > 768 ? "1720px" : "95%"}
-            bodyStyle={{ height: `880px` }}
+            bodyStyle={{ height: width > 768 ? `880px` : `820px` }}
             cancelText="閉じる"
             zIndex={194545}
             footer={<></>}
@@ -514,7 +514,7 @@ export default function MayuChara({ width }) {
                   justify={"space-between"}
                   style={{
                     position: "relative",
-                    bottom: "60vh",
+                    bottom: "70vh",
                   }}
                 >
                   {charaValue?.index > 0 ? (
