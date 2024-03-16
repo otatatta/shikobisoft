@@ -1,4 +1,4 @@
-import React, {useState, useLayoutEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import Head from 'next/head'
 import Footer from "./component/Footer";
 import {Modal} from 'antd';
@@ -8,7 +8,7 @@ import Router from 'next/router'
 
 export default function Home() {
   const [open, setOpen] = useState(false);
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (
       localStorage.getItem("shiko") === "isSeijin") {
       Router.push("./mayukara")
