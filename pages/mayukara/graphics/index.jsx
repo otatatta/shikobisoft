@@ -73,9 +73,9 @@ const imageData = [
   {
     modal_index: "6",
     title: "cg_9",
-    path: "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/ef30e7ab71b947179aa365ae187a0025/sample06.png",
+    path: "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/dc9b4c4d03324345a226a45bf69e71fb/sample09a.png",
     path2:
-      "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/c7ede46debe64201b1e2835458bf239a/sample06b.png",
+      "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/5c8e134163a1427ab60df2bab8a140e9/sample09b.png",
     path3: noimg,
   },
   {
