@@ -10,66 +10,59 @@ const imageData = [
   {
     modal_index: "0",
     title: "cg_1",
-    path: "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/ff5671d6171049b28ac72cd61d3b8557/sample01a.png",
+    path: "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/3315faa9252d45b585a7e7c33f9db29b/sample01a.png",
     path2:
-      "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/0576b995807a45c4b1ba834c4bafb9c3/sample01b.png",
+      "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/e701f811f9284b2badfe32ce817286e8/sample01b.png",
     path3:
-      "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/2751b6c6a90a4f218044a91ed7c05fd9/sample01c.png",
+      "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/00d8a637f99e45ba856b39bec521cfa8/sample01c.png",
   },
   {
     modal_index: "1",
     title: "cg_2",
-    path: "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/e31054fede2c4f319e42e7e692599738/sample02a.png",
+    path: "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/3d5086335e8a48ea879b89fad85affb3/sample02a.png",
     path2:
-      "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/a2f26c1de17a40b39b5534c1d4e509ab/sample02b.png",
-    path3: noimg,
+      "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/4e0b3f8f18f440948688a581c61be705/sample02b.png",
+    path3: "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/c2b3b377ccce4b8bb06817906e2fb61f/sample02c.png",
   },
   {
     modal_index: "2",
     title: "cg_3",
-    path: "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/3958dd47eb2a4d5b898ab227c16da9f6/sample03a.png",
+    path: "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/7e685f583d4e4e3fbbb5d80659e8c46f/sample03a.png",
     path2:
-      "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/eadb3530556b4f0097e96e937747e9a8/sample03b.png",
+      "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/d94647c2ea364dd589a7104f7cd89335/sample03b.png",
     path3:
-      "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/2b18958538f0461cb8bdcb1659602615/sample03c.png",
+      "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/e30705d7b62240319a586c9a67b6cc1f/sample03c.png",
   },
   {
     modal_index: "3",
     title: "cg_4",
-    path: "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/8d177000b33044e1a8d12eed8a2864de/sample04a.png",
+    path: "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/104fbeea545b462884b18d48ef1d505f/sample04a.png",
     path2:
-      "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/139a38353bf344ddb2fa6b6020f3bcff/sample04b.png",
+      "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/91c59a3e46be4b43927646471283ff3a/sample04b.png",
     path3:
-      "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/2de210e624904dd182babe5b4f78a739/sample04c.png",
+      "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/02f664984b5d4694b73e96c5f6d35c93/sample04c.png",
+  },
+  {
+    modal_index: "4",
+    title: "cg_5",
+    path: "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/bfa2b5462f7e4046a08cd92a6334152e/sample05a.png",
+    path2: "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/17c3add082c4428c993e7969f7a8c28d/sample05b.png",
+    path3: "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/923905668b3c4e60b9fb90f373519772/sample05c.png",
   },
   {
     title: "Noimg",
     path: noimg,
     path2: noimg,
-    path3: noimg,
-  },
-  {
-    modal_index: "4",
-    title: "cg_6",
-    path: "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/ef30e7ab71b947179aa365ae187a0025/sample06.png",
-    path2:
-      "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/c7ede46debe64201b1e2835458bf239a/sample06b.png",
     path3: noimg,
   },
   {
     modal_index: "5",
     title: "cg_7",
-    path: "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/51a5a60205bf4d90870fdc81116c075e/sample07a.png",
+    path: "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/9cac9dbd73ef44d7ac672d3360fb1512/sample07a.png",
     path2:
-      "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/4915e7e008ba465ca1c65390231ae9b0/sample07b.png",
+      "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/1f57743ddf404108b658f1aedf46b531/sample07b.png",
     path3:
-      "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/db25a6f4cfa44f2988dfc43783c28c96/sample07c.png",
-  },
-  {
-    title: "Noimg",
-    path: noimg,
-    path2: noimg,
-    path3: noimg,
+      "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/5bfa562383d04ee4a5ddc56ed221012e/sample07c.png",
   },
   {
     title: "Noimg",
@@ -79,11 +72,19 @@ const imageData = [
   },
   {
     modal_index: "6",
-    title: "cg_10",
-    path: "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/170b19a30dc049d2824bcc039d1c0c5b/sample10a.png",
+    title: "cg_9",
+    path: "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/ef30e7ab71b947179aa365ae187a0025/sample06.png",
     path2:
-      "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/8ebdb5ea5bc94fefbfcad699ffd39425/sample10b.png",
+      "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/c7ede46debe64201b1e2835458bf239a/sample06b.png",
     path3: noimg,
+  },
+  {
+    modal_index: "7",
+    title: "cg_10",
+    path: "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/485520c82a5a4ab79a3d57b4bb67eae5/sample10a.png",
+    path2:
+      "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/910c3907dd7f4f98aadfc757ff4d3aaa/sample10b.png",
+    path3: "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/60f98b4cbac74cd1836dc3364e4ccb74/sample10c.png",
   },
   {
     title: "Noimg",
@@ -92,9 +93,10 @@ const imageData = [
     path3: noimg,
   },
   {
-    title: "Noimg",
-    path: noimg,
-    path2: noimg,
+    modal_index: "8",
+    title: "cg_12",
+    path: "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/63212a3cf1d74682ac82ca0980dd05d6/sample12a.png",
+    path2: "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/3e009196c7d845eca3789a18da05ae4f/sample12b.png",
     path3: noimg,
   },
 ];
@@ -126,7 +128,7 @@ const Graphics = ({ width }) => {
 
   const showImg = useMemo(() => {
     if (cgNo === "2") {
-      if (imgData.path2 !== noimg) {
+      if (imgData?.path2 !== noimg) {
         return imgData.path2;
       }
     } else if (cgNo === "3") {
@@ -134,8 +136,8 @@ const Graphics = ({ width }) => {
         return imgData.path3;
       }
     }
-    return imgData.path;
-  }, [cgNo, imgData.path, imgData.path2, imgData.path3]);
+    return imgData?.path;
+  }, [cgNo, imgData?.path, imgData?.path2, imgData?.path3]);
 
   const onClickCg = useCallback(() => {
     if (cgNo === "3") {
@@ -149,9 +151,10 @@ const Graphics = ({ width }) => {
     }
   }, [cgNo, imgData?.path2, imgData?.path3]);
 
+
   const onchangeBeforeCG = () => {
     setCgNo("1");
-    if (imgData.modal_index === "0") {
+    if (imgData?.modal_index === "0") {
       setImgData(data[data?.length - 1]);
       return;
     }
@@ -159,11 +162,11 @@ const Graphics = ({ width }) => {
   };
   const onchangeNextCG = () => {
     setCgNo("1");
-    if (imgData.modal_index === `${data?.length - 1}`) {
+    if (imgData?.modal_index === `${data?.length - 1}`) {
       setImgData(data[0]);
       return;
     }
-    setImgData(data[Number(imgData.modal_index) + 1]);
+    setImgData(data[Number(imgData?.modal_index) + 1]);
   };
 
   const [startX, setStartX] = useState(0);
