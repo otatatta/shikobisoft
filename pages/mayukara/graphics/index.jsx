@@ -19,10 +19,11 @@ const imageData = [
   {
     modal_index: "1",
     title: "cg_2",
-    path: "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/3d5086335e8a48ea879b89fad85affb3/sample02a.png",
+    path: "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/955991f25c094de0a70cc0978241b563/sample02a.png",
     path2:
-      "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/4e0b3f8f18f440948688a581c61be705/sample02b.png",
-    path3: "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/c2b3b377ccce4b8bb06817906e2fb61f/sample02c.png",
+      "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/bf16e1e6455148068ebac5070970ac46/sample02b.png",
+    path3:
+      "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/8be2e894f5794e2d95c450e4a99de554/sample02c.png",
   },
   {
     modal_index: "2",
@@ -46,8 +47,10 @@ const imageData = [
     modal_index: "4",
     title: "cg_5",
     path: "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/bfa2b5462f7e4046a08cd92a6334152e/sample05a.png",
-    path2: "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/17c3add082c4428c993e7969f7a8c28d/sample05b.png",
-    path3: "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/923905668b3c4e60b9fb90f373519772/sample05c.png",
+    path2:
+      "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/17c3add082c4428c993e7969f7a8c28d/sample05b.png",
+    path3:
+      "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/923905668b3c4e60b9fb90f373519772/sample05c.png",
   },
   {
     title: "Noimg",
@@ -84,7 +87,8 @@ const imageData = [
     path: "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/485520c82a5a4ab79a3d57b4bb67eae5/sample10a.png",
     path2:
       "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/910c3907dd7f4f98aadfc757ff4d3aaa/sample10b.png",
-    path3: "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/60f98b4cbac74cd1836dc3364e4ccb74/sample10c.png",
+    path3:
+      "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/60f98b4cbac74cd1836dc3364e4ccb74/sample10c.png",
   },
   {
     title: "Noimg",
@@ -96,7 +100,8 @@ const imageData = [
     modal_index: "8",
     title: "cg_12",
     path: "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/63212a3cf1d74682ac82ca0980dd05d6/sample12a.png",
-    path2: "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/3e009196c7d845eca3789a18da05ae4f/sample12b.png",
+    path2:
+      "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/3e009196c7d845eca3789a18da05ae4f/sample12b.png",
     path3: noimg,
   },
 ];
@@ -150,7 +155,6 @@ const Graphics = ({ width }) => {
       setCgNo("1");
     }
   }, [cgNo, imgData?.path2, imgData?.path3]);
-
 
   const onchangeBeforeCG = () => {
     setCgNo("1");
