@@ -1,8 +1,7 @@
-import { List, Image as AntdImage, Button, Modal, Row, Col } from "antd";
+import { List, Image as AntdImage, Button, Modal, Col } from "antd";
 import React, { useMemo, useState, useRef, useCallback } from "react";
 import Image from "next/image";
 import { LeftOutlined, RightOutlined, CloseOutlined } from "@ant-design/icons";
-// import NoImage from "../../static/mayuimage.jpg";
 const noimg =
   "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/0283dcaf2e624790ae5274ed6d351c56/mayuimage.jpg?w=300";
 
@@ -68,13 +67,16 @@ const imageData = [
       "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/5bfa562383d04ee4a5ddc56ed221012e/sample07c.png",
   },
   {
-    title: "Noimg",
-    path: noimg,
-    path2: noimg,
-    path3: noimg,
+    modal_index: "6",
+    title: "cg_8",
+    path: "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/16b4a198929a4e9794ebe17193881ffb/sample08a.png",
+    path2:
+      "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/9d1e9375f9e84bad8acc77c4b980718f/sample08b.png",
+    path3:
+      "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/1b4b0a12edf3467185187cbcc30f7c7d/sample08c.png",
   },
   {
-    modal_index: "6",
+    modal_index: "7",
     title: "cg_9",
     path: "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/dc9b4c4d03324345a226a45bf69e71fb/sample09a.png",
     path2:
@@ -82,7 +84,7 @@ const imageData = [
     path3: noimg,
   },
   {
-    modal_index: "7",
+    modal_index: "8",
     title: "cg_10",
     path: "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/485520c82a5a4ab79a3d57b4bb67eae5/sample10a.png",
     path2:
@@ -97,7 +99,7 @@ const imageData = [
     path3: noimg,
   },
   {
-    modal_index: "8",
+    modal_index: "9",
     title: "cg_12",
     path: "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/63212a3cf1d74682ac82ca0980dd05d6/sample12a.png",
     path2:
