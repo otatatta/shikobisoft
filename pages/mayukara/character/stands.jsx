@@ -32,10 +32,10 @@ import ushio1 from "../../static/stands/S13uso1.png";
 import ushio2 from "../../static/stands/S13uso2.png";
 import umino1 from "../../static/stands/S14umn1.png";
 import umino2 from "../../static/stands/S14umn2.png";
-import resuna1 from "../../static/stands/S15rsn1.png";
-import resuna2 from "../../static/stands/S15rsn2.png";
+import higane1 from "../../static/stands/S15hgn1.png";
+import higane2 from "../../static/stands/S15hgn2.png";
 
-export default function CharaStands(selected, value, width, height) {
+export default function CharaStands(selected, value) {
   const imgArea = (src) => {
     if (src) {
       return (
@@ -152,11 +152,11 @@ export default function CharaStands(selected, value, width, height) {
           {value === "2" && imgArea(umino2)}
         </>
       );
-    case "Resuna":
+    case "Higane":
       return (
         <>
-          {value === "1" && imgArea(resuna1)}
-          {value === "2" && imgArea(resuna2)}
+          {value === "1" && imgArea(higane1)}
+          {value === "2" && imgArea(higane2)}
         </>
       );
   }
