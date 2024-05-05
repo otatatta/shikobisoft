@@ -9,8 +9,8 @@ import Navigation from "./components/Navigation"
 import SectionHeader from "./components/Header"
 import FloatButtons from "./components/FloatButtons"
 import MayuChara from "./character"
-import {Col, Row} from 'antd';
-import Script from 'next/script'
+// import {Col, Row} from 'antd';
+// import Script from 'next/script'
 import BackTopButton from "./components/BackTopButton"
 import Graphics from "./graphics"
 import {DefaultSeo} from 'next-seo';
@@ -91,16 +91,17 @@ export default function Carankoe() {
                     cardType: 'summary',
                 }}
             />
-            <div style={{position: "fixed", top: "0px", zIndex: -4545}}>
-                <div style={{height: "100%", width: "100%"}}>
-                    <Image
-                        alt="Shikoshikoback"
-                        src={Background}
-                        width="100%"
-                        layout={"intrinsic"}
-                        style={{zIndex: -4545, objectFit: "cover"}}
-                    />
-                </div>
+            <div style={{position: "fixed", top: "0px", width: "100%", zIndex: -4545}}>
+                <Image
+                    alt="Shikoshikoback"
+                    src={Background}
+                    style={{
+                        zIndex: -4545,
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "fill",
+                    }}
+                />
             </div>
             {!hideButton && (
                 <div style={{position: "fixed", top: "10px", width: "100%", zIndex: 14545}}>
@@ -115,7 +116,6 @@ export default function Carankoe() {
                         style={{
                             width: "100%",
                             objectFit: "contain",
-                            maxWidth: '100%',
                             height: 'auto',
                         }} />
                 </div>
@@ -157,7 +157,7 @@ export default function Carankoe() {
                         </div>
 
                     </div>
-                    <div id="update" style={{maxWidth: "1280px", marginLeft: "auto", marginRight: "auto", fontFamily: "cursive"}}>
+                    {/* <div id="update" style={{maxWidth: "1280px", marginLeft: "auto", marginRight: "auto", fontFamily: "cursive"}}>
                         <SectionHeader text="電報" />
                         <Row gutter={16} style={{margin: "2rem"}} justify="space-between">
                             <Col xs={24} sm={11} md={11} lg={11} xl={10} style={{background: "rgba(232, 212, 172, .6)"}} >
@@ -191,7 +191,7 @@ export default function Carankoe() {
                         </Row>
                         <Row gutter={16} justify="center" >
                         </Row>
-                    </div>
+                    </div> */}
                     <BackTopButton />
                     <div id="share" style={{textAlign: "center"}}>
                         <FloatButtons />

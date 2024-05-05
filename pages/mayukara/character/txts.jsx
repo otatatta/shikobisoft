@@ -126,7 +126,7 @@ export default function CharaTxt(selected) {
           <p>
             キャラクターデザイン・原画: あるぷすよ
             <br />
-            キャラクター彩色:
+            キャラクター彩色: くれは
             <br />
           </p>
         </p>
@@ -314,8 +314,7 @@ export default function CharaTxt(selected) {
             <br />
             どんくさそうな方のうし乳。
             <br />
-            八遠寺れすなの下僕である。
-            <br />
+            燠津洲ひがねの下僕である。
             <br />
           </p>
           <p>
@@ -337,8 +336,7 @@ export default function CharaTxt(selected) {
             <br />
             キャピキャピとしてる方のうし乳。
             <br />
-            八遠寺れすなの下僕である。
-            <br />
+            燠津洲ひがねの下僕である。
             <br />
           </p>
           <p>
@@ -349,26 +347,23 @@ export default function CharaTxt(selected) {
           </p>
         </p>
       );
-    case "Resuna":
+    case "Higane":
       return (
         <p>
           <p style={{ fontSize: "20px", fontWeight: "bold" }}>
-            『 ごめんなさいな。私、ヒトを驚かせるのが好きなものでして 』<br />
-          </p>
-          <p>
             『 申し訳ありませんわ。私、ヒトを驚かせるのが好きなものでして 』
             <br />
+          </p>
+          <p>
             繭ノ葉町に存在する娼館　翅爾蝶館 -ぎじちょうかん- のオンナ主人。
             <br />
             下僕として女子を二人連れては、度々にオモチャとして弄っている。
             <br />
-            面白いことを見つけたがり、つまらないことを嫌う。
-            <br />
-            ナニカを見透し、ナニカと語るが、その真意は誰にも判らず、視えもしない。
+            守琉へは戯れるようにナニカを語るが、その真意は不明。
             <br />
           </p>
           <p>
-            キャラクターデザイン・原画: はくがん
+            キャラクターデザイン・原画: 夏紀ゆう
             <br />
             キャラクター彩色: 夏紀ゆう
             <br />

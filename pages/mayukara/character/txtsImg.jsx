@@ -12,7 +12,7 @@ import kenjiTxt from "../../static/stands/HP11knj.png"
 import komariTxt from "../../static/stands/HP12kmr.png"
 import usoTxt from "../../static/stands/HP13uso.png"
 import umnTxt from "../../static/stands/HP14umn.png"
-import resunaTxt from "../../static/stands/HP15rsn.png"
+import higaneTxt from "../../static/stands/HP15hgn.png"
 
 export default function CharaTxtImg(selected) {
 
@@ -45,7 +45,7 @@ export default function CharaTxtImg(selected) {
             return (usoTxt)
         case "Umino":
             return (umnTxt)
-        case "Resuna":
-            return (resunaTxt)
+        case "Higane":
+            return (higaneTxt)
     }
 }

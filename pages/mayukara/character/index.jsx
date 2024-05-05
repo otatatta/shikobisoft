@@ -1,4 +1,4 @@
-import { Col, Row, Modal, Segmented, Button, Tooltip, Spin } from "antd";
+import { Col, Row, Modal, Segmented, Button, Spin } from "antd";
 import React, { useState, useMemo } from "react";
 import {
   LeftOutlined,
@@ -22,7 +22,7 @@ import iconKenji from "../../static/icons/icon11knj.png";
 import iconKomari from "../../static/icons/icon12kmr.png";
 import iconUshi from "../../static/icons/icon13uso.png";
 import iconUmi from "../../static/icons/icon14umn.png";
-import iconResuna from "../../static/icons/icon15rsn.png";
+import iconHigane from "../../static/icons/icon15hgn.png";
 import CharaTxt from "./txts";
 import CharaTxtImg from "./txtsImg";
 import CharaStands from "./stands";
@@ -41,7 +41,7 @@ import nameKenji from "../../static/names/kenji.png";
 import nameKomari from "../../static/names/komari.png";
 import nameUshio from "../../static/names/ushio.png";
 import nameUmino from "../../static/names/umino.png";
-import nameResuna from "../../static/names/resuna.png";
+import nameHigane from "../../static/names/higane.png";
 
 const mamoru = {
   names: "犬無 守琉",
@@ -155,12 +155,12 @@ const umino = {
   icon: iconUmi,
   options: ["1", "2"],
 };
-const resuna = {
-  names: "八遠寺 れすな",
-  name_sub: "Hachionji Resuna",
-  name_img: nameResuna,
-  selected_name: "Resuna",
-  icon: iconResuna,
+const higane = {
+  names: "燠津洲 ひがね",
+  name_sub: "Okitsushima Higane",
+  name_img: nameHigane,
+  selected_name: "Higane",
+  icon: iconHigane,
   options: ["1", "2"],
 };
 const pcList1 = [
@@ -178,7 +178,7 @@ const pcList1 = [
   komari,
   ushio,
   umino,
-  resuna,
+  higane,
 ];
 
 export default function MayuChara({ width }) {
@@ -475,8 +475,8 @@ export default function MayuChara({ width }) {
                     )}
                     <Button
                       style={{
-                        position: "fixed",
-                        right: "200px",
+                        position: "absolute",
+                        right: "5%",
                         top: "85%",
                         zIndex: "198585",
                       }}

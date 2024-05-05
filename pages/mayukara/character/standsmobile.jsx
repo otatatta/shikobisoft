@@ -32,8 +32,8 @@ import ushio1 from "../../static/mobile/m13uso1.png";
 import ushio2 from "../../static/mobile/m13uso2.png";
 import umino1 from "../../static/mobile/m14umn1.png";
 import umino2 from "../../static/mobile/m14umn2.png";
-import resuna1 from "../../static/mobile/m15rsn1.png";
-import resuna2 from "../../static/mobile/m15rsn2.png";
+import higane1 from "../../static/mobile/m15hgn1.png";
+import higane2 from "../../static/mobile/m15hgn2.png";
 
 export default function CharaStandsMobile(selected, value) {
   const imgArea = (src) => {
@@ -152,11 +152,11 @@ export default function CharaStandsMobile(selected, value) {
           {value === "2" && imgArea(umino2)}
         </>
       );
-    case "Resuna":
+    case "Higane":
       return (
         <>
-          {value === "1" && imgArea(resuna1)}
-          {value === "2" && imgArea(resuna2)}
+          {value === "1" && imgArea(higane1)}
+          {value === "2" && imgArea(higane2)}
         </>
       );
   }
