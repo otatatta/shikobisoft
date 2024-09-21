@@ -93,13 +93,15 @@ const imageData = [
       "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/60f98b4cbac74cd1836dc3364e4ccb74/sample10c.png",
   },
   {
-    title: "Noimg",
-    path: noimg,
-    path2: noimg,
+    modal_index: "9",
+    title: "cg_11",
+    path: "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/08c29e8e027d4ceeb1bb7c160a4e6b3b/sample11a.png",
+    path2:
+      "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/cc6c6ebd7d47424eb6efb62245210b73/sample11b.png",
     path3: noimg,
   },
   {
-    modal_index: "9",
+    modal_index: "10",
     title: "cg_12",
     path: "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/63212a3cf1d74682ac82ca0980dd05d6/sample12a.png",
     path2:
