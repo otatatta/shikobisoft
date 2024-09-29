@@ -3,6 +3,7 @@ import Footer from "../component/Footer"
 import karankoeTop from "../static/sitekey_3.png"
 import Background from "../static/hp2_TOP.jpg"
 import junbi from "../static/zyunbi.jpg"
+import junbi2 from "../static/junbi2.jpg"
 import Image from "next/image";
 import CarankoeStory from "./story";
 import Navigation from "./components/Navigation"
@@ -154,6 +155,15 @@ export default function Carankoe() {
                                     maxWidth: '100%',
                                     height: 'auto',
                                 }} />
+                                <Image
+                                    alt="Shikoshiko"
+                                    src={junbi2}
+                                    style={{
+                                        width: "100%",
+                                        objectFit: "contain",
+                                        maxWidth: '100%',
+                                        height: 'auto',
+                                    }} />
                         </div>
 
                     </div>
