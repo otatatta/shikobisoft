@@ -111,6 +111,30 @@ const imageData = [
       "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/3e009196c7d845eca3789a18da05ae4f/sample12b.png",
     path3: noimg,
   },
+  {
+    title: "Noimg",
+    path: noimg,
+    path2: noimg,
+    path3: noimg,
+  },
+  {
+    title: "Noimg",
+    path: noimg,
+    path2: noimg,
+    path3: noimg,
+  },
+  {
+    title: "Noimg",
+    path: noimg,
+    path2: noimg,
+    path3: noimg,
+  },
+  {
+    title: "Noimg",
+    path: noimg,
+    path2: noimg,
+    path3: noimg,
+  },
 ];
 
 const Graphics = ({ width }) => {
@@ -206,7 +230,7 @@ const Graphics = ({ width }) => {
       <List
         grid={{
           gutter: 16,
-          xs: 1,
+          xs: 2,
           sm: 2,
           md: 4,
           lg: 4,
