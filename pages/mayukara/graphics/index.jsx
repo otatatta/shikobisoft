@@ -52,13 +52,16 @@ const imageData = [
       "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/923905668b3c4e60b9fb90f373519772/sample05c.png",
   },
   {
-    title: "Noimg",
-    path: noimg,
-    path2: noimg,
-    path3: noimg,
+    modal_index: "5",
+    title: "cg_6",
+    path: "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/ecf3acbc91b04257b86a29a6ec2f61db/sample06a.png",
+    path2:
+      "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/212963b240a84b798d8b4695d3b1b09e/sample06b.png",
+    path3:
+      "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/f3e40c6afafc4c429c4425d7cf030a21/sample06c.png",
   },
   {
-    modal_index: "5",
+    modal_index: "6",
     title: "cg_7",
     path: "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/9cac9dbd73ef44d7ac672d3360fb1512/sample07a.png",
     path2:
@@ -67,7 +70,7 @@ const imageData = [
       "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/5bfa562383d04ee4a5ddc56ed221012e/sample07c.png",
   },
   {
-    modal_index: "6",
+    modal_index: "7",
     title: "cg_8",
     path: "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/16b4a198929a4e9794ebe17193881ffb/sample08a.png",
     path2:
@@ -76,7 +79,7 @@ const imageData = [
       "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/1b4b0a12edf3467185187cbcc30f7c7d/sample08c.png",
   },
   {
-    modal_index: "7",
+    modal_index: "8",
     title: "cg_9",
     path: "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/dc9b4c4d03324345a226a45bf69e71fb/sample09a.png",
     path2:
@@ -84,7 +87,7 @@ const imageData = [
     path3: noimg,
   },
   {
-    modal_index: "8",
+    modal_index: "9",
     title: "cg_10",
     path: "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/485520c82a5a4ab79a3d57b4bb67eae5/sample10a.png",
     path2:
@@ -93,7 +96,7 @@ const imageData = [
       "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/60f98b4cbac74cd1836dc3364e4ccb74/sample10c.png",
   },
   {
-    modal_index: "9",
+    modal_index: "10",
     title: "cg_11",
     path: "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/08c29e8e027d4ceeb1bb7c160a4e6b3b/sample11a.png",
     path2:
@@ -101,7 +104,7 @@ const imageData = [
     path3: noimg,
   },
   {
-    modal_index: "10",
+    modal_index: "11",
     title: "cg_12",
     path: "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/63212a3cf1d74682ac82ca0980dd05d6/sample12a.png",
     path2:
