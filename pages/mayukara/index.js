@@ -92,7 +92,7 @@ export default function Carankoe() {
                     cardType: 'summary',
                 }}
             />
-            <div style={{position: "fixed", top: "0px", width: "100%", zIndex: -4545}}>
+            <div style={{position: width > 768 ? "fixed" : "absolute", top: "0px", width: "100%", zIndex: -4545}}>
                 <Image
                     alt="Shikoshikoback"
                     src={Background}
@@ -103,12 +103,13 @@ export default function Carankoe() {
                         objectFit: "fill",
                     }}
                 />
-            </div>
+            </div >
             {!hideButton && (
                 <div style={{position: "fixed", top: "10px", width: "100%", zIndex: 14545}}>
                     <Navigation />
                 </div>
-            )}
+            )
+            }
             <div style={{position: "absolute", top: "0px", width: "100%", zIndex: 545}}>
                 <div style={{}} id="top">
                     <Image
@@ -134,7 +135,7 @@ export default function Carankoe() {
                     </div>
                     <div id="illust" style={{maxWidth: "1280px", marginLeft: "auto", marginRight: "auto", marginTop: "4rem"}}>
                         <SectionHeader text="画廊" />
-                        <div style={{padding: "2rem"}}>
+                        <div >
                             <Graphics setHideButton={setHideButton} width={width} />
                         </div>
                     </div>
@@ -155,15 +156,15 @@ export default function Carankoe() {
                                     maxWidth: '100%',
                                     height: 'auto',
                                 }} />
-                                <Image
-                                    alt="Shikoshiko"
-                                    src={junbi2}
-                                    style={{
-                                        width: "100%",
-                                        objectFit: "contain",
-                                        maxWidth: '100%',
-                                        height: 'auto',
-                                    }} />
+                            <Image
+                                alt="Shikoshiko"
+                                src={junbi2}
+                                style={{
+                                    width: "100%",
+                                    objectFit: "contain",
+                                    maxWidth: '100%',
+                                    height: 'auto',
+                                }} />
                         </div>
 
                     </div>
