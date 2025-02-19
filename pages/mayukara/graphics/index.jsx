@@ -243,39 +243,32 @@ const Graphics = ({ width }) => {
           <>
             <List.Item
               colStyle={{
+                paddingLeft: "0px",
+                paddingRight: "0px",
                 textAlign: "center",
-                marginTop: "2rem",
-                height: "140px",
+                marginTop: width > 768 ? "2rem" : "1rem",
+                height: width > 768 ? "140px" : "120px",
               }}
               key={`cg_${index}`}
             >
               <Col key={`aaaa_${index}`}>
-                {item.title !== "Noimg" ? (
-                  <Button
-                    type="text"
-                    onClick={() => {
-                      setOpen(true);
-                      setImgData(item);
-                    }}
-                  >
-                    <AntdImage
-                      width={200}
-                      height={120}
-                      src={item.path}
-                      alt={`cg_${index}`}
-                      placeholder={<p>place</p>}
-                      preview={false}
-                    />
-                  </Button>
-                ) : (
+                <Button
+                  type="text"
+                  disabled={item.title === "Noimg"}
+                  onClick={() => {
+                    setOpen(true);
+                    setImgData(item);
+                  }}
+                >
                   <AntdImage
-                    width={200}
-                    height={120}
+                    width={width > 768 ? 200 : 150}
+                    height={width > 768 ? 120 : 90}
                     src={item.path}
-                    preview={item.title !== "Noimg"}
-                    alt={"noIMG"}
+                    alt={`cg_${index}`}
+                    placeholder={<p>place</p>}
+                    preview={false}
                   />
-                )}
+                </Button>
               </Col>
             </List.Item>
           </>
