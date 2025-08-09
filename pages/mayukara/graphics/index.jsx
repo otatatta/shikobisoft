@@ -121,19 +121,20 @@ const imageData = [
       "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/43515699b93845e4a43e076fe9aa58f0/sample13c.png",
   },
   {
-    title: "Noimg",
-    path: noimg,
-    path2: noimg,
-    path3: noimg,
-  },
-  {
-    title: "Noimg",
-    path: noimg,
-    path2: noimg,
-    path3: noimg,
-  },
-  {
     modal_index: "13",
+    title: "cg_14",
+    path: "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/f6bcac9f0e23432ab4c731218acfe3a4/sample14a.png",
+    path2: "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/9d7c5ac393be4a9bb55d0f4a976577df/sample14b.png",
+    path3: "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/a3df82c6075b425fa338530c683ba477/sample14c.png",
+  },
+  {
+    title: "Noimg",
+    path: noimg,
+    path2: noimg,
+    path3: noimg,
+  },
+  {
+    modal_index: "14",
     title: "cg_16",
     path: "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/90f8db34b1c349b5a0edc43c3fb2bc57/sample16a.png",
     path2:
