@@ -1,7 +1,7 @@
 import React, {useEffect, useState, useMemo} from 'react';
 import Footer from "../component/Footer"
 import karankoeTop from "../static/sitekey_3.png"
-import Background from "../static/hp2_TOP.jpg"
+import Background from "../static/sitoBG2.jpg"
 import junbi from "../static/zyunbi.jpg"
 import junbi2 from "../static/junbi2.jpg"
 import Image from "next/image";
