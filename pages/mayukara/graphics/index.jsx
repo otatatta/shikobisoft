@@ -2,7 +2,7 @@ import { List, Image as AntdImage, Button, Modal, Col } from "antd";
 import React, { useMemo, useState, useRef, useCallback } from "react";
 import Image from "next/image";
 import { LeftOutlined, RightOutlined, CloseOutlined } from "@ant-design/icons";
-import { imagesData, noimg } from "./Images";
+import { imagesData, noimg } from "../../../consts/Images";
 
 const Graphics = ({ width }) => {
   const data = useMemo(
