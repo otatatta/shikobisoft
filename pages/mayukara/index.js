@@ -48,25 +48,25 @@ export default function Carankoe() {
         return () => window.removeEventListener("resize", handleResize)
     }, [])
 
-    const updateHistory = useMemo(() => [
-        {date: "2023.10.08", txt: "画廊にCG差分を追加しました。"},
-        {date: "2023.10.01", txt: "新規立ち絵を4枚追加しました。"},
-        {date: "2023.10.01", txt: "新規CGを1枚追加しました。"},
-        {date: "2023.06.04", txt: "新規CGを2枚追加しました。"},
-        {date: "2023.03.22", txt: "新規CGと立ち絵を追加しました。"},
-        {date: "2023.03.15", txt: "新規CGを追加しました。"},
-        {date: "2023.03.14", txt: "キービジュアルを更新しました。"},
-        {date: "2023.02.14", txt: "新規CGを2枚を追加しました。"},
-        {date: "2023.01.29", txt: "キービジュアルを更新しました。"},
-        {date: "2023.01.09", txt: "サイトオープンしました。"}
-    ], [])
+    // const updateHistory = useMemo(() => [
+    //     {date: "2023.10.08", txt: "画廊にCG差分を追加しました。"},
+    //     {date: "2023.10.01", txt: "新規立ち絵を4枚追加しました。"},
+    //     {date: "2023.10.01", txt: "新規CGを1枚追加しました。"},
+    //     {date: "2023.06.04", txt: "新規CGを2枚追加しました。"},
+    //     {date: "2023.03.22", txt: "新規CGと立ち絵を追加しました。"},
+    //     {date: "2023.03.15", txt: "新規CGを追加しました。"},
+    //     {date: "2023.03.14", txt: "キービジュアルを更新しました。"},
+    //     {date: "2023.02.14", txt: "新規CGを2枚を追加しました。"},
+    //     {date: "2023.01.29", txt: "キービジュアルを更新しました。"},
+    //     {date: "2023.01.09", txt: "サイトオープンしました。"}
+    // ], [])
 
-    const updated = useMemo(() => updateHistory?.map((val, index) => (
-        <p key={`updated_${index}`}>
-            ・<span style={{color: "#222"}}>{val.date}</span> <span style={{paddingLeft: "1rem"}}>{val.txt}</span>
-        </p>
-    )
-    ), [updateHistory])
+    // const updated = useMemo(() => updateHistory?.map((val, index) => (
+    //     <p key={`updated_${index}`}>
+    //         ・<span style={{color: "#222"}}>{val.date}</span> <span style={{paddingLeft: "1rem"}}>{val.txt}</span>
+    //     </p>
+    // )
+    // ), [updateHistory])
 
     return (
         <>
