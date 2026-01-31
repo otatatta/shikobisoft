@@ -136,7 +136,14 @@ export const uploadedImageData = [
     },
     noImage,
     noImage,
-    noImage,
+    {
+        modal_index: "16",
+        path: "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/f76a3542312b471089c77c60cae47142/sample20a.png",
+        path2:
+            "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/022f969bffd746c3acb1f6342b5550e1/sample20b.png",
+        path3:
+            "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/1e169a5bfdde4774aa066885eac53b58/sample20c.png",
+    },
 ];
 
 export const creatData = () => {
