@@ -35,129 +35,74 @@ import umino2 from "../../static/stands/S14umn2.png";
 import higane1 from "../../static/stands/S15hgn1.png";
 import higane2 from "../../static/stands/S15hgn2.png";
 
-export default function CharaStands(selected, value) {
-  const imgArea = (src) => {
-    if (src) {
-      return (
-        <Image
-          src={src}
-          style={{ display: "inline-block", width: "540px", height: "864px" }}
-          alt="Image"
-        />
-      );
-    }
-    return <></>;
-  };
-  switch (selected) {
-    case "Mamoru":
-      return (
-        <>
-          {value === "1" && imgArea(mamoru1)}
-          {value === "2" && imgArea(mamoru2)}
-          {value === "3" && imgArea(mamoru3)}
-        </>
-      );
-    case "Chiyo":
-      return (
-        <>
-          {value === "1" && imgArea(chiyo1)}
-          {value === "2" && imgArea(chiyo2)}
-          {value === "3" && imgArea(chiyo3)}
-        </>
-      );
-    case "Saika":
-      return (
-        <>
-          {value === "1" && imgArea(saika1)}
-          {value === "2" && imgArea(saika2)}
-          {value === "3" && imgArea(saika3)}
-        </>
-      );
-    case "Juri":
-      return (
-        <>
-          {value === "1" && imgArea(juri1)}
-          {value === "2" && imgArea(juri2)}
-        </>
-      );
-    case "Tsuyuri":
-      return (
-        <>
-          {value === "1" && imgArea(tsuyuri1)}
-          {value === "2" && imgArea(tsuyuri2)}
-          {value === "3" && imgArea(tsuyuri3)}
-        </>
-      );
-    case "Nazuna":
-      return (
-        <>
-          {value === "1" && imgArea(nazuna1)}
-          {value === "2" && imgArea(nazuna2)}
-          {value === "3" && imgArea(nazuna3)}
-        </>
-      );
-    case "Sousei":
-      return (
-        <>
-          {value === "1" && imgArea(sousei1)}
-          {value === "2" && imgArea(sousei2)}
-        </>
-      );
-    case "Shitorasu":
-      return (
-        <>
-          {value === "1" && imgArea(sitoras1)}
-          {value === "2" && imgArea(sitoras2)}
-        </>
-      );
-    case "Ryuko":
-      return (
-        <>
-          {value === "1" && imgArea(ryuko1)}
-          {value === "2" && imgArea(ryuko2)}
-        </>
-      );
-    case "Ryou":
-      return (
-        <>
-          {value === "1" && imgArea(ryo1)}
-          {value === "2" && imgArea(ryo2)}
-        </>
-      );
-    case "Kenji":
-      return (
-        <>
-          {value === "1" && imgArea(kenji1)}
-          {value === "2" && imgArea(kenji2)}
-        </>
-      );
-    case "Komari":
-      return (
-        <>
-          {value === "1" && imgArea(komari1)}
-          {value === "2" && imgArea(komari2)}
-        </>
-      );
-    case "Ushio":
-      return (
-        <>
-          {value === "1" && imgArea(ushio1)}
-          {value === "2" && imgArea(ushio2)}
-        </>
-      );
-    case "Umino":
-      return (
-        <>
-          {value === "1" && imgArea(umino1)}
-          {value === "2" && imgArea(umino2)}
-        </>
-      );
-    case "Higane":
-      return (
-        <>
-          {value === "1" && imgArea(higane1)}
-          {value === "2" && imgArea(higane2)}
-        </>
-      );
+import mMamoru1 from "../../static/mobile/m1mmr1.png";
+import mMamoru2 from "../../static/mobile/m1mmr2.png";
+import mMamoru3 from "../../static/mobile/m1mmr3.png";
+import mChiyo1 from "../../static/mobile/m2cy1.png";
+import mChiyo2 from "../../static/mobile/m2cy2.png";
+import mChiyo3 from "../../static/mobile/m2cy3.png";
+import mSaika1 from "../../static/mobile/m3sik1.png";
+import mSaika2 from "../../static/mobile/m3sik2.png";
+import mSaika3 from "../../static/mobile/m3sik3.png";
+import mJuri1 from "../../static/mobile/m4jr1.png";
+import mJuri2 from "../../static/mobile/m4jr2.png";
+import mTsuyuri1 from "../../static/mobile/m5tyr1.png";
+import mTsuyuri2 from "../../static/mobile/m5tyr2.png";
+import mTsuyuri3 from "../../static/mobile/m5tyr3.png";
+import mNazuna1 from "../../static/mobile/m6nzn1.png";
+import mNazuna2 from "../../static/mobile/m6nzn2.png";
+import mNazuna3 from "../../static/mobile/m6nzn3.png";
+import mSousei1 from "../../static/mobile/m7susi1.png";
+import mSousei2 from "../../static/mobile/m7susi2.png";
+import mSitoras1 from "../../static/mobile/m8strs1.png";
+import mSitoras2 from "../../static/mobile/m8strs2.png";
+import mRyuko1 from "../../static/mobile/m9rk1.png";
+import mRyuko2 from "../../static/mobile/m9rk2.png";
+import mRyo1 from "../../static/mobile/m10ku1.png";
+import mRyo2 from "../../static/mobile/m10ku2.png";
+import mKenji1 from "../../static/mobile/m11knj1.png";
+import mKenji2 from "../../static/mobile/m11knj2.png";
+import mKomari1 from "../../static/mobile/m12kmr1.png";
+import mKomari2 from "../../static/mobile/m12kmr2.png";
+import mUshio1 from "../../static/mobile/m13uso1.png";
+import mUshio2 from "../../static/mobile/m13uso2.png";
+import mUmino1 from "../../static/mobile/m14umn1.png";
+import mUmino2 from "../../static/mobile/m14umn2.png";
+import mHigane1 from "../../static/mobile/m15hgn1.png";
+import mHigane2 from "../../static/mobile/m15hgn2.png";
+
+const standsLookup = {
+  Mamoru: { pc: [mamoru1, mamoru2, mamoru3], mobile: [mMamoru1, mMamoru2, mMamoru3] },
+  Chiyo: { pc: [chiyo1, chiyo2, chiyo3], mobile: [mChiyo1, mChiyo2, mChiyo3] },
+  Saika: { pc: [saika1, saika2, saika3], mobile: [mSaika1, mSaika2, mSaika3] },
+  Juri: { pc: [juri1, juri2], mobile: [mJuri1, mJuri2] },
+  Tsuyuri: { pc: [tsuyuri1, tsuyuri2, tsuyuri3], mobile: [mTsuyuri1, mTsuyuri2, mTsuyuri3] },
+  Nazuna: { pc: [nazuna1, nazuna2, nazuna3], mobile: [mNazuna1, mNazuna2, mNazuna3] },
+  Sousei: { pc: [sousei1, sousei2], mobile: [mSousei1, mSousei2] },
+  Shitorasu: { pc: [sitoras1, sitoras2], mobile: [mSitoras1, mSitoras2] },
+  Ryuko: { pc: [ryuko1, ryuko2], mobile: [mRyuko1, mRyuko2] },
+  Ryou: { pc: [ryo1, ryo2], mobile: [mRyo1, mRyo2] },
+  Kenji: { pc: [kenji1, kenji2], mobile: [mKenji1, mKenji2] },
+  Komari: { pc: [komari1, komari2], mobile: [mKomari1, mKomari2] },
+  Ushio: { pc: [ushio1, ushio2], mobile: [mUshio1, mUshio2] },
+  Umino: { pc: [umino1, umino2], mobile: [mUmino1, mUmino2] },
+  Higane: { pc: [higane1, higane2], mobile: [mHigane1, mHigane2] },
+};
+
+export default function CharaStands(selected, value, isMobile) {
+  const entry = standsLookup[selected];
+  if (!entry) return <></>;
+
+  const images = isMobile ? entry.mobile : entry.pc;
+  const idx = parseInt(value, 10) - 1;
+  const src = images[idx];
+
+  const style = isMobile
+    ? { display: "inline-block", width: "480px", height: "768px" }
+    : { display: "inline-block", width: "540px", height: "864px" };
+
+  if (src) {
+    return <Image src={src} style={style} alt="Image" />;
   }
+  return <></>;
 }

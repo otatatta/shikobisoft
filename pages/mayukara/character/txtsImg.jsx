@@ -14,38 +14,24 @@ import usoTxt from "../../static/stands/HP13uso.png"
 import umnTxt from "../../static/stands/HP14umn.png"
 import higaneTxt from "../../static/stands/HP15hgn.png"
 
-export default function CharaTxtImg(selected) {
+const txtImgLookup = {
+    Mamoru: mamoruTxt,
+    Chiyo: chiyoTxt,
+    Saika: saikaTxt,
+    Juri: juriTxt,
+    Tsuyuri: tsuyuriTxt,
+    Nazuna: nazunaTxt,
+    Sousei: souseiTxt,
+    Shitorasu: shitoTxt,
+    Ryuko: ryukoTxt,
+    Ryou: kyoTxt,
+    Kenji: kenjiTxt,
+    Komari: komariTxt,
+    Ushio: usoTxt,
+    Umino: umnTxt,
+    Higane: higaneTxt,
+};
 
-    switch (selected) {
-        case "Mamoru":
-            return (mamoruTxt)
-        case "Chiyo":
-            return (chiyoTxt)
-        case "Saika":
-            return (saikaTxt)
-        case "Juri":
-            return (juriTxt)
-        case "Tsuyuri":
-            return (tsuyuriTxt)
-        case "Nazuna":
-            return (nazunaTxt)
-        case "Sousei":
-            return (souseiTxt)
-        case "Shitorasu":
-            return (shitoTxt)
-        case "Ryuko":
-            return (ryukoTxt)
-        case "Ryou":
-            return (kyoTxt)
-        case "Kenji":
-            return (kenjiTxt)
-        case "Komari":
-            return (komariTxt)
-        case "Ushio":
-            return (usoTxt)
-        case "Umino":
-            return (umnTxt)
-        case "Higane":
-            return (higaneTxt)
-    }
+export default function CharaTxtImg(selected) {
+    return txtImgLookup[selected];
 }
