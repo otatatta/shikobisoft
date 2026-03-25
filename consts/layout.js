@@ -1,0 +1,14 @@
+// レスポンシブ ブレークポイント
+export const BREAKPOINT_MOBILE = 768;
+
+// z-index レイヤー管理（小さい順）
+export const Z_INDEX = {
+  BACKGROUND: -4545,
+  CONTENT: 545,
+  NAVIGATION_BAR: 14545,
+  MODAL_BASE: 194545,
+  MODAL_INNER: 198585,
+  MODAL_SEGMENTED: 19194545,
+  MODAL_OVERLAY: 999999,
+  NAV_BUTTON: 1919545,
+};

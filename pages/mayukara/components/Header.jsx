@@ -17,8 +17,6 @@ function SectionHeader({ text }) {
         return garou;
       case "小噺":
         return kobanashi;
-      case "電報":
-        return denpou;
       default:
         return undefined;
     }

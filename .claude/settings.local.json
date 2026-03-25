@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find /c/Users/ghghg/shikobisoft/.claude/worktrees/serene-jemison -maxdepth 2 -type f -name package.json -o -name *.toml -o -name Dockerfile -o -name *.yaml)",
+      "Bash(xargs wc:*)",
+      "Bash(npm install:*)",
+      "Bash(npx next:*)",
+      "Bash(where gh.exe)",
+      "Bash(ssh -T git@github.com)",
+      "Bash(echo \"exit: $?\")",
+      "Bash(ssh -vT git@github.com)",
+      "Bash(GIT_SSH_COMMAND=\"ssh -o StrictHostKeyChecking=no\" git log --oneline claude/serene-jemison --not main)"
+    ]
+  }
+}
