@@ -1,4 +1,4 @@
-import React, {useEffect, useState, useMemo} from 'react';
+import React, {useEffect, useState} from 'react';
 import Footer from "../component/Footer"
 import karankoeTop from "../static/sitekey_3.png"
 import Background from "../static/sitoBG2.jpg"
@@ -10,8 +10,6 @@ import Navigation from "./components/Navigation"
 import SectionHeader from "./components/Header"
 import FloatButtons from "./components/FloatButtons"
 import MayuChara from "./character"
-// import {Col, Row} from 'antd';
-// import Script from 'next/script'
 import BackTopButton from "./components/BackTopButton"
 import Graphics from "./graphics"
 import {DefaultSeo} from 'next-seo';
@@ -47,26 +45,6 @@ export default function Carankoe() {
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize)
     }, [])
-
-    // const updateHistory = useMemo(() => [
-    //     {date: "2023.10.08", txt: "画廊にCG差分を追加しました。"},
-    //     {date: "2023.10.01", txt: "新規立ち絵を4枚追加しました。"},
-    //     {date: "2023.10.01", txt: "新規CGを1枚追加しました。"},
-    //     {date: "2023.06.04", txt: "新規CGを2枚追加しました。"},
-    //     {date: "2023.03.22", txt: "新規CGと立ち絵を追加しました。"},
-    //     {date: "2023.03.15", txt: "新規CGを追加しました。"},
-    //     {date: "2023.03.14", txt: "キービジュアルを更新しました。"},
-    //     {date: "2023.02.14", txt: "新規CGを2枚を追加しました。"},
-    //     {date: "2023.01.29", txt: "キービジュアルを更新しました。"},
-    //     {date: "2023.01.09", txt: "サイトオープンしました。"}
-    // ], [])
-
-    // const updated = useMemo(() => updateHistory?.map((val, index) => (
-    //     <p key={`updated_${index}`}>
-    //         ・<span style={{color: "#222"}}>{val.date}</span> <span style={{paddingLeft: "1rem"}}>{val.txt}</span>
-    //     </p>
-    // )
-    // ), [updateHistory])
 
     return (
         <>
@@ -168,41 +146,6 @@ export default function Carankoe() {
                         </div>
 
                     </div>
-                    {/* <div id="update" style={{maxWidth: "1280px", marginLeft: "auto", marginRight: "auto", fontFamily: "cursive"}}>
-                        <SectionHeader text="電報" />
-                        <Row gutter={16} style={{margin: "2rem"}} justify="space-between">
-                            <Col xs={24} sm={11} md={11} lg={11} xl={10} style={{background: "rgba(232, 212, 172, .6)"}} >
-                                <div style={{borderBottom: "solid rgb(99,99,99)", fontSize: "28px"}}>
-                                    更新情報
-                                </div>
-                                <div
-                                    style={{
-                                        height: "500px",
-                                        overflowY: "scroll",
-                                        marginTop: "2rem",
-                                        fontSize: "16px"
-                                    }}>
-                                    {updated}
-                                </div>
-                            </Col>
-                            <Col xs={24} sm={12} md={12} lg={12} xl={10} style={{background: "rgba(232, 212, 172, .6)"}}>
-                                <div style={{borderBottom: "solid rgb(99,99,99)", fontSize: "28px"}}>
-                                    Twitter
-                                </div>
-                                <div
-                                    style={{
-                                        height: "500px",
-                                        overflowY: "scroll",
-                                        marginTop: "2rem"
-                                    }}>
-                                    <a className="twitter-timeline" href="https://twitter.com/4545software?ref_src=twsrc%5Etfw">Tweets by 4545software</a> <Script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></Script>
-
-                                </div>
-                            </Col>
-                        </Row>
-                        <Row gutter={16} justify="center" >
-                        </Row>
-                    </div> */}
                     <BackTopButton />
                     <div id="share" style={{textAlign: "center"}}>
                         <FloatButtons />
