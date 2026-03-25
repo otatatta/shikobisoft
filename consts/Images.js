@@ -117,9 +117,15 @@ export const uploadedImageData = [
         path2: "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/9d7c5ac393be4a9bb55d0f4a976577df/sample14b.png",
         path3: "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/a3df82c6075b425fa338530c683ba477/sample14c.png",
     },
-    noImage,
     {
         modal_index: "14",
+        path: "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/874886a271c3469cb15ec7f04c605b18/sample15a.png",
+        path2:
+            "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/e12477ef6b604ee9a9215f34fa29f937/sample15b.png",
+        path3: noimg,
+    },
+    {
+        modal_index: "15",
         path: "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/90f8db34b1c349b5a0edc43c3fb2bc57/sample16a.png",
         path2:
             "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/55d39cd45cc141d0b89ea9c2fc7084e4/sample16b.png",
@@ -127,7 +133,7 @@ export const uploadedImageData = [
             "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/039cafa35f364e8c94ce608187b08772/sample16c.png",
     },
     {
-        modal_index: "15",
+        modal_index: "16",
         path: "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/282edf49130542d8b11d2c47d4e3c62d/sample17a.png",
         path2:
             "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/66c94156291b42f083e0690ddc42873f/sample17b.png",
@@ -137,7 +143,7 @@ export const uploadedImageData = [
     noImage,
     noImage,
     {
-        modal_index: "16",
+        modal_index: "17",
         path: "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/f76a3542312b471089c77c60cae47142/sample20a.png",
         path2:
             "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/022f969bffd746c3acb1f6342b5550e1/sample20b.png",
