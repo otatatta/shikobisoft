@@ -15,6 +15,7 @@ import Graphics from "./graphics"
 import {DefaultSeo} from 'next-seo';
 import Head from "next/head"
 import DlFloatButtons from "./components/DlButton"
+import { BREAKPOINT_MOBILE, Z_INDEX } from "../../consts/layout"
 
 
 export default function Carankoe() {
@@ -70,12 +71,12 @@ export default function Carankoe() {
                     cardType: 'summary',
                 }}
             />
-            <div style={{position: width > 768 ? "fixed" : "absolute", top: "0px", width: "100%", zIndex: -4545}}>
+            <div style={{position: width > BREAKPOINT_MOBILE ? "fixed" : "absolute", top: "0px", width: "100%", zIndex: Z_INDEX.BACKGROUND}}>
                 <Image
                     alt="Shikoshikoback"
                     src={Background}
                     style={{
-                        zIndex: -4545,
+                        zIndex: Z_INDEX.BACKGROUND,
                         width: "100%",
                         height: "100%",
                         objectFit: "fill",
@@ -83,12 +84,12 @@ export default function Carankoe() {
                 />
             </div >
             {!hideButton && (
-                <div style={{position: "fixed", top: "10px", width: "100%", zIndex: 14545}}>
+                <div style={{position: "fixed", top: "10px", width: "100%", zIndex: Z_INDEX.NAVIGATION_BAR}}>
                     <Navigation />
                 </div>
             )
             }
-            <div style={{position: "absolute", top: "0px", width: "100%", zIndex: 545}}>
+            <div style={{position: "absolute", top: "0px", width: "100%", zIndex: Z_INDEX.CONTENT}}>
                 <div style={{}} id="top">
                     <Image
                         alt="key_visual"
@@ -117,7 +118,7 @@ export default function Carankoe() {
                             <Graphics setHideButton={setHideButton} width={width} />
                         </div>
                     </div>
-                    {width > 768 && (
+                    {width > BREAKPOINT_MOBILE && (
                         <div style={{position: "relative", top: "20px"}}>
                             <DlFloatButtons />
                         </div>

@@ -3,6 +3,7 @@ import React, { useMemo, useState, useRef, useCallback } from "react";
 import Image from "next/image";
 import { LeftOutlined, RightOutlined, CloseOutlined } from "@ant-design/icons";
 import { imagesData, noimg } from "../../../consts/Images";
+import { BREAKPOINT_MOBILE, Z_INDEX } from "../../../consts/layout";
 
 const Graphics = ({ width }) => {
   const data = useMemo(
@@ -96,8 +97,8 @@ const Graphics = ({ width }) => {
                 paddingLeft: "0px",
                 paddingRight: "0px",
                 textAlign: "center",
-                marginTop: width > 768 ? "2rem" : "1rem",
-                height: width > 768 ? "140px" : "120px",
+                marginTop: width > BREAKPOINT_MOBILE ? "2rem" : "1rem",
+                height: width > BREAKPOINT_MOBILE ? "140px" : "120px",
               }}
               key={`cg_${index}`}
             >
@@ -111,8 +112,8 @@ const Graphics = ({ width }) => {
                   }}
                 >
                   <AntdImage
-                    width={width > 768 ? 200 : 150}
-                    height={width > 768 ? 120 : 90}
+                    width={width > BREAKPOINT_MOBILE ? 200 : 150}
+                    height={width > BREAKPOINT_MOBILE ? 120 : 90}
                     src={item.path}
                     alt={`cg_${index}`}
                     placeholder={<p>place</p>}
@@ -128,7 +129,7 @@ const Graphics = ({ width }) => {
         centered
         confirmLoading
         open={open}
-        onOk={() => setModal1Open(false)}
+        onOk={() => setOpen(false)}
         onCancel={() => {
           setOpen(false);
           setCgNo("1");
@@ -150,13 +151,9 @@ const Graphics = ({ width }) => {
         }
       >
         <div
-          style={{ zIndex: "999999", height: "100%" }}
+          style={{ zIndex: Z_INDEX.MODAL_OVERLAY, height: "100%" }}
           id="test"
           ref={ref}
-          // onMouseEnter={() => handleMouseEnter()}
-          // onMouseLeave={() => handleMouseLeave()}
-          // onTouchStart={(e) => flickStart(e)}
-          // onTouchMove={(e) => flicking(e)}
         >
           {showImg && (
             <Image
@@ -167,7 +164,7 @@ const Graphics = ({ width }) => {
               onClick={onClickCg}
             />
           )}
-          {width > 768 && (
+          {width > BREAKPOINT_MOBILE && (
             <>
               <Button
                 type="text"

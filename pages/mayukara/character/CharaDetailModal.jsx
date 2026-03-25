@@ -9,6 +9,7 @@ import Image from "next/image";
 import Background from "../../static/hp1_bg.png";
 import CharaTxt from "./txts";
 import CharaTxtImg from "./txtsImg";
+import { Z_INDEX } from "../../../consts/layout";
 
 export default function CharaDetailModal({
   isMobile,
@@ -45,7 +46,7 @@ export default function CharaDetailModal({
       width={!isMobile ? "1720px" : "95%"}
       bodyStyle={{ height: !isMobile ? `880px` : `820px` }}
       cancelText="閉じる"
-      zIndex={194545}
+      zIndex={Z_INDEX.MODAL_BASE}
       footer={<></>}
     >
       {!isMobile ? (
@@ -81,7 +82,7 @@ export default function CharaDetailModal({
                   width: "1680px",
                   height: "860px",
                   top: "35px",
-                  zIndex: "198585",
+                  zIndex: Z_INDEX.MODAL_INNER,
                 }}
                 fill
               >
@@ -95,7 +96,7 @@ export default function CharaDetailModal({
                         position: "relative",
                         bottom: "12vh",
                         left: "45vh",
-                        zIndex: "19194545",
+                        zIndex: Z_INDEX.MODAL_SEGMENTED,
                         border: "2px solid rgba(50, 50, 50, .9)",
                       }}
                     >
@@ -113,7 +114,7 @@ export default function CharaDetailModal({
                   {charatxt}
                   <Row
                     style={{
-                      zIndex: 194545,
+                      zIndex: Z_INDEX.MODAL_BASE,
                       color: "black",
                       width: "100%",
                       position: "relative",
@@ -131,7 +132,7 @@ export default function CharaDetailModal({
                     position: "fixed",
                     left: "30px",
                     top: "45%",
-                    zIndex: "198585",
+                    zIndex: Z_INDEX.MODAL_INNER,
                   }}
                   icon={
                     <LeftOutlined
@@ -153,7 +154,7 @@ export default function CharaDetailModal({
                     position: "fixed",
                     right: "40px",
                     top: "45%",
-                    zIndex: "198585",
+                    zIndex: Z_INDEX.MODAL_INNER,
                   }}
                   icon={
                     <RightOutlined
@@ -172,7 +173,7 @@ export default function CharaDetailModal({
                   position: "absolute",
                   right: "5%",
                   top: "85%",
-                  zIndex: "198585",
+                  zIndex: Z_INDEX.MODAL_INNER,
                 }}
                 onClick={onCancel}
               >
@@ -273,7 +274,7 @@ export default function CharaDetailModal({
                 marginTop: "1rem",
                 height: "200px",
                 overflowY: "scroll",
-                zIndex: 194545,
+                zIndex: Z_INDEX.MODAL_BASE,
                 marginLeft: "1rem",
                 fontSize: "16px",
                 lineHeight: "24px",

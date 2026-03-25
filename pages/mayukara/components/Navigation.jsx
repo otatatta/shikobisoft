@@ -9,6 +9,7 @@ import jinbutsu from "../../static/name_jinbutsu.png"
 import kobanashi from "../../static/name_kobanashi.png"
 import story from "../../static/name_story.png"
 import { Link as Scroll } from 'react-scroll';
+import { Z_INDEX } from "../../../consts/layout";
 
 const Navigation = () => {
   const [open, setOpen] = useState(false);
@@ -32,7 +33,7 @@ const Navigation = () => {
     <>
       <div style={{ textAlign: "right", marginRight:"2rem" }}>
         {open ? (
-          <Button type="text" onClick={showDrawer} style={{ zIndex: 1919545 }}>
+          <Button type="text" onClick={showDrawer} style={{ zIndex: Z_INDEX.NAV_BUTTON }}>
             <Space style={{ color: "#fff", fontSize: "18px" }}>
               <CloseOutlined />
               閉じる
@@ -40,7 +41,7 @@ const Navigation = () => {
           </Button>
         ) : (
           <>
-            <Button shape="round" onClick={showDrawer} style={{ zIndex: 1919545, backgroundColor: "rgb(86,88,84)", height: "40px" }}>
+            <Button shape="round" onClick={showDrawer} style={{ zIndex: Z_INDEX.NAV_BUTTON, backgroundColor: "rgb(86,88,84)", height: "40px" }}>
               <Space style={{ color: "#fff", fontSize: "18px", margin: "1rem", marginTop: "0px" }}>
                 <MenuFoldOutlined />
                 <span>

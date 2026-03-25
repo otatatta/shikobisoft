@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from "react";
 import Image from "next/image";
 import { pcList1 } from "../../../consts/characters";
+import { BREAKPOINT_MOBILE } from "../../../consts/layout";
 import CharaTxtImg from "./txtsImg";
 import CharaStands from "./stands";
 import CharaGrid from "./CharaGrid";
@@ -10,18 +11,10 @@ export default function MayuChara({ width }) {
   const [mamoruOpen, setMamoruOpen] = useState(false);
   const [charaValue, setCharaValue] = useState();
   const [value, setValue] = useState("1");
-  const isMobile = width <= 768;
+  const isMobile = width <= BREAKPOINT_MOBILE;
 
   const onClickButton = (val, index) => {
-    setCharaValue({
-      names: val.names,
-      name_sub: val.name_sub,
-      name_img: val.name_img,
-      selected_name: val.selected_name,
-      icon: val.icon,
-      options: val.options,
-      index: index,
-    });
+    setCharaValue({ ...val, index });
     setMamoruOpen(true);
     setValue("1");
   };
@@ -49,10 +42,8 @@ export default function MayuChara({ width }) {
 
   const onchangeChara = (newIndex) => {
     if (newIndex !== undefined && pcList1[newIndex]?.selected_name) {
-      if (pcList1[newIndex]?.selected_name) {
-        setCharaValue({ ...pcList1[newIndex], index: newIndex });
-        setValue("1");
-      }
+      setCharaValue({ ...pcList1[newIndex], index: newIndex });
+      setValue("1");
     } else {
       setCharaValue({ ...pcList1[0], index: 0 });
       setValue("1");
