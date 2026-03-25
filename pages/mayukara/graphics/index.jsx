@@ -204,7 +204,7 @@ const Graphics = ({ width }) => {
         centered
         confirmLoading
         open={open}
-        onOk={() => setModal1Open(false)}
+        onOk={() => setOpen(false)}
         onCancel={() => setOpen(false)}
         bodyStyle={{ height: `${height * 0.9625}px` }}
         width={1000}

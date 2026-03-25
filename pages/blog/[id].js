@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { client } from "../../libs/client";
 import { Button } from 'antd';
 import Link from "next/link";
@@ -37,14 +38,20 @@ const formatDate = (dt) => {
 
 export default function BlogId({ blog }) {
   const published = new Date(blog.publishedAt)
-  // const size = useState('large');
+  const sanitizedContent = useMemo(() => {
+    if (typeof window !== "undefined") {
+      const DOMPurify = require("dompurify");
+      return DOMPurify.sanitize(blog.content);
+    }
+    return blog.content;
+  }, [blog.content]);
   return (
     <>
       <main style={{ textAlign: "left", width: "100%", padding: "1rem" }}>
         <h1>{blog.title}</h1>
         <p>更新日：{blog.publishedAt ? formatDate(published) : ""}</p>
         <div
-          dangerouslySetInnerHTML={{ __html: `${blog.content}` }}
+          dangerouslySetInnerHTML={{ __html: sanitizedContent }}
         ></div>
         <Link href="../blog" >
           <Button shape={"round"} style={{ padding: "1rem" }}>
