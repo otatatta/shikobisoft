@@ -1,9 +1,11 @@
+import styles from "./txts.module.css";
+
 export default function CharaTxt(selected) {
   switch (selected) {
     case "Mamoru":
       return (
         <div>
-          <p style={{ fontSize: "20px", fontWeight: "bold" }}>
+          <p className={styles.quote}>
             『 ――全部が全部、気色が悪いよな…… 』<br />
           </p>
           <p>
@@ -32,7 +34,7 @@ export default function CharaTxt(selected) {
     case "Chiyo":
       return (
         <div>
-          <p style={{ fontSize: "20px", fontWeight: "bold" }}>
+          <p className={styles.quote}>
             『 町の外のこと、いっぱいウチに教えて欲しいんだぁ 』<br />
           </p>
           <p>
@@ -57,7 +59,7 @@ export default function CharaTxt(selected) {
     case "Saika":
       return (
         <div>
-          <p style={{ fontSize: "20px", fontWeight: "bold" }}>
+          <p className={styles.quote}>
             『 まったく、アナタという人は……本当に…… 』<br />
           </p>
           <p>
@@ -84,7 +86,7 @@ export default function CharaTxt(selected) {
     case "Juri":
       return (
         <p>
-          <p style={{ fontSize: "20px", fontWeight: "bold" }}>
+          <p className={styles.quote}>
             『 ねえさまたちは、ジュリの〝タカラモノ〟なのですっ！ 』<br />
           </p>
           <p>
@@ -108,7 +110,7 @@ export default function CharaTxt(selected) {
     case "Tsuyuri":
       return (
         <p>
-          <p style={{ fontSize: "20px", fontWeight: "bold" }}>
+          <p className={styles.quote}>
             『 ワタクシと、そちらさま。きっとご縁がありますわよ 』<br />
           </p>
           <p>
@@ -134,7 +136,7 @@ export default function CharaTxt(selected) {
     case "Nazuna":
       return (
         <p>
-          <p style={{ fontSize: "20px", fontWeight: "bold" }}>
+          <p className={styles.quote}>
             『 むっ……。〝なずな〟はちゃんと、お屋敷の使用人ですよっ！ 』
           </p>
           <p>
@@ -159,7 +161,7 @@ export default function CharaTxt(selected) {
     case "Sousei":
       return (
         <p>
-          <p style={{ fontSize: "20px", fontWeight: "bold" }}>
+          <p className={styles.quote}>
             『 ようこそ来てくれたね。……待っていたんだよ 』
           </p>
           <p>
@@ -182,7 +184,7 @@ export default function CharaTxt(selected) {
     case "Shitorasu":
       return (
         <p>
-          <p style={{ fontSize: "20px", fontWeight: "bold" }}>
+          <p className={styles.quote}>
             『 いやはや、――守琉クンに興味が尽きないね 』
           </p>
           <p>
@@ -210,7 +212,7 @@ export default function CharaTxt(selected) {
     case "Ryuko":
       return (
         <p>
-          <p style={{ fontSize: "20px", fontWeight: "bold" }}>
+          <p className={styles.quote}>
             『 きっとこれは私たちオトナへの……〝ノロイ〟なのでしょうね…… 』
           </p>
           <p>
@@ -235,7 +237,7 @@ export default function CharaTxt(selected) {
     case "Ryou":
       return (
         <p>
-          <p style={{ fontSize: "20px", fontWeight: "bold" }}>
+          <p className={styles.quote}>
             『 アンタにそこ居られると、コッチは仕事にならねぇんだよ 』<br />
           </p>
           <p>
@@ -259,7 +261,7 @@ export default function CharaTxt(selected) {
     case "Kenji":
       return (
         <p>
-          <p style={{ fontSize: "20px", fontWeight: "bold" }}>
+          <p className={styles.quote}>
             『 非現実的な事柄は受け入れることが難しい。……しかし 』
           </p>
           <p>
@@ -284,7 +286,7 @@ export default function CharaTxt(selected) {
     case "Komari":
       return (
         <p>
-          <p style={{ fontSize: "20px", fontWeight: "bold" }}>
+          <p className={styles.quote}>
             『 ――そちの名を、識ってるぞ 』<br />
           </p>
           <p>
@@ -306,7 +308,7 @@ export default function CharaTxt(selected) {
     case "Ushio":
       return (
         <p>
-          <p style={{ fontSize: "20px", fontWeight: "bold" }}>
+          <p className={styles.quote}>
             『 ？　お昼ってどんぶりなの？ 』<br />
           </p>
           <p>
@@ -328,7 +330,7 @@ export default function CharaTxt(selected) {
     case "Umino":
       return (
         <p>
-          <p style={{ fontSize: "20px", fontWeight: "bold" }}>
+          <p className={styles.quote}>
             『 はえ～ひとつ賢くなれたねえ 』<br />
           </p>
           <p>
@@ -350,7 +352,7 @@ export default function CharaTxt(selected) {
     case "Higane":
       return (
         <p>
-          <p style={{ fontSize: "20px", fontWeight: "bold" }}>
+          <p className={styles.quote}>
             『 申し訳ありませんわ。私、ヒトを驚かせるのが好きなものでして 』
             <br />
           </p>

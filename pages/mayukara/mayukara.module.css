@@ -1,0 +1,60 @@
+.backgroundImage {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.keyVisual {
+  width: 100%;
+  object-fit: contain;
+  height: auto;
+}
+
+.contentBackground {
+  background: rgba(242, 222, 182, 0.9);
+}
+
+.spacer {
+  height: 20px;
+}
+
+.sectionContainer {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.characterSection {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3rem;
+}
+
+.illustSection {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 4rem;
+}
+
+.dlButtonWrapper {
+  position: relative;
+  top: 20px;
+}
+
+.novelContent {
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+.novelImage {
+  width: 100%;
+  object-fit: contain;
+  max-width: 100%;
+  height: auto;
+}
+
+.shareSection {
+  text-align: center;
+}

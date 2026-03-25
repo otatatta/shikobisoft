@@ -6,6 +6,7 @@ import CharaTxtImg from "./txtsImg";
 import CharaStands from "./stands";
 import CharaGrid from "./CharaGrid";
 import CharaDetailModal from "./CharaDetailModal";
+import styles from "./index.module.css";
 
 export default function MayuChara({ width }) {
   const [mamoruOpen, setMamoruOpen] = useState(false);
@@ -27,7 +28,7 @@ export default function MayuChara({ width }) {
     () => (
       <Image
         src={CharaTxtImg(charaValue?.selected_name)}
-        style={{ display: "inline-block" }}
+        className={styles.charaImage}
         alt="charatxt"
       />
     ),
@@ -52,17 +53,8 @@ export default function MayuChara({ width }) {
 
   return (
     <>
-      <div
-        style={{
-          maxWidth: "1280px",
-          marginLeft: "auto",
-          marginRight: "auto",
-          textAlign: "center",
-          fontFamily: "serif",
-          marginTop: "2rem",
-        }}
-      >
-        <div style={{ padding: "0, 2rem" }}>
+      <div className={styles.container}>
+        <div className={styles.innerPadding}>
           <CharaGrid isMobile={isMobile} onClickButton={onClickButton} />
           <CharaDetailModal
             isMobile={isMobile}

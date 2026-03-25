@@ -1,8 +1,9 @@
 
 import 'antd/dist/antd.css';
+import styles from "./Footer.module.css";
 
 const Footer = () => (
-    <div style={{ textAlign: "center", width: "100%", padding: "1rem" }}>
+    <div className={styles.footer}>
         @2045 SHIKOSHIKOSOFT
     </div>
 )

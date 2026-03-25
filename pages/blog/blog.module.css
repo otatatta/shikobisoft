@@ -1,0 +1,19 @@
+.blogHeader {
+  text-align: center;
+}
+
+.blogMain {
+  text-align: center;
+  width: 100%;
+  padding: 1rem;
+}
+
+.blogDetailMain {
+  text-align: left;
+  width: 100%;
+  padding: 1rem;
+}
+
+.backButton {
+  padding: 1rem;
+}

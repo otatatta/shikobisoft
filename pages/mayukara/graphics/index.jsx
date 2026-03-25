@@ -4,6 +4,7 @@ import Image from "next/image";
 import { LeftOutlined, RightOutlined, CloseOutlined } from "@ant-design/icons";
 import { imagesData, noimg } from "../../../consts/Images";
 import { BREAKPOINT_MOBILE, Z_INDEX } from "../../../consts/layout";
+import styles from "./graphics.module.css";
 
 const Graphics = ({ width }) => {
   const data = useMemo(
@@ -139,19 +140,13 @@ const Graphics = ({ width }) => {
         footer={<></>}
         closeIcon={
           <CloseOutlined
-            style={{
-              fontSize: "64px",
-              paddingTop: "8px",
-              color: "#fff",
-              position: "relative",
-              top: "-80px",
-              right: "10px",
-            }}
+            className={styles.closeIcon}
           />
         }
       >
         <div
-          style={{ zIndex: Z_INDEX.MODAL_OVERLAY, height: "100%" }}
+          className={styles.modalContent}
+          style={{ zIndex: Z_INDEX.MODAL_OVERLAY }}
           id="test"
           ref={ref}
         >
@@ -168,40 +163,20 @@ const Graphics = ({ width }) => {
             <>
               <Button
                 type="text"
-                style={{
-                  width: "40px",
-                  height: "120px",
-                  position: "relative",
-                  top: "40%",
-                  left: "-15%",
-                }}
+                className={styles.navButtonLeft}
                 onClick={() => onchangeBeforeCG()}
               >
                 <LeftOutlined
-                  style={{
-                    fontSize: "70px",
-                    color: "#fff",
-                    position: "relative",
-                  }}
+                  className={styles.navIcon}
                 />
               </Button>
               <Button
                 type="text"
-                style={{
-                  width: "40px",
-                  height: "120px",
-                  position: "relative",
-                  left: "100%",
-                  top: "40%",
-                }}
+                className={styles.navButtonRight}
                 onClick={() => onchangeNextCG()}
               >
                 <RightOutlined
-                  style={{
-                    fontSize: "70px",
-                    color: "#fff",
-                    position: "relative",
-                  }}
+                  className={styles.navIcon}
                 />
               </Button>
             </>

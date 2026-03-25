@@ -1,0 +1,163 @@
+/* Modal */
+.modalRoot {
+  overflow-x: scroll;
+  position: relative;
+}
+
+/* Close icon */
+.closeIcon {
+  font-size: 48px;
+  padding: 4px;
+}
+
+/* Desktop: background row */
+.desktopBgRow {
+  position: absolute;
+  left: 0px;
+  top: -40px;
+  width: 1720px;
+  height: 980px;
+  background-color: #fff;
+}
+
+/* Desktop: background image */
+.desktopBgImage {
+  width: 1720px;
+  height: 980px;
+  opacity: 0.25;
+}
+
+/* Desktop: main content row */
+.desktopContentRow {
+  font-family: "Hannari";
+  position: absolute;
+  width: 1680px;
+  height: 860px;
+  top: 35px;
+}
+
+/* Desktop: left column */
+.desktopLeftCol {
+  text-align: right;
+}
+
+/* Desktop: chara stand wrapper */
+.charaStandWrapper {
+  position: relative;
+  bottom: 40px;
+}
+
+/* Desktop: segmented wrapper */
+.segmentedWrapper {
+  position: relative;
+  bottom: 12vh;
+  left: 45vh;
+  border: 2px solid rgba(50, 50, 50, 0.9);
+}
+
+/* Desktop: segmented inner */
+.segmentedInner {
+  border: 2px;
+}
+
+/* Desktop: bottom row in content area */
+.desktopBottomRow {
+  color: black;
+  width: 100%;
+  position: relative;
+  bottom: 6vh;
+}
+
+/* Desktop: nav button left */
+.navButtonLeft {
+  position: fixed;
+  left: 30px;
+  top: 45%;
+}
+
+/* Desktop: nav button right */
+.navButtonRight {
+  position: fixed;
+  right: 40px;
+  top: 45%;
+}
+
+/* Desktop: nav arrow icon */
+.navArrowIcon {
+  font-size: 120px;
+  color: #fff;
+  background-color: rgba(168, 178, 178, 0.6);
+}
+
+/* Desktop: close button */
+.desktopCloseButton {
+  position: absolute;
+  right: 5%;
+  top: 85%;
+}
+
+/* Loading spinner icon */
+.spinnerIcon {
+  font-size: 32px;
+}
+
+/* Mobile: background image */
+.mobileBgImage {
+  opacity: 0.25;
+  object-fit: cover;
+}
+
+/* Mobile: chara stand container */
+.mobileCharaStandContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+/* Mobile: nav row */
+.mobileNavRow {
+  position: relative;
+  bottom: 70vh;
+}
+
+/* Mobile: nav arrow icon */
+.mobileNavArrowIcon {
+  font-size: 120px;
+  color: #fff;
+  background-color: rgba(128, 128, 128, 0.5);
+}
+
+/* Mobile: info panel */
+.mobileInfoPanel {
+  position: relative;
+  bottom: 340px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Mobile: character name */
+.mobileCharaName {
+  font-size: 32px;
+  margin-left: 1rem;
+}
+
+/* Mobile: character sub name */
+.mobileCharaSubName {
+  font-size: 16px;
+  margin-left: 1rem;
+}
+
+/* Mobile: description scroll area */
+.mobileDescriptionArea {
+  margin-top: 1rem;
+  height: 200px;
+  overflow-y: scroll;
+  margin-left: 1rem;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+/* Mobile: segmented container */
+.mobileSegmentedContainer {
+  text-align: center;
+  margin: 1rem;
+}

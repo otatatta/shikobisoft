@@ -10,6 +10,7 @@ import kobanashi from "../../static/name_kobanashi.png"
 import story from "../../static/name_story.png"
 import { Link as Scroll } from 'react-scroll';
 import { Z_INDEX } from "../../../consts/layout";
+import styles from "./Navigation.module.css";
 
 const Navigation = () => {
   const [open, setOpen] = useState(false);
@@ -21,7 +22,7 @@ const Navigation = () => {
     <Image
       alt="titlelogo"
       src={src}
-      style={{ objectFit: "contain" }}
+      className={styles.menuImage}
       layout={"intrinsic"}
     />)
 
@@ -31,18 +32,18 @@ const Navigation = () => {
 
   return (
     <>
-      <div style={{ textAlign: "right", marginRight:"2rem" }}>
+      <div className={styles.navWrapper}>
         {open ? (
           <Button type="text" onClick={showDrawer} style={{ zIndex: Z_INDEX.NAV_BUTTON }}>
-            <Space style={{ color: "#fff", fontSize: "18px" }}>
+            <Space className={styles.closeButtonContent}>
               <CloseOutlined />
               閉じる
             </Space>
           </Button>
         ) : (
           <>
-            <Button shape="round" onClick={showDrawer} style={{ zIndex: Z_INDEX.NAV_BUTTON, backgroundColor: "rgb(86,88,84)", height: "40px" }}>
-              <Space style={{ color: "#fff", fontSize: "18px", margin: "1rem", marginTop: "0px" }}>
+            <Button shape="round" onClick={showDrawer} className={styles.menuButton} style={{ zIndex: Z_INDEX.NAV_BUTTON }}>
+              <Space className={styles.menuButtonContent}>
                 <MenuFoldOutlined />
                 <span>
                   項目
@@ -58,11 +59,11 @@ const Navigation = () => {
             <Image
               alt="titlelogo"
               src={TitleLogo}
-              style={{ objectFit: "contain" }}
+              className={styles.menuImage}
             />
           </Scroll>
         </div>
-        <div style={{ borderTop: "thick double #fff", color: "#fff" }} />
+        <div className={styles.divider} />
         <Scroll to="story" smooth={true} duration={600} onClick={onClose} saveHashHistory>
           {menuList(story)}
         </Scroll>

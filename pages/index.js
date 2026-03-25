@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Footer from "./component/Footer";
 import {Modal} from 'antd';
 import Router from 'next/router'
+import styles from "./index.module.css"
 
 
 
@@ -42,7 +43,7 @@ export default function Home() {
           okText='はい'
           cancelText='いいえ'
         >
-          <p style={{fontSize: "14px", textAlign: "left"}}>
+          <p className={styles.ageConfirmText}>
             しこしこソフトへようこそ!!<br /><br />
             このサイトには18歳未満の方にが回覧できないコンテンツが含まれています。<br />
             あなたは18歳以上ですか?<br />
