@@ -140,10 +140,16 @@ export const uploadedImageData = [
         path3:
             "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/2f05df1e104b4b59a0e57f4594a9831d/sample17c.png",
     },
-    noImage,
-    noImage,
     {
         modal_index: "17",
+        path: "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/1376e1853be14d428c34e6e96a641ceb/sample18a.png",
+        path2:
+            "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/53959545841b45b48e0f55fe24be8d73/sample18b.png",
+        path3: noimg,
+    },
+    noImage,
+    {
+        modal_index: "18",
         path: "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/f76a3542312b471089c77c60cae47142/sample20a.png",
         path2:
             "https://images.microcms-assets.io/assets/5309d67b60eb4f779993a5bde21d922a/022f969bffd746c3acb1f6342b5550e1/sample20b.png",
