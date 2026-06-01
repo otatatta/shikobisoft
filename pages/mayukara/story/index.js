@@ -1,17 +1,15 @@
 import Image from "next/image";
 import story from "../../static/story.png"
+import styles from "./story.module.css";
 export default function CarankoeStory() {
     return (
         <>
-            <div style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto", margin: "2rem" }}>
-                <div style={{ height: "100%", width: "100%" }}>
+            <div className={styles.container}>
+                <div className={styles.imageWrapper}>
                     <Image
                         alt="Shikoshikoback"
                         src={story}
-                        style={{
-                            maxWidth: '100%',
-                            height: 'auto',
-                          }}
+                        className={styles.storyImage}
                     />
                 </div>
             </div>

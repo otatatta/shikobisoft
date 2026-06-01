@@ -1,0 +1,16 @@
+.gridItem {
+  width: 255px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.iconButton {
+  width: 180px;
+  height: 180px;
+  clip-path: circle(50%);
+}
+
+.mobileIconButton {
+  width: 105px;
+  height: 105px;
+}

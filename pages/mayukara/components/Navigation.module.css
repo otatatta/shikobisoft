@@ -1,0 +1,30 @@
+.navWrapper {
+  text-align: right;
+  margin-right: 2rem;
+}
+
+.closeButtonContent {
+  color: #fff;
+  font-size: 18px;
+}
+
+.menuButton {
+  background-color: rgb(86, 88, 84);
+  height: 40px;
+}
+
+.menuButtonContent {
+  color: #fff;
+  font-size: 18px;
+  margin: 1rem;
+  margin-top: 0px;
+}
+
+.menuImage {
+  object-fit: contain;
+}
+
+.divider {
+  border-top: thick double #fff;
+  color: #fff;
+}

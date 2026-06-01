@@ -1,0 +1,35 @@
+.closeIcon {
+  font-size: 64px;
+  padding-top: 8px;
+  color: #fff;
+  position: relative;
+  top: -80px;
+  right: 10px;
+}
+
+.modalContent {
+  height: 100%;
+}
+
+.navButton {
+  width: 40px;
+  height: 120px;
+  position: relative;
+  top: 40%;
+}
+
+.navButtonLeft {
+  composes: navButton;
+  left: -15%;
+}
+
+.navButtonRight {
+  composes: navButton;
+  left: 100%;
+}
+
+.navIcon {
+  font-size: 70px;
+  color: #fff;
+  position: relative;
+}

@@ -4,6 +4,7 @@ import { client } from "../../libs/client";
 import shikoIcon from "../static/shikoIcon.png"
 import Footer from "../component/Footer"
 import Image from "next/image";
+import styles from "./blog.module.css";
 
 //SSG
 export const getStaticProps = async () => {
@@ -23,11 +24,11 @@ export default function Home({ blog }) {
   return (
     <div>
       <header >
-        <h1 style={{ textAlign: "center" }}>
+        <h1 className={styles.blogHeader}>
           しこしこソフト スタッフブログ
         </h1>
       </header>
-      <main style={{ textAlign: "center", width: "100%", padding: "1rem" }} className={"site-card-wrapper"}>
+      <main className={`${styles.blogMain} site-card-wrapper`}>
         <Row gutter={16}>
           {blog.map((blog, index) => (
             <Col xs={20} sm={16} md={12} lg={8} xl={6} style={{ marginBottom: 12 }} key={index}>

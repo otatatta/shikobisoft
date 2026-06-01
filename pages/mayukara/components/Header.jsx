@@ -1,5 +1,6 @@
 import React, { useMemo } from "react";
 import Image from "next/image";
+import styles from "./Header.module.css";
 import arasuji from "../../static/bar-arasuji.png";
 import denpou from "../../static/bar-denpo.png";
 import garou from "../../static/bar-garo.png";
@@ -22,38 +23,16 @@ function SectionHeader({ text }) {
     }
   }, [text]);
 
-  const outer = {
-    width: "100%",
-    height: "3rem",
-    overflow: "hidden",
-    textAlign: "center",
-    outline: "thick double #A3383E",
-    borderRadius: "1rem",
-    marginTop: "1rem",
-  };
-  const inner = {
-    width: "100%",
-    height: "100%",
-    backgroundColor: "#A3383E",
-    color: "#fff",
-  };
-
   return (
     <>
-      <div style={outer}>
-        <div style={inner}>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
+      <div className={styles.outer}>
+        <div className={styles.inner}>
+          <div className={styles.flexCenter}>
             {txtImg && (
               <Image
                 alt="Shikoshiko"
                 src={txtImg}
-                style={{ objectFit: "cover", maxHeight: "46px" }}
+                className={styles.headerImage}
               />
             )}
           </div>

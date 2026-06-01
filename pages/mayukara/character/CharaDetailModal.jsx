@@ -10,6 +10,7 @@ import Background from "../../static/hp1_bg.png";
 import CharaTxt from "./txts";
 import CharaTxtImg from "./txtsImg";
 import { Z_INDEX } from "../../../consts/layout";
+import styles from "./CharaDetailModal.module.css";
 
 export default function CharaDetailModal({
   isMobile,
@@ -29,20 +30,12 @@ export default function CharaDetailModal({
         !isMobile ? (
           <></>
         ) : (
-          <CloseOutlined
-            style={{
-              fontSize: "48px",
-              padding: "4px",
-            }}
-          />
+          <CloseOutlined className={styles.closeIcon} />
         )
       }
       open={open}
       onCancel={onCancel}
-      style={{
-        overflowX: "scroll",
-        position: "relative",
-      }}
+      className={styles.modalRoot}
       width={!isMobile ? "1720px" : "95%"}
       bodyStyle={{ height: !isMobile ? `880px` : `820px` }}
       cancelText="閉じる"
@@ -53,55 +46,31 @@ export default function CharaDetailModal({
         <>
           {charaStand ? (
             <>
-              <Row
-                style={{
-                  position: "absolute",
-                  left: "0px",
-                  top: "-40px",
-                  width: "1720px",
-                  height: "980px",
-                  backgroundColor: "#fff",
-                }}
-              >
+              <Row className={styles.desktopBgRow}>
                 <Image
                   alt="Shikoshikoback"
                   src={Background}
-                  style={{
-                    width: "1720px",
-                    height: "980px",
-                    opacity: 0.25,
-                  }}
+                  className={styles.desktopBgImage}
                 />
               </Row>
               <Row
                 gutter={{ xs: 8, sm: 16, md: 24 }}
                 align="middle"
-                style={{
-                  fontFamily: "Hannari",
-                  position: "absolute",
-                  width: "1680px",
-                  height: "860px",
-                  top: "35px",
-                  zIndex: Z_INDEX.MODAL_INNER,
-                }}
+                className={styles.desktopContentRow}
+                style={{ zIndex: Z_INDEX.MODAL_INNER }}
                 fill
               >
-                <Col span={6} style={{ textAlign: "right" }}>
+                <Col span={6} className={styles.desktopLeftCol}>
                   <Row>
-                    <div style={{ position: "relative", bottom: "40px" }}>
+                    <div className={styles.charaStandWrapper}>
                       {charaStand}
                     </div>
                     <span
-                      style={{
-                        position: "relative",
-                        bottom: "12vh",
-                        left: "45vh",
-                        zIndex: Z_INDEX.MODAL_SEGMENTED,
-                        border: "2px solid rgba(50, 50, 50, .9)",
-                      }}
+                      className={styles.segmentedWrapper}
+                      style={{ zIndex: Z_INDEX.MODAL_SEGMENTED }}
                     >
                       <Segmented
-                        style={{ border: "2px" }}
+                        className={styles.segmentedInner}
                         options={charaValue?.options ?? ["1"]}
                         value={value}
                         onChange={setValue}
@@ -113,13 +82,8 @@ export default function CharaDetailModal({
                 <Col span={16} align="top">
                   {charatxt}
                   <Row
-                    style={{
-                      zIndex: Z_INDEX.MODAL_BASE,
-                      color: "black",
-                      width: "100%",
-                      position: "relative",
-                      bottom: "6vh",
-                    }}
+                    className={styles.desktopBottomRow}
+                    style={{ zIndex: Z_INDEX.MODAL_BASE }}
                     align="middle"
                   ></Row>
                 </Col>
@@ -128,21 +92,10 @@ export default function CharaDetailModal({
                 <Button
                   type="text"
                   onClick={() => onchangeChara(charaValue.index - 1)}
-                  style={{
-                    position: "fixed",
-                    left: "30px",
-                    top: "45%",
-                    zIndex: Z_INDEX.MODAL_INNER,
-                  }}
+                  className={styles.navButtonLeft}
+                  style={{ zIndex: Z_INDEX.MODAL_INNER }}
                   icon={
-                    <LeftOutlined
-                      style={{
-                        fontSize: "120px",
-                        color: "#fff",
-                        backgroundColor: "rgba(168,178,178,.6)",
-                      }}
-                      block
-                    />
+                    <LeftOutlined className={styles.navArrowIcon} block />
                   }
                 ></Button>
               )}
@@ -150,31 +103,16 @@ export default function CharaDetailModal({
                 <Button
                   type="text"
                   onClick={() => onchangeChara(charaValue.index + 1)}
-                  style={{
-                    position: "fixed",
-                    right: "40px",
-                    top: "45%",
-                    zIndex: Z_INDEX.MODAL_INNER,
-                  }}
+                  className={styles.navButtonRight}
+                  style={{ zIndex: Z_INDEX.MODAL_INNER }}
                   icon={
-                    <RightOutlined
-                      style={{
-                        fontSize: "120px",
-                        color: "#fff",
-                        backgroundColor: "rgba(168,178,178,.6)",
-                      }}
-                      block
-                    />
+                    <RightOutlined className={styles.navArrowIcon} block />
                   }
                 ></Button>
               )}
               <Button
-                style={{
-                  position: "absolute",
-                  right: "5%",
-                  top: "85%",
-                  zIndex: Z_INDEX.MODAL_INNER,
-                }}
+                className={styles.desktopCloseButton}
+                style={{ zIndex: Z_INDEX.MODAL_INNER }}
                 onClick={onCancel}
               >
                 閉じる
@@ -183,7 +121,7 @@ export default function CharaDetailModal({
           ) : (
             <Spin
               indicator={
-                <LoadingOutlined style={{ fontSize: 32 }} spin />
+                <LoadingOutlined className={styles.spinnerIcon} spin />
               }
             />
           )}
@@ -193,37 +131,22 @@ export default function CharaDetailModal({
           <Image
             alt="Shikoshikoback"
             src={Background}
-            style={{ opacity: 0.25, objectFit: "cover" }}
+            className={styles.mobileBgImage}
             fill
           />
-          <div
-            style={{
-              position: "relative",
-              display: "flex",
-              justifyContent: "center",
-            }}
-          >
+          <div className={styles.mobileCharaStandContainer}>
             {charaStand}
           </div>
           <Row
             justify={"space-between"}
-            style={{
-              position: "relative",
-              bottom: "70vh",
-            }}
+            className={styles.mobileNavRow}
           >
             {charaValue?.index > 0 ? (
               <Button
                 type="text"
                 onClick={() => onchangeChara(charaValue.index - 1)}
                 icon={
-                  <LeftOutlined
-                    style={{
-                      fontSize: "120px",
-                      color: "#fff",
-                      backgroundColor: "rgba(128,128,128,.5)",
-                    }}
-                  />
+                  <LeftOutlined className={styles.mobileNavArrowIcon} />
                 }
               ></Button>
             ) : (
@@ -235,54 +158,25 @@ export default function CharaDetailModal({
                 type="text"
                 onClick={() => onchangeChara(charaValue.index + 1)}
                 icon={
-                  <RightOutlined
-                    style={{
-                      fontSize: "120px",
-                      color: "#fff",
-                      backgroundColor: "rgba(128,128,128,.5)",
-                    }}
-                  />
+                  <RightOutlined className={styles.mobileNavArrowIcon} />
                 }
               ></Button>
             )}
           </Row>
-          <div
-            style={{
-              position: "relative",
-              bottom: "340px",
-              backgroundColor: "rgba(255, 255, 255, .8)",
-            }}
-          >
-            <div
-              style={{
-                fontSize: "32px",
-                marginLeft: "1rem",
-              }}
-            >
+          <div className={styles.mobileInfoPanel}>
+            <div className={styles.mobileCharaName}>
               《{charaValue?.names}》
-              <div
-                style={{
-                  fontSize: "16px",
-                  marginLeft: "1rem",
-                }}
-              >
+              <div className={styles.mobileCharaSubName}>
                 ー{charaValue?.name_sub}ー
               </div>
             </div>
             <div
-              style={{
-                marginTop: "1rem",
-                height: "200px",
-                overflowY: "scroll",
-                zIndex: Z_INDEX.MODAL_BASE,
-                marginLeft: "1rem",
-                fontSize: "16px",
-                lineHeight: "24px",
-              }}
+              className={styles.mobileDescriptionArea}
+              style={{ zIndex: Z_INDEX.MODAL_BASE }}
             >
               {CharaTxt(charaValue?.selected_name) ?? ""}
             </div>
-            <div style={{ textAlign: "center", margin: "1rem" }}>
+            <div className={styles.mobileSegmentedContainer}>
               <Segmented
                 options={charaValue?.options ?? ["1"]}
                 value={value}

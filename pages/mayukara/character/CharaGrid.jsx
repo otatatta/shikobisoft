@@ -1,6 +1,7 @@
 import { Col, Row, Button } from "antd";
 import Image from "next/image";
 import { pcList1 } from "../../../consts/characters";
+import styles from "./CharaGrid.module.css";
 
 export default function CharaGrid({ isMobile, onClickButton }) {
   if (!isMobile) {
@@ -8,22 +9,14 @@ export default function CharaGrid({ isMobile, onClickButton }) {
       <Row gutter={16} md="4" lg="4" xl="4" xxl="4" align="middle">
         {pcList1?.map((list, index) => (
           <div
-            style={{
-              width: "255px",
-              textAlign: "center",
-              marginTop: "20px",
-            }}
+            className={styles.gridItem}
             key={`aaaa_${index}`}
           >
             <div>
               <Button
                 type="text"
                 shape="circle"
-                style={{
-                  width: "180x",
-                  height: "180px",
-                  clipPath: "circle(50%)",
-                }}
+                className={styles.iconButton}
                 onClick={() => onClickButton(list, index)}
               >
                 <Image
@@ -61,7 +54,7 @@ export default function CharaGrid({ isMobile, onClickButton }) {
           <div>
             <Button
               type="text"
-              style={{ width: "105px", height: "105px" }}
+              className={styles.mobileIconButton}
               onClick={() => onClickButton(list, index)}
             >
               <Image

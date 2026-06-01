@@ -3,6 +3,7 @@ import { client } from "../../libs/client";
 import { Button } from 'antd';
 import Link from "next/link";
 import Footer from "../component/Footer"
+import styles from "./blog.module.css"
 
 //SSG
 export const getStaticProps = async (context) => {
@@ -47,14 +48,14 @@ export default function BlogId({ blog }) {
   }, [blog.content]);
   return (
     <>
-      <main style={{ textAlign: "left", width: "100%", padding: "1rem" }}>
+      <main className={styles.blogDetailMain}>
         <h1>{blog.title}</h1>
         <p>更新日：{blog.publishedAt ? formatDate(published) : ""}</p>
         <div
           dangerouslySetInnerHTML={{ __html: sanitizedContent }}
         ></div>
         <Link href="../blog" >
-          <Button shape={"round"} style={{ padding: "1rem" }}>
+          <Button shape={"round"} className={styles.backButton}>
             一覧に戻る
           </Button>
         </Link>

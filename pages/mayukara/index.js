@@ -16,6 +16,7 @@ import {DefaultSeo} from 'next-seo';
 import Head from "next/head"
 import DlFloatButtons from "./components/DlButton"
 import { BREAKPOINT_MOBILE, Z_INDEX } from "../../consts/layout"
+import styles from "./mayukara.module.css"
 
 
 export default function Carankoe() {
@@ -75,11 +76,9 @@ export default function Carankoe() {
                 <Image
                     alt="Shikoshikoback"
                     src={Background}
+                    className={styles.backgroundImage}
                     style={{
                         zIndex: Z_INDEX.BACKGROUND,
-                        width: "100%",
-                        height: "100%",
-                        objectFit: "fill",
                     }}
                 />
             </div >
@@ -90,65 +89,54 @@ export default function Carankoe() {
             )
             }
             <div style={{position: "absolute", top: "0px", width: "100%", zIndex: Z_INDEX.CONTENT}}>
-                <div style={{}} id="top">
+                <div id="top">
                     <Image
                         alt="key_visual"
                         src={karankoeTop}
-                        style={{
-                            width: "100%",
-                            objectFit: "contain",
-                            height: 'auto',
-                        }} />
+                        className={styles.keyVisual}
+                    />
                 </div>
-                <div style={{background: "rgba(242, 222, 182, .9)"}}>
-                    <div style={{height: "20px"}}>
+                <div className={styles.contentBackground}>
+                    <div className={styles.spacer}>
 
                     </div>
-                    <div id="story" style={{maxWidth: "1280px", marginLeft: "auto", marginRight: "auto"}}>
+                    <div id="story" className={styles.sectionContainer}>
                         <SectionHeader text="御噺" />
                         <CarankoeStory />
                     </div>
-                    <div id="character" style={{maxWidth: "1280px", marginLeft: "auto", marginRight: "auto", marginTop: "3rem"}}>
+                    <div id="character" className={styles.characterSection}>
                         <SectionHeader text="人物" />
                         <MayuChara width={width} />
                     </div>
-                    <div id="illust" style={{maxWidth: "1280px", marginLeft: "auto", marginRight: "auto", marginTop: "4rem"}}>
+                    <div id="illust" className={styles.illustSection}>
                         <SectionHeader text="画廊" />
                         <div >
                             <Graphics setHideButton={setHideButton} width={width} />
                         </div>
                     </div>
                     {width > BREAKPOINT_MOBILE && (
-                        <div style={{position: "relative", top: "20px"}}>
+                        <div className={styles.dlButtonWrapper}>
                             <DlFloatButtons />
                         </div>
                     )}
-                    <div id="novel" style={{maxWidth: "1280px", marginLeft: "auto", marginRight: "auto"}}>
+                    <div id="novel" className={styles.sectionContainer}>
                         <SectionHeader text="小噺" />
-                        <div style={{padding: "2rem", marginTop: "2rem"}}>
+                        <div className={styles.novelContent}>
                             <Image
                                 alt="Shikoshiko"
                                 src={junbi}
-                                style={{
-                                    width: "100%",
-                                    objectFit: "contain",
-                                    maxWidth: '100%',
-                                    height: 'auto',
-                                }} />
+                                className={styles.novelImage}
+                            />
                             <Image
                                 alt="Shikoshiko"
                                 src={junbi2}
-                                style={{
-                                    width: "100%",
-                                    objectFit: "contain",
-                                    maxWidth: '100%',
-                                    height: 'auto',
-                                }} />
+                                className={styles.novelImage}
+                            />
                         </div>
 
                     </div>
                     <BackTopButton />
-                    <div id="share" style={{textAlign: "center"}}>
+                    <div id="share" className={styles.shareSection}>
                         <FloatButtons />
                     </div>
                     <Footer />
